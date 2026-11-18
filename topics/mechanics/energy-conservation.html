@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Conservation of Total Energy, Energy as Equation of Motion · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="energy-conservation">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,104 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Conservation of Total Energy, Energy as Equation of Motion</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">For a particle under conservative forces (with time-independent potential), the total mechanical energy K + U is constant. This gives a first-order equation of motion.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Total energy</strong> = motion energy + stored energy [1]; [2]:</p>
+$$E = K + U = \tfrac12 mv^2 + U.$$
+<p><strong>The big rule:</strong> if the only forces are conservative (and $U$ doesn't change with time), $E$ is <em>constant</em>. You can swap $K$ for $U$ and back, but the total never changes [1]; [2].</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Dropping a ball</strong>: $U = mgh$ drops to zero, $K$ grows to $mgh$, so $v = \sqrt{2gh}$.</li>
+<li><strong>Pendulum</strong>: at the top, all $U$; at the bottom, all $K$; back and forth.</li>
+<li><strong>Spring</strong>: at the ends of the swing ($x = \pm A$), all $U = \tfrac12 kA^2$; at the middle, all $K$.</li>
+</ul>
+<p><strong>Where can the particle go?</strong> Only where $E \ge U(x)$ (otherwise $K$ would be negative, which is impossible). Places where $E = U$ are <strong>turning points</strong>: there the particle stops for an instant and reverses [1].</p>
+<p><strong>Energy is a shortcut.</strong> Instead of solving $F = ma$ (a second-order equation), you can often use $E = \tfrac12 mv^2 + U(x) = \text{const}$ to get the speed at any point without knowing the whole motion [1].</p>
+<p><strong>When it fails:</strong> friction and drag <em>don't</em> have a potential energy. They turn mechanical energy into heat, so $E$ drops. The total energy (including heat) is still conserved — that's thermodynamics [2].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Conservation of mechanical energy</h3>
+            <div>
+<p>The <strong>mechanical energy</strong> of a particle is the sum of kinetic and potential energies [1, §Conservation of Mechanical Energy]; [2, §14.5]:</p>
+$$E = K + U = \tfrac12 mv^2 + U(\mathbf r).$$
+<p>Differentiate with respect to time, using $dK/dt = \mathbf F\cdot\mathbf v$ (work-energy theorem rate form) and $dU/dt = \nabla U\cdot\mathbf v + \partial U/\partial t$ [1]:</p>
+$$\frac{dE}{dt} = (\mathbf F + \nabla U)\cdot\mathbf v + \frac{\partial U}{\partial t}.$$
+<p>For a conservative force $\mathbf F = -\nabla U$, the first term vanishes. If $U$ is also <em>time-independent</em>, $\partial U/\partial t = 0$, and [1]</p>
+$$\boxed{\frac{dE}{dt} = 0 \;\Longrightarrow\; E = K + U = \text{const.}}$$
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Allowed and forbidden regions</h3>
+            <div>
+<p>Since $K \ge 0$ always, conservation implies [1, §More on the Potential Energy]</p>
+$$E \ge U(x).$$
+<p>Regions where $U(x) &gt; E$ are <strong>classically forbidden</strong>: the particle can never enter them (it would need $K &lt; 0$). The boundaries where $U(x) = E$ are <strong>turning points</strong>: there $K = 0$, the particle stops instantaneously, and if the force there is nonzero it reverses [1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Energy as a first integral of motion</h3>
+            <div>
+<p>In one dimension, solve $E = \tfrac12 mv^2 + U(x)$ for the speed [1, §Mechanical Energy as a First Integral of Motion]:</p>
+$$v = \frac{dx}{dt} = \pm\sqrt{\tfrac{2}{m}\bigl[E - U(x)\bigr]}.$$
+<p>This is a <strong>first-order</strong> equation — one integration below the second-order Newton equation. Separate and integrate [1]:</p>
+$$t - t_0 = \int_{x_0}^{x}\frac{dx'}{\pm\sqrt{\tfrac{2}{m}[E - U(x')]}}.$$
+<p>If the integral can be done, it gives $x(t)$ directly from $E$ and $U(x)$, without ever solving $m\ddot x = -dU/dx$ [1].</p>
+<p>In 2D or 3D, $E = \text{const}$ fixes the speed but not the direction, so it isn't enough on its own; you need other conserved quantities too (such as $L$) [1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> When energy isn't conserved</h3>
+            <div>
+<p>Mechanical energy is <em>not</em> conserved if [1]; [2, §14.7]:</p>
+<ul>
+<li>a <strong>non-conservative force</strong> acts (friction, drag): it does path-dependent work that cannot be captured by any $U$; the energy lost goes into heat;</li>
+<li>a <strong>time-dependent potential</strong> is present (an external agent pumps energy in or out).</li>
+</ul>
+<p>In those cases the right statement is energy balance: $\Delta E_{\text{mechanical}} = W_{\text{non-conservative}}$ [2, §14.7.1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> From Newton to energy and back</h3>
+            <div>
+<p>The conservation of energy is just Newton's second law, integrated once. For a particle under a constant force $F$, you can derive $x(t)$ either from $m\ddot x = F$ (two integrations) or from $E = \tfrac12 mv^2 - Fx$ (one separation and square) — same answer [1, Worked Example “Using Total Energy as the Equation of Motion for a Particle Under a Constant Force”].</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>Energy conservation is often easier to apply than $F = ma$ because it is a scalar equation and uses only the start and end states, skipping the details of the path [1, Worked Example “Velocity with respect to distance”].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>Potential energy is defined only for conservative forces. Don't write "$U$ of friction": friction's work depends on the path, so it has no potential energy [2, §14.2].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="pendulum">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A pendulum swinging (optionally with damping). The three bars on the right show kinetic energy $K$, potential energy $U = mgL(1-\cos\theta)$, and the total $E = K + U$. With damping 0: $E$ stays constant and $K, U$ trade back and forth. Add damping: the total $E$ drops — the "lost" energy becomes heat, which is where the mechanical-energy conservation breaks.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +131,40 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Mechanical energy [1, 2]</span></figcaption>
+              <div class="formula-body">$$E = K + U = \tfrac12 mv^2 + U(\mathbf r)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Conservation [1, 2]</span></figcaption>
+              <div class="formula-body">$$\mathbf F = -\nabla U, \ \partial U/\partial t = 0 \;\Rightarrow\; E = \text{const}$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Allowed region [1]</span></figcaption>
+              <div class="formula-body">$$E \ge U(x)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Turning points [1]</span></figcaption>
+              <div class="formula-body">$$U(x) = E$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Speed from energy (1D) [1]</span></figcaption>
+              <div class="formula-body">$$v(x) = \pm\sqrt{\tfrac{2}{m}[E - U(x)]}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Time by quadrature (1D) [1]</span></figcaption>
+              <div class="formula-body">$$t - t_0 = \int_{x_0}^{x}\frac{dx'}{\pm\sqrt{\tfrac{2}{m}[E-U(x')]}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>With non-conservative forces [2]</span></figcaption>
+              <div class="formula-body">$$\Delta E = W_{\text{nc}}$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +173,94 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A ball of mass $m$ is dropped from height $h$. Find its speed when it hits the ground using energy conservation. (Direct application of [1]; [2, §14.5.1].)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>Take $U = mgy$ with $U(0) = 0$. Initial: $K_i = 0$, $U_i = mgh$, so $E = mgh$.</p>
+              </div></li>
+              <li><div>
+<p>Final: $U_f = 0$, so $K_f = E = mgh$.</p>
+              </div></li>
+              <li><div>
+<p>$\tfrac12 mv^2 = mgh \Rightarrow v = \sqrt{2gh}$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Same result as from $m\ddot y = -mg$ with $v = 0$ at $y = h$ (Topic 3.3), and it doesn't depend on $m$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A block slides down a frictionless incline of angle $\theta$, starting from rest. Find its speed after moving a distance $d$ along the slope. (From [1], Worked Example “Velocity with respect to distance”, Solution 2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Drop in height: $\Delta y = -d\sin\theta$, so $\Delta U = -mgd\sin\theta$.</p>
+              </div></li>
+              <li><div>
+<p>Conservation: $K_f - K_i = -\Delta U = mgd\sin\theta$, so $\tfrac12 mv^2 = mgd\sin\theta$.</p>
+              </div></li>
+              <li><div>
+<p>$v = \sqrt{2gd\sin\theta}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Height dropped $h = d\sin\theta$, so $v = \sqrt{2gh}$ — the same as free fall from height $h$. Expected: no friction, so all $U$ turns into $K$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A mass on a spring of constant $k$ oscillates with amplitude $A$. Find the maximum speed. (Standard application; derivation from [2], §14.4.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$E = \tfrac12 kx^2 + \tfrac12 mv^2$. At the turning points ($x = \pm A$), $v = 0$, so $E = \tfrac12 kA^2$.</p>
+              </div></li>
+              <li><div>
+<p>At the centre ($x = 0$), $U = 0$, so all energy is kinetic: $\tfrac12 mv_{\max}^2 = \tfrac12 kA^2$, giving $v_{\max} = A\sqrt{k/m} = A\omega_0$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Matches the SHM solution $x(t) = A\cos(\omega_0 t)$, with $v(t) = -A\omega_0\sin(\omega_0 t)$, maximum $A\omega_0$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A pendulum of length $L$ is released from angle $\theta_0$ (small or not). Find its speed at the bottom. (Energy conservation applied to the pendulum setup from [2], §14.5.1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Height of bob above the bottom: $h(\theta) = L(1 - \cos\theta)$.</p>
+              </div></li>
+              <li><div>
+<p>At release: $v_0 = 0$, $U_0 = mgL(1 - \cos\theta_0)$. At the bottom: $U = 0$.</p>
+              </div></li>
+              <li><div>
+<p>$\tfrac12 mv^2 = mgL(1 - \cos\theta_0)$, so $v = \sqrt{2gL(1 - \cos\theta_0)}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>For small $\theta_0$: $1 - \cos\theta_0 \approx \theta_0^2/2$, so $v \approx \theta_0\sqrt{gL}$. Compare with the SHM result for a simple pendulum: amplitude $\theta_0$, angular frequency $\omega_0 = \sqrt{g/L}$, max tangential speed $L\theta_0\omega_0 = \theta_0\sqrt{gL}$ ✓.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +268,8 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Conservation of Mechanical Energy, §More on the Potential Energy, §Mechanical Energy as a First Integral of Motion; Worked Examples “Velocity with respect to distance” and “Using Total Energy as the Equation of Motion for a Particle Under a Constant Force”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 14 "Potential Energy and Conservation of Energy", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §14.1 Conservation of Energy, §14.5 Mechanical Energy and Conservation, §14.6 Spring Force Energy Diagram, §14.7 Change of Mechanical Energy for Closed System with Internal Non-Conservative Forces. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter14.pdf">PDF</a></span></li>
           </ol>
         </section>
 
