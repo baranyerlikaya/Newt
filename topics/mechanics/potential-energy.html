@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Conservative Forces and Potential Energy · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="potential-energy">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,102 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Conservative Forces and Potential Energy</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">A conservative force is one whose work depends only on the endpoints, never on the path. Then there is a potential energy U(r) with F = −∇U, and the mechanical energy K + U is conserved.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>A conservative force</strong> is one where only the start and end matter. Lift a book by a path that goes up, sideways and down — gravity doesn't care how; it only looks at the height difference [1]; [2].</p>
+<p>Examples that are conservative: <strong>gravity, springs, electric forces</strong>. Examples that aren't: <strong>friction, air drag</strong> — rubbing in circles clearly costs energy even though you end where you started.</p>
+<p><strong>For a conservative force we can define potential energy</strong> $U(\mathbf r)$, so that [1]; [2]:</p>
+$$W_{AB} = U_A - U_B.$$
+<p>Big $U$ means "if I let go, I'll move toward smaller $U$". The force is the downhill slope of $U$:</p>
+$$F = -\frac{dU}{dx} \quad (\text{1D}), \qquad \mathbf F = -\nabla U \quad (\text{3D}).$$
+<p><strong>Three to memorize:</strong></p>
+<ul>
+<li>A thing at height $y$ above the ground: $U = mgy$ [2].</li>
+<li>A spring stretched by $x$: $U = \tfrac12 k x^2$ [2].</li>
+<li>Gravity far from Earth, distance $r$ from the centre: $U = -GMm/r$ [2].</li>
+</ul>
+<p><strong>The zero is up to you.</strong> Only differences matter — so pick the zero wherever it's convenient (floor for gravity, natural length for a spring, infinity for far-field gravity) [1].</p>
+<p><strong>Equilibrium points are flat spots of U</strong>: a bottom (local minimum) is stable (pushes you back), a top (local maximum) is unstable (shoves you away) [1].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Conservative forces</h3>
+            <div>
+<p>A force is <strong>conservative</strong> if the work it does in moving a particle between two points is independent of the path taken [1, §Conservative Forces and Potential Energy]; [2, §14.2]. Equivalently, the work around any closed loop is zero:</p>
+$$\oint\mathbf F\cdot d\mathbf r = 0.$$
+<p>Examples: gravity (near and far), the Hooke's-law spring force, the electrostatic force. <strong>Non-conservative</strong>: friction, drag, muscles — the work they do depends on the path (think of rubbing in a circle versus not rubbing at all) [2, §14.2].</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Definition of potential energy</h3>
+            <div>
+<p>For a conservative force, define the <strong>potential energy</strong> $U(\mathbf r)$ so that the work equals the <em>drop</em> in $U$ [1]; [2, §14.3]:</p>
+$$W_{AB} = \int_A^B\mathbf F\cdot d\mathbf r = U(\mathbf r_A) - U(\mathbf r_B) = -\Delta U.$$
+<p>$U$ is a scalar function of position; adding a constant doesn't change the force, so the zero of $U$ is arbitrary — a convention [1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Force from potential energy</h3>
+            <div>
+<p>Differentiating the definition gives the force [1]; [2, §14.3]:</p>
+$$F_x = -\frac{\partial U}{\partial x}, \qquad \mathbf F = -\nabla U.$$
+<p>In 1D: $F(x) = -dU/dx$. The force points "downhill" on the potential energy graph: toward lower $U$. Maxima of $U$ repel the particle; minima attract it [1, §More on the Potential Energy].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Standard potential energies</h3>
+            <div>
+<p>Three that recur constantly [2, §14.4]:</p>
+<ul>
+<li><strong>Uniform gravity</strong> near Earth, height $y$: $U = mgy$, so $F = -mg\,\hat\jmath$ [2, §14.4.1].</li>
+<li><strong>Hooke's-law spring</strong>, displacement $x$ from the natural length: $U = \tfrac12 kx^2$, so $F = -kx$ [2, §14.4.2].</li>
+<li><strong>Newtonian gravity</strong> (point masses): $U = -GMm/r$, so $F_r = -GMm/r^2$ (attractive, inverse-square) [2, §14.4.3].</li>
+</ul>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Finding U from F and the arbitrary constant</h3>
+            <div>
+<p>For a 1D conservative force $F(x)$, integrate to get the potential energy [1]; [2, §14.4]:</p>
+$$U(x) = -\int F(x)\,dx + C.$$
+<p>The integration constant $C$ is fixed by choosing a reference where $U = 0$. For uniform gravity people usually pick the ground; for Newtonian gravity, infinity ($U(\infty) = 0$, which forces $U = -GMm/r$); for springs, the natural length [2, §14.4].</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>Every one-dimensional force that depends only on position is automatically conservative (because its work $\int F\,dx$ depends only on the endpoints). In two or more dimensions the conservative condition is a real restriction [2, §14.2].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>Only the <em>change</em> in $U$ has physical meaning; $U(\mathbf r)$ itself depends on an arbitrary reference. Choose the zero to make the problem simple, but keep the choice consistent throughout a calculation [1].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="potwell">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A particle moves in one dimension under the potential $U(x) = x^4 - 2x^2$, a "double well". The dark dot sits on the curve at the particle's current $x$, its height $U(x)$. The dashed line shows the total energy $E$; the vertical segment above the particle is the kinetic energy $K = E - U$. Set $E$ small: the particle rattles in one well ($x \approx -1$ or $+1$, local minima = stable equilibria). Set $E &gt; 0$: it crosses the central hump at $x = 0$ (local max, unstable equilibrium) and visits both wells.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +129,40 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Conservative force (closed path) [1, 2]</span></figcaption>
+              <div class="formula-body">$$\oint\mathbf F\cdot d\mathbf r = 0$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Work from potential energy [1, 2]</span></figcaption>
+              <div class="formula-body">$$W_{AB} = U(\mathbf r_A) - U(\mathbf r_B) = -\Delta U$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Force from potential (1D) [1, 2]</span></figcaption>
+              <div class="formula-body">$$F(x) = -\frac{dU}{dx}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Force from potential (3D) [1, 2]</span></figcaption>
+              <div class="formula-body">$$\mathbf F = -\nabla U$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Uniform gravity [2]</span></figcaption>
+              <div class="formula-body">$$U = mgy, \qquad F_y = -mg$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Hooke's-law spring [2]</span></figcaption>
+              <div class="formula-body">$$U = \tfrac12 kx^2, \qquad F = -kx$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Newtonian gravity [2]</span></figcaption>
+              <div class="formula-body">$$U = -\frac{GMm}{r}, \qquad F_r = -\frac{GMm}{r^2}$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +171,94 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>Show that the uniform gravitational force near the Earth is conservative, and find its potential energy $U(y)$. (From [1], §More on the Potential Energy.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>Force: $\mathbf F = -mg\,\hat\jmath$. Work from $(x_A, y_A)$ to $(x_B, y_B)$ along any path: $W = \int\mathbf F\cdot d\mathbf r = -mg\int dy = -mg(y_B - y_A)$.</p>
+              </div></li>
+              <li><div>
+<p>Depends only on $y_A, y_B$, not on the path — the force is conservative.</p>
+              </div></li>
+              <li><div>
+<p>Define $U(y) = mgy + C$. Check: $-dU/dy = -mg = F_y$ ✓. Choosing $U(0) = 0$ gives $U = mgy$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Closed loop: start and end at same $y$, so $W = 0$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For the spring force $F = -kx$, find $U(x)$ with $U(0) = 0$. Verify $F = -dU/dx$. (From [2], §14.4.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$U(x) = -\int_0^x F(x')\,dx' = -\int_0^x(-kx')\,dx' = \tfrac12 kx^2$.</p>
+              </div></li>
+              <li><div>
+<p>Check: $-dU/dx = -kx = F$ ✓.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$U(x) \ge 0$ with minimum at $x = 0$, where the force vanishes — a stable equilibrium.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Show that Newtonian gravity $\mathbf F = -(GMm/r^2)\hat r$ is conservative and find its potential energy with $U(\infty) = 0$. (From [2], §14.4.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>In spherical coordinates the force has only a radial component $F_r = -GMm/r^2$, so $\mathbf F\cdot d\mathbf r = F_r\,dr$ depends only on $r$: conservative.</p>
+              </div></li>
+              <li><div>
+<p>$U(r) = -\int_\infty^r F_r\,dr' = -\int_\infty^r\left(-\dfrac{GMm}{r'^2}\right)dr' = -\dfrac{GMm}{r}$.</p>
+              </div></li>
+              <li><div>
+<p>Check: $-dU/dr = -GMm/r^2 = F_r$ ✓. $U(\infty) = 0$ ✓.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$U &lt; 0$ everywhere: bringing masses from infinity releases energy, so bound states have negative total energy. ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A particle moves in one dimension with $U(x) = k(x^3 - 3x)$ where $k &gt; 0$. Find the equilibrium points and classify them. (From [1], §More on the Potential Energy.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$F = -dU/dx = -k(3x^2 - 3) = -3k(x^2 - 1)$. Equilibria at $F = 0$: $x = \pm1$.</p>
+              </div></li>
+              <li><div>
+<p>$U''(x) = 6kx$. At $x = 1$: $U''(1) = 6k &gt; 0$: $U$ has a local minimum, so stable equilibrium.</p>
+              </div></li>
+              <li><div>
+<p>At $x = -1$: $U''(-1) = -6k &lt; 0$: local maximum, so unstable equilibrium.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Compute $U$ directly: $U(1) = k(1 - 3) = -2k$ (bottom of the well), $U(-1) = k(-1 + 3) = 2k$ (top of the barrier) ✓.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +266,8 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Conservative Forces and Potential Energy, §More on the Potential Energy, §Stable and Unstable Equilibrium. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 14 "Potential Energy and Conservation of Energy", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §14.2 Conservative and Non-Conservative Forces, §14.3 Changes in Potential Energies, §14.4 Standard Potential Energies. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter14.pdf">PDF</a></span></li>
           </ol>
         </section>
 
