@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Newton's 2nd Law in Rotational Form · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="rotational-newton">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,101 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Newton's 2nd Law in Rotational Form</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">For a rigid body rotating about a fixed axis, Newton's second law becomes τ = Iα, the rotational analogue of F = ma.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Newton's second law, rotational version.</strong> For a rigid body spinning about a fixed axis [1]; [2]:</p>
+$$\tau = I\alpha.$$
+<p>Same shape as $F = ma$. Substitute torque for force, moment of inertia for mass, angular acceleration for linear acceleration.</p>
+<p><strong>Where does it come from?</strong> From $dL/dt = \tau$: since $L = I\omega$ and $I$ is constant for a rigid body, $dL/dt = I\,d\omega/dt = I\alpha$ [1]; [2].</p>
+<p><strong>How to use it, step by step:</strong></p>
+<ol>
+<li>Pick the axis.</li>
+<li>Find each force and its torque about that axis: moment arm × force.</li>
+<li>Add torques to get net $\tau$.</li>
+<li>Find $I$ about that axis.</li>
+<li>$\alpha = \tau/I$.</li>
+</ol>
+<p>Like with linear motion, if $\tau$ is constant, $\alpha$ is constant, and the angle-velocity-time formulas look exactly like $v = v_0 + at$ and $x = x_0 + v_0t + \tfrac12at^2$, with $x \to \theta$, $v \to \omega$, $a \to \alpha$.</p>
+<p><strong>Only external torques count</strong> — internal ones cancel in pairs, just like internal forces [2].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> From dL/dt = τ to τ = Iα</h3>
+            <div>
+<p>For a rigid body rotating about a fixed axis, $L = I\omega$ with $I$ the moment of inertia about that axis (see Topic 4.3). Since $I$ is constant for a rigid body [1, §Angular-Momentum Form of the 2nd Axiom]; [2, §17.4.1],</p>
+$$\frac{dL}{dt} = I\,\frac{d\omega}{dt} = I\alpha.$$
+<p>The rotational second law $dL/dt = \tau$ becomes</p>
+$$\boxed{\tau = I\alpha,}$$
+<p>where $\tau$ is the component of the net external torque along the rotation axis [2, §17.4.1].</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> The parallel between translation and rotation</h3>
+            <div>
+<p>Line up the two laws [1]:</p>
+<ul>
+<li>Translation: $\mathbf F = m\mathbf a$</li>
+<li>Rotation (fixed axis): $\tau = I\alpha$</li>
+</ul>
+<p>Replace: force → torque, mass → moment of inertia, acceleration → angular acceleration. The same equation of motion, in rotational language [1, §Angular-Momentum Form of the 2nd Axiom]; [2, §17.4.1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Internal torques cancel</h3>
+            <div>
+<p>Like internal forces, internal torques come in Newton's-third-law pairs along the line joining particles. Their torques about any point cancel in pairs (since $\mathbf r_i - \mathbf r_j$ is parallel to $\mathbf F_{j,i}$) [2, §17.4.1]:</p>
+$$\sum_i(\boldsymbol\tau^{\text{int}}_i) = 0.$$
+<p>So only the <strong>external</strong> torques matter in $\tau = I\alpha$ [2, §17.4.1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Solving a rotational problem</h3>
+            <div>
+<p>The recipe is the mirror of the translational one [2, §17.4]:</p>
+<ol>
+<li>Choose an axis of rotation.</li>
+<li>Draw the forces and compute their torques about that axis: $\tau_i = r_{\perp,i}F_i$ (positive if it tends to rotate the chosen positive way).</li>
+<li>Compute $I$ about that axis.</li>
+<li>Apply $\sum\tau_i = I\alpha$ to get $\alpha$.</li>
+<li>Integrate to get $\omega(t)$ and $\theta(t)$.</li>
+</ol>
+<p>Constant torque gives constant $\alpha$, so $\omega(t) = \omega_0 + \alpha t$ and $\theta(t) = \theta_0 + \omega_0 t + \tfrac12\alpha t^2$ [2, §17.4.1].</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>For an axis through the centre of mass, external forces acting at the centre (such as gravity on a symmetric body) produce no torque about that axis. That is why hanging a body from its centre of mass makes it rotate only when an off-axis torque is applied [2, §17.4.2].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>$\tau = I\alpha$ applies about a <em>fixed axis</em> (or the centre-of-mass axis of a rigid body). For a more general axis, both $\mathbf L$ and $\boldsymbol\tau$ must be treated as vectors, and $I$ becomes a tensor — outside the scope of this topic [2, §17.4].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="alpha">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A disc with torque $\tau$ applied about its axis. The angular acceleration is $\alpha = \tau/I$ (shown live). The disc speeds up: $\omega = \alpha t$ grows linearly, and $\theta = \tfrac12\alpha t^2$ grows as $t^2$. The graph at the bottom shows $\omega(t)$: a straight line with slope $\alpha$. Try doubling $\tau$: the line is twice as steep. Double $I$ instead: half as steep.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +128,35 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Angular momentum, fixed axis [1, 2]</span></figcaption>
+              <div class="formula-body">$$L = I\omega$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Rotational second law [1, 2]</span></figcaption>
+              <div class="formula-body">$$\tau = I\alpha$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular acceleration from torque [2]</span></figcaption>
+              <div class="formula-body">$$\alpha = \frac{\tau}{I}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Constant α kinematics [2]</span></figcaption>
+              <div class="formula-body">$$\begin{gathered}\omega = \omega_0 + \alpha t \\ \theta = \theta_0 + \omega_0 t + \tfrac12\alpha t^2\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rotational work [2]</span></figcaption>
+              <div class="formula-body">$$W_{\text{rot}} = \int\tau\,d\theta$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rotational work-energy theorem [2]</span></figcaption>
+              <div class="formula-body">$$W_{\text{rot}} = \Delta\left(\tfrac12 I\omega^2\right)$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +165,76 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A uniform disc of mass $M$ and radius $R$ (with $I = \tfrac12 MR^2$) is free to rotate about its centre. A tangential force $F$ is applied at the rim. Find the angular acceleration and the time to reach angular velocity $\omega$ from rest. (Direct application of [2], §17.4.1.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>Torque: $\tau = RF$, along the axis.</p>
+              </div></li>
+              <li><div>
+<p>$\alpha = \tau/I = RF/(\tfrac12 MR^2) = 2F/(MR)$.</p>
+              </div></li>
+              <li><div>
+<p>From rest: $\omega = \alpha t$, so $t = \omega/\alpha = MR\omega/(2F)$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Bigger $F$ or smaller $M$: faster spin-up ✓. The factor of 2 comes from the disc's $I = \tfrac12 MR^2$, half as much as a hoop of the same mass and radius.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A pulley of moment of inertia $I$ and radius $R$ has a string wrapped around it; a block of mass $m$ hangs from the string and is released. Find the block's downward acceleration, assuming the string doesn't slip. (From [2], Example 16.4, adapted.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Block: $ma = mg - T$.</p>
+              </div></li>
+              <li><div>
+<p>Pulley: tangential tension $T$ at radius $R$ gives $\tau = RT$, so $I\alpha = RT$.</p>
+              </div></li>
+              <li><div>
+<p>No-slip: $a = R\alpha$, so $T = I\alpha/R = Ia/R^2$.</p>
+              </div></li>
+              <li><div>
+<p>Substitute: $ma = mg - Ia/R^2$, so $a = \dfrac{mg}{m + I/R^2}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Massless pulley ($I = 0$): $a = g$ ✓. Very massive pulley ($I/R^2 \gg m$): $a \to 0$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A thin rod of mass $M$ and length $L$ is pivoted at one end and released from horizontal. Find its angular acceleration at the moment of release. (From [2], §17.4.2 and Example 17.9.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Moment of inertia about the pivot (end of rod): $I_{\text{end}} = \tfrac13 ML^2$.</p>
+              </div></li>
+              <li><div>
+<p>Gravity acts at the centre of mass, distance $L/2$ from the pivot, perpendicular to the rod when horizontal: $\tau = (L/2)(Mg) = MgL/2$.</p>
+              </div></li>
+              <li><div>
+<p>$\alpha = \tau/I = (MgL/2)/(\tfrac13 ML^2) = 3g/(2L)$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Units: $g/L$ has units $\text{s}^{-2}$ ✓. For $L = 1\ \text{m}$, $\alpha \approx 14.7\ \text{rad/s}^2$: the tip's tangential acceleration is $L\alpha = 1.5g &gt; g$, so a coin on the tip falls slower than the tip itself.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +242,8 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Angular-Momentum Form of the 2nd Axiom. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 17 "Two Dimensional Rotational Dynamics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §17.3 Torque, §17.4 Torque, Angular Acceleration, and Moment of Inertia; Examples 17.9. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter17.pdf">PDF</a></span></li>
           </ol>
         </section>
 
