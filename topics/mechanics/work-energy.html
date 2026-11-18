@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Work and Kinetic Energy, Work–Energy Theorem · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="work-energy">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,106 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Work and Kinetic Energy, Work–Energy Theorem</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">Work is force times displacement, kinetic energy is ½mv²; the work-energy theorem says that the total work done on a particle equals the change in its kinetic energy.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Kinetic energy</strong> is the "motion energy" of something moving. Twice the mass → twice the energy; twice the speed → <em>four</em> times the energy [1]; [2]:</p>
+$$K = \tfrac12 m v^2.$$
+<p>Measured in joules (J). A $1\ \text{kg}$ book at $1\ \text{m/s}$ has $0.5\ \text{J}$; a car at $15\ \text{m/s}$ has about $170\ \text{kJ}$.</p>
+<p><strong>Work = force times how far it moves the thing, in the direction of the force</strong> [1]; [2]:</p>
+$$W = \mathbf F\cdot\mathbf d.$$
+<p>Push a box 5 m with a 10 N force along the floor: $W = 50\ \text{J}$. Push sideways on a car moving down the road: $W = 0$, because your push isn't along the motion.</p>
+<p><strong>The work-energy theorem</strong> ties it all together [1]; [2]:</p>
+$$\boxed{W_{\text{total}} = \Delta K.}$$
+<p>Doing positive work on something speeds it up; doing negative work (like brakes) slows it down.</p>
+<p><strong>Power</strong> is how <em>fast</em> you do work [1]:</p>
+$$P = \mathbf F\cdot\mathbf v.$$
+<p>Measured in watts. A person climbing stairs at a good pace puts out about 100 W; a fit cyclist peaks above 1 kW; a car engine delivers tens to hundreds of kW.</p>
+<p><strong>A perpendicular force does no work</strong> — the string on a swinging ball, the normal force on a sliding block, gravity on a horizontal walk [2].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Kinetic energy</h3>
+            <div>
+<p>The <strong>kinetic energy</strong> of a particle of mass $m$ moving with speed $v$ is [1, §Work and Kinetic Energy]; [2, §13.2]:</p>
+$$K = \tfrac12 m v^2 = \tfrac12 m\,\mathbf v\cdot\mathbf v.$$
+<p>It is a scalar, never negative, and in SI has units of joules (J): $1\ \text{J} = 1\ \text{kg·m}^2/\text{s}^2 = 1\ \text{N·m}$.</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Work done by a force</h3>
+            <div>
+<p>When a force $\mathbf F$ acts on a particle that moves along an infinitesimal displacement $d\mathbf r$, the <strong>work</strong> done is [1]; [2, §13.4]:</p>
+$$dW = \mathbf F\cdot d\mathbf r = F\,|d\mathbf r|\,\cos\phi,$$
+<p>where $\phi$ is the angle between the force and the displacement. For a path from $\mathbf r_1$ to $\mathbf r_2$ [1]:</p>
+$$W_{12} = \int_{\mathbf r_1}^{\mathbf r_2}\mathbf F\cdot d\mathbf r.$$
+<p>A force perpendicular to the motion does no work (centripetal force, normal force on a sliding block). A force with a component along the motion does positive work; a force opposing the motion does negative work [2, §13.4].</p>
+<p>For a constant force and a straight displacement, $W = \mathbf F\cdot\mathbf d = Fd\cos\phi$ [2, §13.4].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The work-energy theorem</h3>
+            <div>
+<p>Along the path, Newton's second law gives $\mathbf F = m\dot{\mathbf v}$. Then [1, §Work and Kinetic Energy]; [2, §13.6]:</p>
+$$\mathbf F\cdot d\mathbf r = m\dot{\mathbf v}\cdot\mathbf v\,dt = \tfrac12 m\,d(\mathbf v\cdot\mathbf v) = dK.$$
+<p>Integrating:</p>
+$$\boxed{W_{\text{net}} = K_2 - K_1 = \Delta K,}$$
+<p>the <strong>work-energy theorem</strong>: the total work done by the net force equals the change in kinetic energy [1]; [2, §13.6]. Positive net work speeds the particle up; negative net work slows it down.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Common calculations</h3>
+            <div>
+<p>Three cases worth having memorized [2, §13.4]:</p>
+<ul>
+<li><strong>Constant force along the motion:</strong> $W = Fd$. If the force opposes the motion, $W = -Fd$.</li>
+<li><strong>Gravity near the surface, straight-up displacement $h$:</strong> $W_{\text{grav}} = -mgh$ (falling body: $+mgh$).</li>
+<li><strong>Spring force $F = -kx$ stretched from 0 to $x_0$:</strong> $W_{\text{spring}} = -\tfrac12 kx_0^2$ (negative, since the spring opposes the stretch). The agent who stretches does $+\tfrac12 kx_0^2$.</li>
+</ul>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Power</h3>
+            <div>
+<p>The rate at which a force does work is the <strong>power</strong> [1, §Impulse and Power]:</p>
+$$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
+<p>Positive when the force and velocity are in the same direction; negative when they oppose. Total work over an interval: $W = \int P\,dt$ [1].</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>Only the net work matters for $\Delta K$, but each force does its own work individually. In a car braking, friction does negative work on the car, converting kinetic energy into heat [2, §13.6].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>Work depends on the path in general. For a force perpendicular to the motion (normal force on a sliding block, centripetal force in a circle), $W = 0$ even if the body moves a long way [2, §13.4].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="spring">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A mass on a spring, released from stretch $x = 1$. The spring force $F = -kx$ does positive work when it points along the motion (pulling the mass toward the centre) and negative work when it opposes (slowing it past the centre). The oscillation shows $K$ turning into spring potential energy and back — that is the next page. For now: watch $x(t)$ (the lower graph) and notice that the maximum speed happens at $x = 0$, where $K$ is largest.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +133,40 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Kinetic energy [1, 2]</span></figcaption>
+              <div class="formula-body">$$K = \tfrac12 m v^2$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Work (general) [1, 2]</span></figcaption>
+              <div class="formula-body">$$W = \int\mathbf F\cdot d\mathbf r$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Work (constant force) [2]</span></figcaption>
+              <div class="formula-body">$$W = \mathbf F\cdot\mathbf d = Fd\cos\phi$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Work-energy theorem [1, 2]</span></figcaption>
+              <div class="formula-body">$$W_{\text{net}} = \Delta K$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Work by gravity (up by h) [2]</span></figcaption>
+              <div class="formula-body">$$W_{\text{grav}} = -mgh$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Work by a spring (0 to x) [2]</span></figcaption>
+              <div class="formula-body">$$W_{\text{spring}} = -\tfrac12 k x^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Power [1]</span></figcaption>
+              <div class="formula-body">$$P = \mathbf F\cdot\mathbf v$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +175,88 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A force $\mathbf F = (3\hat\imath + 4\hat\jmath)\ \text{N}$ moves an object through displacement $\mathbf d = (2\hat\imath - \hat\jmath)\ \text{m}$. Find the work. (From the course's dot-product example, [4, Example 3(d)].)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>$W = \mathbf F\cdot\mathbf d = (3)(2) + (4)(-1) = 6 - 4 = 2\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Only the component of $\mathbf F$ along $\mathbf d$ does work.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>$|\mathbf F| = 5$, $|\mathbf d| = \sqrt5$, so $\cos\phi = 2/(5\sqrt5) \approx 0.179$ and $Fd\cos\phi = 5\sqrt5\times 0.179 \approx 2$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A spring of force constant $k = 200\ \text{N/m}$ is stretched from $0$ to $x_0 = 0.1\ \text{m}$. How much work does the person stretching do? (From [4], Worked Example 7(d).)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>The applied force equals the spring force in magnitude but opposite sign: $F_{\text{applied}}(x) = +kx$.</p>
+              </div></li>
+              <li><div>
+<p>$W = \int_0^{x_0}kx\,dx = \tfrac12 k x_0^2 = \tfrac12 \times 200 \times 0.01 = 1\ \text{J}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The spring stores exactly this as potential energy (see Topic 5.3). ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $1500\ \text{kg}$ car at $15\ \text{m/s}$ brakes to rest in $20\ \text{m}$. Find the average braking force. (Application of the work-energy theorem, [1]; [2, §13.6].)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Change in kinetic energy: $\Delta K = 0 - \tfrac12(1500)(15^2) = -1.69\times10^5\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Work by friction: $W = -F d = -F \times 20$ (force opposes motion).</p>
+              </div></li>
+              <li><div>
+<p>Work-energy theorem: $-20F = -1.69\times10^5$, so $F \approx 8440\ \text{N}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Deceleration: $a = F/m = 8440/1500 \approx 5.6\ \text{m/s}^2$. Using kinematics: $v^2 = v_0^2 - 2ad$ gives $0 = 225 - 2(5.6)(20) = 225 - 224$ ✓ (to rounding).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A person of $70\ \text{kg}$ climbs stairs of $20\ \text{m}$ in $10\ \text{s}$. Find the work done against gravity and the average power. (From [1], Worked Example “Power”.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Work against gravity: $W = mgh = 70 \times 9.8 \times 20 \approx 1.37\times10^4\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Average power: $P = W/\Delta t = 1.37\times10^4 / 10 \approx 1.37\ \text{kW}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>About $1.9\ \text{hp}$. A fit cyclist can sustain close to this ✓.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +264,9 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Work and Kinetic Energy, §Impulse and Power; Worked Examples “Power” and “Horsepower”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 13 "The Concept of Energy and Conservation of Energy", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §13.2 Kinetic Energy, §13.4 Work done by Constant Forces, §13.5 Work done by Non-Constant Forces, §13.6 Work-Kinetic Energy Theorem, §13.7 Power, §13.8 Work and the Scalar Product. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter13.pdf">PDF</a></span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 1: Mathematical Tools</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Dot Product; Worked Example 3 (Dot Product, Work), Worked Example 7(d) (Work by a Spring). <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/mathematical-tools/main.pdf">PDF</a></span></li>
           </ol>
         </section>
 
