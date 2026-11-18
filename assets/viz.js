@@ -861,6 +861,155 @@
     }
   });
 
+  V.register('angvel', {
+    params: {
+      w: { label: 'ω', min: 0.3, max: 3, value: 1, unit: 'rad/s', digits: 2 },
+      al: { label: 'α', min: -0.5, max: 0.5, value: 0, unit: 'rad/s²', digits: 2 }
+    },
+    duration: 8,
+    init: function () { return { th: 0, om: 0 }; },
+    step: function (s, dt, p) { s.om = p.w + p.al * (s.t = (s.t || 0) + dt); s.th += s.om * dt; },
+    draw: function (c, w, h, s, p) {
+      var R = Math.min(w, h) * 0.22, cx = w * 0.35, cy = h * 0.5, th = s.th;
+      var px = cx + R * Math.cos(th), py = cy - R * Math.sin(th), om = s.om;
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, R, FAINT, 1);
+      D.line(c, cx, cy, px, py, MUTED, 1);
+      D.dot(c, cx, cy, 3, MUTED);
+      D.dot(c, px, py, 7, INK);
+      var k = 20;
+      D.arrow(c, px, py, px - k * om * Math.sin(th), py - k * om * Math.cos(th), INK, 1.75);
+      D.line(c, cx + R * 1.3, cy, cx + R * 1.3, cy - om * 30, MUTED, 2);
+      D.arrow(c, cx + R * 1.3, cy, cx + R * 1.3, cy - om * 30, INK, 1.5);
+      D.label(c, 'ω', cx + R * 1.3 + 8, cy - om * 15);
+      var ang = (th % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+      D.label(c, 'θ = ' + (ang * 180 / Math.PI).toFixed(0) + '°   ω = ' + om.toFixed(2) + ' rad/s', 12, 16, 'left', INK);
+      D.label(c, 'v = ωR = ' + (om * R / 60).toFixed(2) + ' m/s (R scaled)', 12, 34);
+      D.label(c, 'period T = 2π/ω = ' + (Math.abs(om) > 0.01 ? (2 * Math.PI / Math.abs(om)).toFixed(2) : '∞') + ' s', 12, h - 16);
+    }
+  });
+
+  V.register('torqueL', {
+    params: {
+      F: { label: 'F', min: 0, max: 3, value: 1, unit: 'N', digits: 1 },
+      ph: { label: 'angle of F', min: 0, max: 180, value: 90, unit: '°', digits: 0 }
+    },
+    duration: 6,
+    init: function () { return { th: 0.3 }; },
+    step: function (s, dt, p) { var tau = (0.5 + 0.5) * p.F * Math.sin(p.ph * Math.PI / 180); s.th += tau * dt * 0.5; },
+    draw: function (c, w, h, s, p) {
+      var R = Math.min(w, h) * 0.22, cx = w * 0.5, cy = h * 0.5, th = s.th;
+      var px = cx + R * Math.cos(th), py = cy - R * Math.sin(th);
+      var ph = p.ph * Math.PI / 180, fx = p.F * 32 * Math.cos(th + ph), fy = -p.F * 32 * Math.sin(th + ph);
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, R, FAINT, 1);
+      D.arrow(c, cx, cy, px, py, MUTED, 1.5);
+      D.arrow(c, px, py, px + fx, py + fy, INK, 2);
+      D.dot(c, cx, cy, 4, INK);
+      D.dot(c, px, py, 5, INK);
+      var tau = R * p.F * Math.sin(ph) / 60;
+      D.label(c, 'r', (cx + px) / 2 + 6, (cy + py) / 2 - 6);
+      D.label(c, 'F', px + fx + 6, py + fy + 4);
+      D.label(c, '|τ| = rF sinφ = ' + tau.toFixed(2) + ' N·m', 12, 16, 'left', INK);
+      D.label(c, (Math.sin(ph) > 0 ? 'τ out of page' : Math.sin(ph) < 0 ? 'τ into page' : 'τ = 0 (F ∥ r)'), 12, 34);
+    }
+  });
+
+  V.register('moi', {
+    params: {
+      r1: { label: 'r₁', min: 0.3, max: 2, value: 1, unit: 'm', digits: 1 },
+      r2: { label: 'r₂', min: 0.3, max: 2, value: 1.5, unit: 'm', digits: 1 },
+      w: { label: 'ω', min: 0.3, max: 2, value: 1, unit: 'rad/s', digits: 2 }
+    },
+    init: function () { return { th: 0 }; },
+    step: function (s, dt, p) { s.th += p.w * dt; },
+    draw: function (c, w, h, s, p) {
+      var sc = Math.min(w, h) * 0.18, cx = w * 0.4, cy = h * 0.5, th = s.th, m1 = 1, m2 = 1;
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, p.r1 * sc, FAINT, 1, [3, 3]);
+      D.ring(c, cx, cy, p.r2 * sc, FAINT, 1, [3, 3]);
+      D.dot(c, cx, cy, 4, INK);
+      var ps = [[p.r1, th, 1], [p.r1, th + Math.PI, 1], [p.r2, th + Math.PI / 2, 1], [p.r2, th - Math.PI / 2, 1]];
+      ps.forEach(function (q) {
+        var x = cx + q[0] * sc * Math.cos(q[1]), y = cy - q[0] * sc * Math.sin(q[1]);
+        D.line(c, cx, cy, x, y, MUTED, 1);
+        D.dot(c, x, y, 6 + q[2] * 2, INK);
+      });
+      var I = 2 * m1 * p.r1 * p.r1 + 2 * m2 * p.r2 * p.r2, K = 0.5 * I * p.w * p.w;
+      D.label(c, 'I = Σ mᵢrᵢ² = 2(' + p.r1.toFixed(1) + ')² + 2(' + p.r2.toFixed(1) + ')² = ' + I.toFixed(2) + ' kg·m²', 12, 16, 'left', INK);
+      D.label(c, 'K_rot = ½Iω² = ' + K.toFixed(2) + ' J', 12, 34);
+      D.label(c, 'pull masses in → smaller I → spins faster (L conserved)', 12, h - 16);
+    }
+  });
+
+  V.register('alpha', {
+    params: {
+      tau: { label: 'τ', min: 0, max: 4, value: 1.5, unit: 'N·m', digits: 1 },
+      I: { label: 'I', min: 0.3, max: 3, value: 1, unit: 'kg·m²', digits: 1 }
+    },
+    resetOnChange: true,
+    duration: 6,
+    init: function () { return {}; },
+    draw: function (c, w, h, s, p, t) {
+      var al = p.tau / p.I, om = al * t, th = 0.5 * al * t * t;
+      var R = Math.min(w, h) * 0.22, cx = w * 0.4, cy = h * 0.45;
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, R, FAINT, 1);
+      for (var k = 0; k < 4; k++) {
+        var a = th + k * Math.PI / 2, x = cx + R * Math.cos(a), y = cy - R * Math.sin(a);
+        D.line(c, cx, cy, x, y, MUTED, 1.5);
+      }
+      D.dot(c, cx, cy, 5, INK);
+      D.label(c, 'α = τ/I = ' + al.toFixed(2) + ' rad/s²', 12, 16, 'left', INK);
+      D.label(c, 'ω(t) = αt = ' + om.toFixed(2) + ' rad/s', 12, 34);
+      D.label(c, 'θ(t) = ½αt² = ' + th.toFixed(2) + ' rad', 12, 52);
+      var gx0 = 40, gx1 = w - 16, gy = h - 24, gh = h * 0.2, T = 6;
+      D.line(c, gx0, gy, gx1, gy, FAINT, 1);
+      D.label(c, 'ω(t)', 6, gy - gh - 2);
+      var maxOm = Math.max(1, (p.tau / p.I) * T);
+      D.plot(c, function (q) { return (p.tau / p.I) * q; }, 0, Math.max(t, 0.01), function (q) { return gx0 + q / T * (gx1 - gx0); }, function (y) { return gy - y / maxOm * gh; }, INK, 1.75);
+    }
+  });
+
+  V.register('potwell', {
+    params: {
+      E: { label: 'E', min: -1, max: 3, value: 1, unit: 'J', digits: 1 }
+    },
+    duration: 10,
+    init: function () { return { x: 0, v: 0, t0: 0 }; },
+    step: function (s, dt, p) {
+      var U = function (x) { return x * x * x * x - 2 * x * x; };
+      var dU = function (x) { return 4 * x * x * x - 4 * x; };
+      var E = p.E;
+      if (E < U(s.x) || isNaN(s.x)) { s.x = -1.3; s.v = 0; }
+      var K = Math.max(0, E - U(s.x));
+      var vMag = Math.sqrt(2 * K);
+      if (!s.dir) s.dir = 1;
+      s.x += s.dir * vMag * dt * 1.5;
+      if (s.dir > 0 && U(s.x + 0.01) > E) s.dir = -1;
+      if (s.dir < 0 && U(s.x - 0.01) > E) s.dir = 1;
+    },
+    draw: function (c, w, h, s, p) {
+      var U = function (x) { return x * x * x * x - 2 * x * x; };
+      var xr = 1.7, Umin = -1, Umax = 3;
+      var ox = 30, oy = h - 30, gx1 = w - 16, gy1 = 20;
+      var X = function (x) { return ox + (x + xr) / (2 * xr) * (gx1 - ox); };
+      var Y = function (u) { return oy - (u - Umin) / (Umax - Umin) * (oy - gy1); };
+      D.grid(c, w, h, 32);
+      D.line(c, ox, Y(0), gx1, Y(0), FAINT, 1);
+      D.plot(c, U, -xr, xr, X, Y, INK, 1.75);
+      D.line(c, ox, Y(p.E), gx1, Y(p.E), MUTED, 1.5, [4, 4]);
+      D.label(c, 'E = ' + p.E.toFixed(1) + ' J', gx1 - 8, Y(p.E) - 8, 'right');
+      D.label(c, 'U(x) = x⁴ − 2x²', 12, 16, 'left', INK);
+      if (!isNaN(s.x)) {
+        D.dot(c, X(s.x), Y(U(s.x)), 7, INK);
+        var K = Math.max(0, p.E - U(s.x));
+        D.line(c, X(s.x), Y(U(s.x)), X(s.x), Y(p.E), MUTED, 1.5);
+        D.label(c, 'K = E − U = ' + K.toFixed(2), 12, h - 16);
+      }
+    }
+  });
+
   function start() { document.querySelectorAll('.viz[data-viz]').forEach(mount); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
