@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Angular Velocity · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="angular-velocity">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,96 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Angular Velocity</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">The angular velocity ω = dθ/dt: how fast an angle changes with time, its direction along the axis of rotation, and the link v = ωR between angular and linear speed.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>How fast does something spin?</strong> If you turn by angle $\theta$ in time $t$, your <strong>angular velocity</strong> is [1]; [2]</p>
+$$\omega = \frac{d\theta}{dt}.$$
+<p>Measured in radians per second. A record player at 33⅓ rpm turns at about 3.5 rad/s.</p>
+<p><strong>Direction?</strong> Along the axis you're spinning around, not along the motion. Curl the fingers of your right hand the way the thing is spinning; your thumb shows where $\boldsymbol\omega$ points [2].</p>
+<p><strong>Speed of a point on the circle.</strong> The further from the axis, the faster. For a point at distance $R$ from the axis [1]; [2]:</p>
+$$v = R\omega.$$
+<p>That's why the end of a cracked whip moves so fast, and why skaters tuck in to spin faster.</p>
+<p><strong>Still accelerating:</strong> even at a steady $\omega$ (uniform circular motion), the point's direction changes, so there's an acceleration toward the centre: $a_c = \omega^2 R = v^2/R$ [2].</p>
+<p><strong>Speeding the spin up:</strong> if $\omega$ itself changes, the <strong>angular acceleration</strong> $\alpha = d\omega/dt$ is the rotational version of $a$ [2]. With constant $\alpha$, the formulas are exactly the linear ones with $x \to \theta$, $v \to \omega$, $a \to \alpha$.</p>
+<p><strong>Period:</strong> one full turn takes $T = 2\pi/\omega$ seconds [1].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Angle, angular velocity, angular acceleration</h3>
+            <div>
+<p>For a particle on a circle of radius $R$, the position can be given by the angle $\theta(t)$ between the radial line and the $+x$-axis [1, §Circular Motion]; [2, §16.2.2]. The <strong>angular velocity</strong> and <strong>angular acceleration</strong> are its time derivatives:</p>
+$$\omega = \frac{d\theta}{dt}, \qquad \alpha = \frac{d\omega}{dt} = \frac{d^2\theta}{dt^2}.$$
+<p>Units: $\omega$ in rad/s, $\alpha$ in rad/s². The sign of $\omega$ tells the sense: $\omega &gt; 0$ for counterclockwise motion, $\omega &lt; 0$ for clockwise [2, §16.2.3].</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Angular velocity as a vector</h3>
+            <div>
+<p>For rotation about a fixed axis, $\boldsymbol\omega$ is a vector along that axis, with its direction fixed by the right-hand rule: curl the fingers in the sense of rotation, the thumb gives $\boldsymbol\omega$ [2, §16.2.2]. Taking the axis along $\hat k$,</p>
+$$\boldsymbol\omega = \omega\,\hat k.$$
+<p>All points of a rigid body share the same $\boldsymbol\omega$ and $\boldsymbol\alpha$, otherwise they would drift relative to each other [2, §16.2.2].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Linear from angular: v = ωR</h3>
+            <div>
+<p>A point at distance $R$ from the axis traces a circle. Its arc length over time $dt$ is $ds = R\,d\theta$, so its tangential speed is [1, §Circular Motion]; [2, §16.2.4]:</p>
+$$v = R\omega.$$
+<p>If $\omega$ itself changes, the point has a tangential acceleration along its motion and a centripetal one toward the centre [2, §16.2.4]:</p>
+$$a_t = R\alpha, \qquad a_c = R\omega^2 = \frac{v^2}{R}.$$
+<p>They are perpendicular, so the total acceleration has magnitude $\sqrt{a_t^2 + a_c^2}$.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Period and frequency</h3>
+            <div>
+<p>If $\omega$ is constant (uniform rotation), the angle grows linearly, $\theta(t) = \theta_0 + \omega t$, and one full turn takes the <strong>period</strong> [1, §Circular Motion]:</p>
+$$T = \frac{2\pi}{\omega}, \qquad f = \frac{1}{T} = \frac{\omega}{2\pi}.$$
+<p>$f$ is the frequency in hertz (1 Hz = 1 cycle per second). "Angular frequency" $\omega$ is the rate of change of the phase, measured in rad/s [1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Constant angular acceleration</h3>
+            <div>
+<p>When $\alpha$ is constant, the formulas are just the linear ones with symbols replaced [2, §16.2.2]:</p>
+$$\omega(t) = \omega_0 + \alpha t, \qquad \theta(t) = \theta_0 + \omega_0 t + \tfrac12\alpha t^2.$$
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>In the formula $v = R\omega$, the angle must be in radians. Degrees would introduce an extra factor $\pi/180$. All rotational formulas on this page assume radians [1, §Circular Motion].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>$\omega$ and $\alpha$ point along the axis of rotation, not along the velocity of the moving point. For a wheel spinning in the plane of the page, $\boldsymbol\omega$ points out of (or into) the page [2, §16.2.2].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="angvel">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A dot moves around a circle at angular velocity $\omega$. The velocity arrow (tangent to the circle) has length $\omega R$ — speed up the slider and the dot flies around faster, and the arrow gets longer. The up-pointing arrow shows $\boldsymbol\omega$ pointing out of the page by the right-hand rule, growing with $\omega$. Add small $\alpha$: the speed grows (or shrinks) over time. The readouts show $\omega$, $\theta$, and the period $T = 2\pi/\omega$.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +123,45 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Angular velocity [1, 2]</span></figcaption>
+              <div class="formula-body">$$\omega = \frac{d\theta}{dt}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Angular acceleration [2]</span></figcaption>
+              <div class="formula-body">$$\alpha = \frac{d\omega}{dt} = \frac{d^2\theta}{dt^2}$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Axis vector (right-hand rule) [2]</span></figcaption>
+              <div class="formula-body">$$\boldsymbol\omega = \omega\,\hat k$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Tangential speed [1, 2]</span></figcaption>
+              <div class="formula-body">$$v = R\omega$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Centripetal acceleration [1, 2]</span></figcaption>
+              <div class="formula-body">$$a_c = R\omega^2 = \frac{v^2}{R}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Tangential acceleration [2]</span></figcaption>
+              <div class="formula-body">$$a_t = R\alpha$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Period and frequency [1]</span></figcaption>
+              <div class="formula-body">$$T = \frac{2\pi}{\omega}, \qquad f = \frac{\omega}{2\pi}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Constant α [2]</span></figcaption>
+              <div class="formula-body">$$\begin{gathered}\omega = \omega_0 + \alpha t \\ \theta = \theta_0 + \omega_0 t + \tfrac12\alpha t^2\end{gathered}$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +170,73 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A record on a turntable spins at a steady $33\tfrac13$ revolutions per minute. Find its angular velocity in rad/s, its period, and the tangential speed of a point at $R = 10\ \text{cm}$. (From [2], Example 16.1, in SI units.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>$f = 33.33/60 \approx 0.556\ \text{Hz}$, so $\omega = 2\pi f \approx 3.49\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>Period: $T = 1/f \approx 1.80\ \text{s}$.</p>
+              </div></li>
+              <li><div>
+<p>Tangential speed: $v = R\omega = 0.10 \times 3.49 \approx 0.35\ \text{m/s}$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Distance per revolution at $R = 10\ \text{cm}$: $2\pi R \approx 0.628\ \text{m}$, covered in $T = 1.80\ \text{s}$: $v = 0.628/1.80 \approx 0.35\ \text{m/s}$. ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A particle moves on a circle of radius $R$ with $\theta(t) = \omega t$ (constant $\omega$). Find the position, velocity and acceleration. (From [1], Worked Example “Uniform Circular Motion”.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Position: $\mathbf r = R\cos(\omega t)\,\hat\imath + R\sin(\omega t)\,\hat\jmath$.</p>
+              </div></li>
+              <li><div>
+<p>Velocity: $\mathbf v = -R\omega\sin(\omega t)\,\hat\imath + R\omega\cos(\omega t)\,\hat\jmath$, with magnitude $v = R\omega$.</p>
+              </div></li>
+              <li><div>
+<p>Acceleration: $\mathbf a = -R\omega^2\cos(\omega t)\,\hat\imath - R\omega^2\sin(\omega t)\,\hat\jmath = -\omega^2\,\mathbf r$: toward the centre, magnitude $R\omega^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$\mathbf r\cdot\mathbf v = 0$: velocity is tangent to the circle ✓. And $\mathbf a\cdot\mathbf v = 0$ for uniform motion ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A wheel starts from rest and accelerates uniformly at $\alpha = 2\ \text{rad/s}^2$. How many revolutions does it make in the first $5\ \text{s}$, and what is its angular velocity then? (Standard constant-$\alpha$ application, [2, §16.2.2].)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\omega(5) = \omega_0 + \alpha t = 0 + 2 \times 5 = 10\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$\theta(5) = \tfrac12 \alpha t^2 = \tfrac12 \times 2 \times 25 = 25\ \text{rad}$.</p>
+              </div></li>
+              <li><div>
+<p>Revolutions: $25/(2\pi) \approx 3.98$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Average $\omega$ over the interval is $5\ \text{rad/s}$, so $\theta = 5 \times 5 = 25\ \text{rad}$ ✓.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +244,8 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 2: Kinematics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Circular Motion; Worked Example “Uniform Circular Motion”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/kinematics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 16 "Two Dimensional Rotational Kinematics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §16.2 Fixed Axis Rotation: Rotational Kinematics; Example 16.1. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter16.pdf">PDF</a></span></li>
           </ol>
         </section>
 

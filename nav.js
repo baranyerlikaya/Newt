@@ -42,7 +42,7 @@ window.PHYSREF_NAV = [
     id: 'rotation',
     title: 'Rotation',
     topics: [
-      { id: 'angular-velocity',    title: 'Angular Velocity',                                     file: 'topics/mechanics/angular-velocity.html',    status: 'soon' },
+      { id: 'angular-velocity',    title: 'Angular Velocity',                                     file: 'topics/mechanics/angular-velocity.html',    status: 'ready' },
       { id: 'torque-angular-momentum', title: 'Torque, Angular Momentum',                         file: 'topics/mechanics/torque-angular-momentum.html', status: 'soon' },
       { id: 'rotational-inertia',  title: 'Rotational Inertia of a System of Particles',          file: 'topics/mechanics/rotational-inertia.html',  status: 'soon' },
       { id: 'rotational-newton',   title: "Newton's 2nd Law in Rotational Form",                  file: 'topics/mechanics/rotational-newton.html',   status: 'soon' },
