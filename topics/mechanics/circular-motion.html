@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Uniform Circular Motion · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="circular-motion">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,105 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Uniform Circular Motion</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">A body moving on a circle at constant speed: the velocity is always tangent, the acceleration always points to the centre with size v²/R, and some real force must supply it.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Going around at constant speed.</strong> The speed stays the same, but the <em>direction</em> keeps changing — so the velocity vector keeps changing — so there must be an acceleration [1]; [2].</p>
+<p>Where does it point? <strong>Toward the centre</strong>. How big? [1]; [2]</p>
+$$a_c = \frac{v^2}{R} = \omega^2 R.$$
+<p><strong>And what makes it happen?</strong> By $\mathbf F = m\mathbf a$, some real force has to pull the thing toward the centre. That's the <strong>centripetal force</strong> $F_c = mv^2/R$ [3]:</p>
+<ul>
+<li>a string tension, for a stone on a string;</li>
+<li>gravity, for the Moon;</li>
+<li>friction, for a car on a flat curve;</li>
+<li>the slope of a banked curve, for cars and trains.</li>
+</ul>
+<p>Remove the force (let go of the string): the stone flies off <strong>tangent</strong> to the circle, not outward. That feeling of being "thrown outward" is just your body's wish to go straight, not a real outward push [3].</p>
+<p>The <strong>period</strong> (time for one loop) is $T = 2\pi R/v = 2\pi/\omega$ [1].</p>
+<p>In uniform circular motion, the centripetal force is perpendicular to the velocity, so it does <strong>no work</strong> — the kinetic energy and speed never change [3].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Kinematics of uniform circular motion</h3>
+            <div>
+<p>A particle moves on a circle of radius $R$, with angular velocity $\omega$ constant. Then $\theta(t) = \omega t + \theta_0$ and the position is [1, §Circular Motion]; [2, §6.2]:</p>
+$$\mathbf r(t) = R\cos(\omega t + \theta_0)\,\hat\imath + R\sin(\omega t + \theta_0)\,\hat\jmath.$$
+<p>Its velocity is tangent to the circle, with constant <strong>speed</strong> [1]; [2, §6.2.8]:</p>
+$$v = R\omega.$$
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Centripetal acceleration</h3>
+            <div>
+<p>Differentiate the velocity. The acceleration points from the particle toward the centre of the circle, with magnitude [1, §Circular Motion]; [2, §6.3]:</p>
+$$\boxed{a_c = R\omega^2 = \frac{v^2}{R}.}$$
+<p>This is the <strong>centripetal</strong> ("centre-seeking") acceleration. In vector form, $\mathbf a = -\omega^2\,\mathbf r$: it always points opposite to the position vector [1, Worked Example “Uniform Circular Motion”].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The force that causes it</h3>
+            <div>
+<p>By Newton's second law, this acceleration requires a <strong>centripetal force</strong> [3, §9.1]:</p>
+$$F_c = m a_c = \frac{mv^2}{R}.$$
+<p>"Centripetal" names the direction, not the physical origin. The actual force that supplies it is one of the usual forces [3, §9.1]:</p>
+<ul>
+<li>tension in a string swinging a stone;</li>
+<li>gravity holding a satellite in orbit;</li>
+<li>friction between tyres and road in a car's turn;</li>
+<li>the normal force on the inside of a banked track.</li>
+</ul>
+<p>With no such force (release the string), the particle flies off tangentially, by Newton's first law.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Period and frequency</h3>
+            <div>
+<p>One trip around takes the <strong>period</strong> [1]</p>
+$$T = \frac{2\pi}{\omega} = \frac{2\pi R}{v}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Tangential component: non-uniform circular motion</h3>
+            <div>
+<p>If the speed changes, the particle also has a <strong>tangential</strong> acceleration $a_t = R\alpha = dv/dt$, along the velocity. The total acceleration is the vector sum [2, §6.3]:</p>
+$$\mathbf a = -R\omega^2\,\hat r + R\alpha\,\hat\theta, \qquad |\mathbf a| = \sqrt{a_c^2 + a_t^2}.$$
+<p>Uniform circular motion is the special case $\alpha = 0$: only the centripetal component is present, so $\mathbf a\perp\mathbf v$ and the speed stays constant.</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>No work is done on the particle in <em>uniform</em> circular motion: the centripetal force is perpendicular to the velocity, so $P = \mathbf F\cdot\mathbf v = 0$ and the kinetic energy stays constant [3, §9.1].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>There is no outward "centrifugal force" in an inertial frame — the feeling of being thrown outward in a car's turn is just your inertia pressing against the door. In a rotating (non-inertial) frame one adds a fictitious centrifugal force $+m\omega^2 r\,\hat r$; see Newton's Laws, Topic 3.1 [3, §9.1].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="circular">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A particle on a circle of radius $r$ at constant $\omega$. The dark arrow is the velocity, always tangent to the circle, with magnitude $v = \omega r$. The grey arrow is the acceleration, always pointing to the centre, with magnitude $a = \omega^2 r = v^2/r$. Both values are shown live. The two arrows are always perpendicular, which is why the speed stays constant: no work is done.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +132,35 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Position (uniform circular motion) [1, 2]</span></figcaption>
+              <div class="formula-body">$$\mathbf r = R\cos(\omega t)\,\hat\imath + R\sin(\omega t)\,\hat\jmath$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Speed [1, 2]</span></figcaption>
+              <div class="formula-body">$$v = R\omega$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Centripetal acceleration [1, 2]</span></figcaption>
+              <div class="formula-body">$$a_c = \frac{v^2}{R} = R\omega^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Centripetal force [3]</span></figcaption>
+              <div class="formula-body">$$F_c = \frac{mv^2}{R} = mR\omega^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Period [1]</span></figcaption>
+              <div class="formula-body">$$T = \frac{2\pi}{\omega} = \frac{2\pi R}{v}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Non-uniform (adds tangential) [2]</span></figcaption>
+              <div class="formula-body">$$\mathbf a = -R\omega^2\,\hat r + R\alpha\,\hat\theta$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +169,67 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A $0.5\ \text{kg}$ ball on a $1\ \text{m}$ string is swung in a horizontal circle at $2\ \text{m/s}$. Find the centripetal acceleration and the tension in the string. (Direct application of [3], §9.1.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>$a_c = v^2/R = 4/1 = 4\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>The tension is the only horizontal force, providing the centripetal force: $T = m a_c = 0.5 \times 4 = 2\ \text{N}$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Using $\omega = v/R = 2\ \text{rad/s}$: $a_c = R\omega^2 = 1 \times 4 = 4\ \text{m/s}^2$ ✓. Period $T = 2\pi/\omega = \pi \approx 3.14\ \text{s}$.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A car of mass $1000\ \text{kg}$ takes a flat curve of radius $50\ \text{m}$ at $15\ \text{m/s}$. What is the minimum coefficient of static friction between tyres and road? (Application of [3], §9.1 with friction as the centripetal force.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>The centripetal force must be $F_c = mv^2/R = 1000 \times 225/50 = 4500\ \text{N}$.</p>
+              </div></li>
+              <li><div>
+<p>Friction supplies this: $f_s \le \mu_s N = \mu_s mg$.</p>
+              </div></li>
+              <li><div>
+<p>Minimum: $\mu_s = v^2/(gR) = 225/(9.8 \times 50) \approx 0.46$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Independent of mass (it cancels). On an icy road, $\mu_s \approx 0.1$, so the safe speed drops to $v = \sqrt{\mu_s gR} \approx 7\ \text{m/s}$. ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>The Moon orbits the Earth in roughly a circle of radius $R_{e,m} = 3.84\times 10^8\ \text{m}$ with period $T \approx 27.3\ \text{days}$. What centripetal acceleration does it have? (From [3], §9.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Convert $T = 27.3 \times 86400\ \text{s} \approx 2.36\times 10^6\ \text{s}$, so $\omega = 2\pi/T \approx 2.66\times 10^{-6}\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$a_c = R_{e,m}\omega^2 \approx 3.84\times 10^8 \times (2.66\times 10^{-6})^2 \approx 2.72\times 10^{-3}\ \text{m/s}^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Gravity at the Moon's distance: $g_{\text{moon}} = GM_E/R_{e,m}^2 \approx 2.70\times 10^{-3}\ \text{m/s}^2$, matching the centripetal acceleration. This is exactly Newton's observation that led to universal gravitation [3, §9.2]. ✓</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +237,9 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 2: Kinematics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Circular Motion; Worked Example “Uniform Circular Motion”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/kinematics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 6 "Circular Motion", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §6.2 Circular Motion: Velocity and Angular Velocity, §6.3 Tangential and Radial Acceleration. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter6.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 9 "Circular Motion Dynamics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §9.1 Newton’s Second Law and Circular Motion, §9.2 Universal Law of Gravitation and the Circular Orbit of the Moon. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter9.pdf">PDF</a></span></li>
           </ol>
         </section>
 
