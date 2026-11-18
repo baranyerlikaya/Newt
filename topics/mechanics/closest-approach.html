@@ -33,12 +33,12 @@
           <h2 id="basics-h">In short</h2>
           <div>
 <p><strong>Two boats on a lake</strong>, each going straight at a steady speed. Will they crash? If not, how close will they get, and when?</p>
-<p><strong>Step 1: look at the gap.</strong> Draw an arrow from boat 1 to boat 2. That's the <strong>separation vector</strong> $\mathbf R = \mathbf r_2 - \mathbf r_1$. Its length is how far apart they are [1].</p>
-<p><strong>Step 2: pretend you're on boat 1.</strong> From there, boat 2 seems to move with the <strong>relative velocity</strong> $\mathbf V = \mathbf v_2 - \mathbf v_1$, in a straight line: $\mathbf R(t) = \mathbf R_0 + \mathbf V t$ [3].</p>
-<p><strong>Step 3: find the closest moment.</strong> The distance shrinks, reaches a smallest value, then grows again. At the smallest point it stops shrinking, so its derivative is zero. It's easier to use the distance <em>squared</em>; that gives [2]</p>
+<p><strong>Step 1: look at the gap.</strong> Draw an arrow from boat 1 to boat 2. That's the <strong>separation vector</strong> $\mathbf R = \mathbf r_2 - \mathbf r_1$. Its length is how far apart they are <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Step 2: pretend you're on boat 1.</strong> From there, boat 2 seems to move with the <strong>relative velocity</strong> $\mathbf V = \mathbf v_2 - \mathbf v_1$, in a straight line: $\mathbf R(t) = \mathbf R_0 + \mathbf V t$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p><strong>Step 3: find the closest moment.</strong> The distance shrinks, reaches a smallest value, then grows again. At the smallest point it stops shrinking, so its derivative is zero. It's easier to use the distance <em>squared</em>; that gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></p>
 $$t_c = -\frac{\mathbf R_0\cdot\mathbf V}{|\mathbf V|^2}, \qquad d_{\min} = |\mathbf R_0 + \mathbf V t_c|.$$
-<p>At that moment the gap arrow is exactly <strong>perpendicular</strong> to the relative velocity, like the shortest line from you to a passing road [2].</p>
-<p><strong>Crash or not?</strong> They collide only if the gap becomes exactly zero: same $x$ <em>and</em> same $y$ at the <em>same time</em>. Paths crossing isn't enough; they have to be there at the same moment [1].</p>
+<p>At that moment the gap arrow is exactly <strong>perpendicular</strong> to the relative velocity, like the shortest line from you to a passing road <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Crash or not?</strong> They collide only if the gap becomes exactly zero: same $x$ <em>and</em> same $y$ at the <em>same time</em>. Paths crossing isn't enough; they have to be there at the same moment <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
 <p>If $t_c$ is negative, the closest moment was in the past and they are already moving apart.</p>
           </div>
         </section>
@@ -49,18 +49,18 @@ $$t_c = -\frac{\mathbf R_0\cdot\mathbf V}{|\mathbf V|^2}, \qquad d_{\min} = |\ma
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> The separation vector</h3>
             <div>
-<p>For two particles with positions $\mathbf r_1(t)$ and $\mathbf r_2(t)$, define the <strong>separation (relative position) vector</strong> [1, Worked Example “Collision of Two Particles”]</p>
+<p>For two particles with positions $\mathbf r_1(t)$ and $\mathbf r_2(t)$, define the <strong>separation (relative position) vector</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example “Collision of Two Particles”</span></span></p>
 $$\mathbf R(t) = \mathbf r_2(t) - \mathbf r_1(t).$$
-<p>It points from particle 1 to particle 2, and its length $|\mathbf R(t)|$ is the distance between them at time $t$. Its derivative is the <strong>relative velocity</strong> $\mathbf V = \dot{\mathbf R} = \mathbf v_2 - \mathbf v_1$: the velocity of particle 2 as seen by an observer riding on particle 1 [3, §11.3].</p>
+<p>It points from particle 1 to particle 2, and its length $|\mathbf R(t)|$ is the distance between them at time $t$. Its derivative is the <strong>relative velocity</strong> $\mathbf V = \dot{\mathbf R} = \mathbf v_2 - \mathbf v_1$: the velocity of particle 2 as seen by an observer riding on particle 1 <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§11.3</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> Collision</h3>
             <div>
-<p>The particles collide when they are at the same place <em>at the same time</em>, i.e. $\mathbf R(t) = \mathbf 0$. Every component must vanish at one common instant [1]:</p>
+<p>The particles collide when they are at the same place <em>at the same time</em>, i.e. $\mathbf R(t) = \mathbf 0$. Every component must vanish at one common instant <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
 $$\begin{gathered}x_2(t) - x_1(t) = 0, \\ y_2(t) - y_1(t) = 0 \quad (\text{and the same for } z).\end{gathered}$$
-<p>Equal $x$ at one time and equal $y$ at a different time is <em>not</em> a collision: the paths cross, but the particles pass the crossing point at different times [1, Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”].</p>
+<p>Equal $x$ at one time and equal $y$ at a different time is <em>not</em> a collision: the paths cross, but the particles pass the crossing point at different times <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”</span></span>.</p>
             </div>
           </section>
 
@@ -69,19 +69,19 @@ $$\begin{gathered}x_2(t) - x_1(t) = 0, \\ y_2(t) - y_1(t) = 0 \quad (\text{and t
             <div>
 <p>If both particles move with constant velocities, $\mathbf r_i(t) = \mathbf r_{i0} + \mathbf v_i t$, then</p>
 $$\begin{gathered}\mathbf R(t) = \mathbf R_0 + \mathbf V t, \\ \mathbf R_0 = \mathbf r_{20} - \mathbf r_{10}, \qquad \mathbf V = \mathbf v_2 - \mathbf v_1.\end{gathered}$$
-<p>Seen from particle 1, particle 2 moves along a straight line with constant velocity $\mathbf V$. So the closest approach is the point of that line nearest to particle 1 [3, §11.3].</p>
+<p>Seen from particle 1, particle 2 moves along a straight line with constant velocity $\mathbf V$. So the closest approach is the point of that line nearest to particle 1 <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§11.3</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> Finding the moment of closest approach</h3>
             <div>
-<p>Minimizing the distance is easier through its square, which has its minimum at the same time [2, §Maxima and Minima of Functions]:</p>
+<p>Minimizing the distance is easier through its square, which has its minimum at the same time <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§Maxima and Minima of Functions</span></span>:</p>
 $$\begin{aligned}D^2(t) &= |\mathbf R|^2 = \mathbf R\cdot\mathbf R \\ &= |\mathbf R_0|^2 + 2(\mathbf R_0\cdot\mathbf V)\,t + |\mathbf V|^2 t^2.\end{aligned}$$
 <p>This is a quadratic in $t$. Set its derivative to zero, $\frac{d}{dt}D^2 = 2\,\mathbf R\cdot\mathbf V = 0$:</p>
 $$t_c = -\frac{\mathbf R_0\cdot\mathbf V}{|\mathbf V|^2}, \qquad d_{\min} = |\mathbf R_0 + \mathbf V t_c|.$$
-<p>Since $|\mathbf V|^2 &gt; 0$, this stationary point is a minimum ($\frac{d^2}{dt^2}D^2 = 2|\mathbf V|^2 &gt; 0$) [2]. Geometrically, $\mathbf R\cdot\mathbf V = 0$ says that at closest approach <strong>the separation is perpendicular to the relative velocity</strong> [2, §Dot Product].</p>
-<p>Equivalently, $d_{\min}$ is the distance from a point to a line, which the cross product gives directly [2, §Cross Product]:</p>
+<p>Since $|\mathbf V|^2 &gt; 0$, this stationary point is a minimum ($\frac{d^2}{dt^2}D^2 = 2|\mathbf V|^2 &gt; 0$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. Geometrically, $\mathbf R\cdot\mathbf V = 0$ says that at closest approach <strong>the separation is perpendicular to the relative velocity</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§Dot Product</span></span>.</p>
+<p>Equivalently, $d_{\min}$ is the distance from a point to a line, which the cross product gives directly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§Cross Product</span></span>:</p>
 $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
 <p>The particles collide exactly when $d_{\min} = 0$.</p>
             </div>
@@ -97,7 +97,7 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>Minimize the <em>distance between the particles</em>, $|\mathbf r_2 - \mathbf r_1|$, not the distance of each particle from the origin, and use the same $t$ for both. Finding where the two <em>paths</em> cross does not tell you where the <em>particles</em> are closest [1].</p>
+<p>Minimize the <em>distance between the particles</em>, $|\mathbf r_2 - \mathbf r_1|$, not the distance of each particle from the origin, and use the same $t$ for both. Finding where the two <em>paths</em> cross does not tell you where the <em>particles</em> are closest <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </aside>
         </section>
@@ -116,37 +116,37 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Separation and relative velocity [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Separation and relative velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf R = \mathbf r_2 - \mathbf r_1, \qquad \mathbf V = \mathbf v_2 - \mathbf v_1$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Uniform motion [3]</span></figcaption>
+              <figcaption class="formula-label"><span>Uniform motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf R(t) = \mathbf R_0 + \mathbf V t$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Collision condition [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Collision condition <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf R(t) = \mathbf 0 \ \ \text{(all components, same } t)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Squared distance [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Squared distance <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{aligned}D^2(t) = {}&|\mathbf R_0|^2 + 2(\mathbf R_0\cdot\mathbf V)\,t \\ &+ |\mathbf V|^2t^2\end{aligned}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Time of closest approach [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Time of closest approach <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$t_c = -\frac{\mathbf R_0\cdot\mathbf V}{|\mathbf V|^2}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Minimum distance [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Minimum distance <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}d_{\min} = |\mathbf R_0 + \mathbf V t_c| \\ = \frac{|\mathbf R_0\times\mathbf V|}{|\mathbf V|}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Condition at closest approach [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Condition at closest approach <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf R(t_c)\cdot\mathbf V = 0$$</div>
             </figure>
 
@@ -159,7 +159,7 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Two particles move as $\mathbf r_1(t) = t\,\hat\imath + t\,\hat\jmath$ and $\mathbf r_2(t) = (4 - t)\,\hat\imath + (2t - 2)\,\hat\jmath$. Find their closest approach. Do they collide? (From [1], Worked Example “Collision of Two Particles”, Solution 2.)</p>
+<p>Two particles move as $\mathbf r_1(t) = t\,\hat\imath + t\,\hat\jmath$ and $\mathbf r_2(t) = (4 - t)\,\hat\imath + (2t - 2)\,\hat\jmath$. Find their closest approach. Do they collide? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Collision of Two Particles”, Solution 2.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -183,7 +183,7 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Same as Example 1, but particle 2 starts one unit higher: $\mathbf r_2(t) = (4 - t)\,\hat\imath + (2t - 1)\,\hat\jmath$. Find the time and distance of closest approach. (Adapted from [1], Worked Example “Collision of Two Particles”.)</p>
+<p>Same as Example 1, but particle 2 starts one unit higher: $\mathbf r_2(t) = (4 - t)\,\hat\imath + (2t - 1)\,\hat\jmath$. Find the time and distance of closest approach. (Adapted from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Collision of Two Particles”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -207,7 +207,7 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Two particles move as $\mathbf r_1 = (t^2+1)\,\hat\imath + 2t\,\hat\jmath$ and $\mathbf r_2 = (5-t)\,\hat\imath + (t^2-1)\,\hat\jmath$. Do they collide? (From [1], Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”, (e).)</p>
+<p>Two particles move as $\mathbf r_1 = (t^2+1)\,\hat\imath + 2t\,\hat\jmath$ and $\mathbf r_2 = (5-t)\,\hat\imath + (t^2-1)\,\hat\jmath$. Do they collide? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”, (e).)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -223,7 +223,7 @@ $$d_{\min} = \frac{|\mathbf R_0 \times \mathbf V|}{|\mathbf V|}.$$
             <div class="example-check">
               <p class="example-check-label">Check</p>
               <div>
-<p>The $x$-coordinates match at one moment and the $y$-coordinates at another: the paths come close, but the particles are never in the same place at the same time [1]. ✓</p>
+<p>The $x$-coordinates match at one moment and the $y$-coordinates at another: the paths come close, but the particles are never in the same place at the same time <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. ✓</p>
               </div>
             </div>
           </div>

@@ -33,15 +33,15 @@
           <h2 id="basics-h">In short</h2>
           <div>
 <p><strong>Three loose ends from everything so far.</strong></p>
-<p><strong>1. Equilibrium = "flat spot on the potential energy".</strong> Place a ball at rest on a flat part of the hill and it stays there. More formally [1]:</p>
+<p><strong>1. Equilibrium = "flat spot on the potential energy".</strong> Place a ball at rest on a flat part of the hill and it stays there. More formally <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
 $$\frac{dU}{dx} = 0.$$
 <p><strong>Stable</strong> equilibrium: the bottom of a bowl. Nudge it, it rolls back. $U$ has a local minimum.</p>
 <p><strong>Unstable</strong> equilibrium: the top of a hill. Nudge it, it rolls away. $U$ has a local maximum.</p>
-<p>Near a stable point, small motions are (approximately) simple harmonic, with frequency $\omega_0 = \sqrt{U''(x_0)/m}$ [1]; [2].</p>
-<p><strong>2. Impulse = how much "oomph" a push gives you</strong> [1]; [3]:</p>
+<p>Near a stable point, small motions are (approximately) simple harmonic, with frequency $\omega_0 = \sqrt{U''(x_0)/m}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>2. Impulse = how much "oomph" a push gives you</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>:</p>
 $$J = \int F\,dt = \Delta p.$$
 <p>Short, hard punch or long, soft shove, same impulse means same change in momentum. Airbags lengthen $\Delta t$ to lower $F$ for the same $\Delta p$.</p>
-<p><strong>3. Power = how <em>fast</em> you deliver energy</strong> [1]:</p>
+<p><strong>3. Power = how <em>fast</em> you deliver energy</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
 $$P = \mathbf F\cdot\mathbf v.$$
 <p>Climbing stairs faster doesn't cost more energy, but it demands more power. 1 watt = 1 joule per second.</p>
           </div>
@@ -53,7 +53,7 @@ $$P = \mathbf F\cdot\mathbf v.$$
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> Equilibrium</h3>
             <div>
-<p>A point $x_0$ is an <strong>equilibrium</strong> of a conservative 1D system if the force there vanishes [1, §Stable and Unstable Equilibrium]:</p>
+<p>A point $x_0$ is an <strong>equilibrium</strong> of a conservative 1D system if the force there vanishes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Stable and Unstable Equilibrium</span></span>:</p>
 $$F(x_0) = -\frac{dU}{dx}\bigg|_{x_0} = 0.$$
 <p>So equilibria are where $U(x)$ is flat (critical points). A particle placed at rest there stays at rest.</p>
             </div>
@@ -62,54 +62,54 @@ $$F(x_0) = -\frac{dU}{dx}\bigg|_{x_0} = 0.$$
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> Stable or unstable?</h3>
             <div>
-<p>Look at the second derivative of $U$ [1, §Stable and Unstable Equilibrium]:</p>
+<p>Look at the second derivative of $U$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Stable and Unstable Equilibrium</span></span>:</p>
 <ul>
 <li>$U''(x_0) &gt; 0$ (local minimum): displaced particle is pushed back — <strong>stable</strong>.</li>
 <li>$U''(x_0) &lt; 0$ (local maximum): displaced particle is pushed away — <strong>unstable</strong>.</li>
 <li>$U''(x_0) = 0$: inconclusive from the second derivative; look at higher derivatives.</li>
 </ul>
-<p>Near a stable equilibrium, Taylor-expand $U(x) \approx U(x_0) + \tfrac12 U''(x_0)(x-x_0)^2$: this is exactly a spring potential with $k = U''(x_0)$, so the small oscillations have angular frequency $\omega_0 = \sqrt{U''(x_0)/m}$ [1]; [2, §14.6].</p>
+<p>Near a stable equilibrium, Taylor-expand $U(x) \approx U(x_0) + \tfrac12 U''(x_0)(x-x_0)^2$: this is exactly a spring potential with $k = U''(x_0)$, so the small oscillations have angular frequency $\omega_0 = \sqrt{U''(x_0)/m}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§14.6</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Impulse</h3>
             <div>
-<p>The <strong>impulse</strong> of a force over a time interval is [1, §Impulse and Power]; [3, §10.2]</p>
+<p>The <strong>impulse</strong> of a force over a time interval is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Impulse and Power</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§10.2</span></span></p>
 $$\mathbf J = \int_{t_1}^{t_2}\mathbf F(t)\,dt.$$
-<p>By Newton's second law, $\mathbf J = \Delta\mathbf p = \mathbf p_2 - \mathbf p_1$: impulse equals the change in momentum [1]. Geometrically, $|\mathbf J|$ is the area under the $|F|$-vs-$t$ graph [1]. The <strong>average force</strong> over the interval is</p>
+<p>By Newton's second law, $\mathbf J = \Delta\mathbf p = \mathbf p_2 - \mathbf p_1$: impulse equals the change in momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. Geometrically, $|\mathbf J|$ is the area under the $|F|$-vs-$t$ graph <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. The <strong>average force</strong> over the interval is</p>
 $$\mathbf F_{\text{avg}} = \frac{\mathbf J}{\Delta t} = \frac{\Delta\mathbf p}{\Delta t}.$$
-<p>Short, hard kicks (soccer, drum sticks) and long, soft pushes (rockets) can give the same impulse and the same change in momentum [3, §10.2].</p>
+<p>Short, hard kicks (soccer, drum sticks) and long, soft pushes (rockets) can give the same impulse and the same change in momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§10.2</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> Power</h3>
             <div>
-<p>The <strong>power</strong> delivered by a force is the rate at which it does work [1, §Impulse and Power]:</p>
+<p>The <strong>power</strong> delivered by a force is the rate at which it does work <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Impulse and Power</span></span>:</p>
 $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
-<p>Positive when force and velocity point the same way (energy flows in), negative when they oppose. Total work: $W = \int P\,dt$. Units: watt (W), with $1\ \text{W} = 1\ \text{J/s}$. Legacy unit: $1\ \text{hp} \approx 735\ \text{W}$ [1, Worked Example “Horsepower”].</p>
+<p>Positive when force and velocity point the same way (energy flows in), negative when they oppose. Total work: $W = \int P\,dt$. Units: watt (W), with $1\ \text{W} = 1\ \text{J/s}$. Legacy unit: $1\ \text{hp} \approx 735\ \text{W}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example “Horsepower”</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> A single-particle energy diagram</h3>
             <div>
-<p>Impulse, power, equilibrium and stability come together in the <strong>energy diagram</strong>: plot $U(x)$ and the horizontal line $E$. Equilibria are the critical points of $U$; stability is set by concavity; turning points are where $U = E$; the particle's speed at $x$ is $\sqrt{(2/m)(E - U(x))}$; and the time to go from $x_0$ to $x$ is the integral of $1/v$ [1, §More on the Potential Energy, §Mechanical Energy as a First Integral of Motion].</p>
+<p>Impulse, power, equilibrium and stability come together in the <strong>energy diagram</strong>: plot $U(x)$ and the horizontal line $E$. Equilibria are the critical points of $U$; stability is set by concavity; turning points are where $U = E$; the particle's speed at $x$ is $\sqrt{(2/m)(E - U(x))}$; and the time to go from $x_0$ to $x$ is the integral of $1/v$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§More on the Potential Energy, §Mechanical Energy as a First Integral of Motion</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>Near <em>any</em> stable equilibrium (not just a spring), motion is <em>approximately</em> simple harmonic with $\omega_0 = \sqrt{U''(x_0)/m}$. That is why so many small-oscillation problems in physics — pendulums, molecules, bridges, atoms — share the same mathematics [1, §Stable and Unstable Equilibrium]; [2, §14.6].</p>
+<p>Near <em>any</em> stable equilibrium (not just a spring), motion is <em>approximately</em> simple harmonic with $\omega_0 = \sqrt{U''(x_0)/m}$. That is why so many small-oscillation problems in physics — pendulums, molecules, bridges, atoms — share the same mathematics <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Stable and Unstable Equilibrium</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§14.6</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>"Equilibrium" means no net force. It doesn't mean "at rest": a particle can pass through an equilibrium point with any speed. Only the special case $v = 0$ at equilibrium is a truly static situation [1, §Stable and Unstable Equilibrium].</p>
+<p>"Equilibrium" means no net force. It doesn't mean "at rest": a particle can pass through an equilibrium point with any speed. Only the special case $v = 0$ at equilibrium is a truly static situation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Stable and Unstable Equilibrium</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -128,37 +128,37 @@ $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Equilibrium condition [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Equilibrium condition <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\frac{dU}{dx}\bigg|_{x_0} = 0$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Stability [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Stability <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}U''(x_0) > 0 \;\Rightarrow\; \text{stable} \\ U''(x_0) < 0 \;\Rightarrow\; \text{unstable}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Small-oscillation frequency [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Small-oscillation frequency <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\omega_0 = \sqrt{\frac{U''(x_0)}{m}}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Impulse [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Impulse <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf J = \int_{t_1}^{t_2}\mathbf F\,dt = \Delta\mathbf p$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Average force [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Average force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf F_{\text{avg}} = \frac{\Delta\mathbf p}{\Delta t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Instantaneous power [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Instantaneous power <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$P = \mathbf F\cdot\mathbf v$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Work from power [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Work from power <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$W = \int_{t_1}^{t_2}P\,dt$$</div>
             </figure>
 
@@ -171,7 +171,7 @@ $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>$U(x) = k(x^3 - 3x)$ with $k &gt; 0$. Find the equilibrium points, say which are stable, and the small-oscillation frequency about the stable one. (From [1], §More on the Potential Energy and §Stable and Unstable Equilibrium.)</p>
+<p>$U(x) = k(x^3 - 3x)$ with $k &gt; 0$. Find the equilibrium points, say which are stable, and the small-oscillation frequency about the stable one. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §More on the Potential Energy and §Stable and Unstable Equilibrium.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -195,7 +195,7 @@ $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A soccer ball of mass $0.5\ \text{kg}$ is kicked with a force of $200\ \text{N}$ for $0.1\ \text{s}$. Find the impulse and the resulting speed (starting from rest). (From [1], Worked Example “Impulse — 1”.)</p>
+<p>A soccer ball of mass $0.5\ \text{kg}$ is kicked with a force of $200\ \text{N}$ for $0.1\ \text{s}$. Find the impulse and the resulting speed (starting from rest). (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Impulse — 1”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -219,7 +219,7 @@ $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A $1500\ \text{kg}$ car travelling at $10\ \text{m/s}$ hits a wall and stops in $0.2\ \text{s}$. Find the average force on the car. (From [1], Worked Example “Impulse — 2”.)</p>
+<p>A $1500\ \text{kg}$ car travelling at $10\ \text{m/s}$ hits a wall and stops in $0.2\ \text{s}$. Find the average force on the car. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Impulse — 2”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -240,7 +240,7 @@ $$P = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A $70\ \text{kg}$ person climbs $20\ \text{m}$ of stairs in $10\ \text{s}$. Find the average power delivered against gravity. (From [1], Worked Example “Power”.)</p>
+<p>A $70\ \text{kg}$ person climbs $20\ \text{m}$ of stairs in $10\ \text{s}$. Find the average power delivered against gravity. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Power”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

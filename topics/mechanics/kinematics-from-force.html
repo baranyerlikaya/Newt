@@ -32,21 +32,21 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>If you know the force at every moment, you know the whole motion.</strong> That's the whole story. Just divide by mass, then "add things up" (integrate) twice [1]; [2].</p>
+<p><strong>If you know the force at every moment, you know the whole motion.</strong> That's the whole story. Just divide by mass, then "add things up" (integrate) twice <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
 <p><strong>The three-step recipe:</strong></p>
 <ol>
 <li><strong>Acceleration:</strong> $a(t) = F(t)/m$. Divide out the mass.</li>
-<li><strong>Velocity:</strong> add up acceleration over time (integrate). Start with $v_0$: $v(t) = v_0 + \int_0^t a\,dt'$. Graphically, it's the area under the acceleration curve [2].</li>
+<li><strong>Velocity:</strong> add up acceleration over time (integrate). Start with $v_0$: $v(t) = v_0 + \int_0^t a\,dt'$. Graphically, it's the area under the acceleration curve <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</li>
 <li><strong>Position:</strong> add up velocity. Start with $x_0$: $x(t) = x_0 + \int_0^t v\,dt'$.</li>
 </ol>
-<p>Each step needs one starting fact. That's why second-order motion needs <em>two</em>: initial position <em>and</em> initial velocity [1].</p>
-<p><strong>Impulse = force × time.</strong> A short, hard kick and a long, gentle push can give the same change in momentum: $J = \int F\,dt = \Delta p$. Soccer, airbags, catching a ball: it's all impulse [1]; [3].</p>
-<p><strong>Power = force × velocity.</strong> How fast energy flows into the thing you're pushing: $P = F\,v$ (or more generally, $P = \mathbf F\cdot\mathbf v$) [1].</p>
+<p>Each step needs one starting fact. That's why second-order motion needs <em>two</em>: initial position <em>and</em> initial velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Impulse = force × time.</strong> A short, hard kick and a long, gentle push can give the same change in momentum: $J = \int F\,dt = \Delta p$. Soccer, airbags, catching a ball: it's all impulse <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p><strong>Power = force × velocity.</strong> How fast energy flows into the thing you're pushing: $P = F\,v$ (or more generally, $P = \mathbf F\cdot\mathbf v$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
 <ul>
 <li>Push a cart twice as fast with the same force: twice the power.</li>
 <li>Climb stairs faster: more power, same energy.</li>
 </ul>
-<p>Units: 1 watt = 1 joule per second. Your body sustains about 100 W; a sprinter can briefly produce over 1 kW. A 200 hp car engine is 147 kW, about 1500 of you [1].</p>
+<p>Units: 1 watt = 1 joule per second. Your body sustains about 100 W; a sprinter can briefly produce over 1 kW. A 200 hp car engine is 147 kW, about 1500 of you <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
           </div>
         </section>
 
@@ -56,7 +56,7 @@
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> From force to acceleration</h3>
             <div>
-<p>For a particle of constant mass, Newton's second law reads [1, §Newton's Axioms of Motion]</p>
+<p>For a particle of constant mass, Newton's second law reads <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Newton's Axioms of Motion</span></span></p>
 $$\mathbf a(t) = \frac{\mathbf F(t)}{m}.$$
 <p>If $\mathbf F$ depends only on time (not position or velocity), $\mathbf a$ is known as an explicit function of time, so velocity and position follow by direct integration.</p>
             </div>
@@ -65,7 +65,7 @@ $$\mathbf a(t) = \frac{\mathbf F(t)}{m}.$$
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> From a(t) to v(t) to x(t)</h3>
             <div>
-<p>Integrate the acceleration once to get velocity, and the velocity to get position, using the initial conditions $v(0) = v_0$ and $x(0) = x_0$ [1, §Equations of Motion]; [2, §4.6]:</p>
+<p>Integrate the acceleration once to get velocity, and the velocity to get position, using the initial conditions $v(0) = v_0$ and $x(0) = x_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Equations of Motion</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§4.6</span></span>:</p>
 $$\begin{gathered}v(t) = v_0 + \int_0^t a(t')\,dt' \\ x(t) = x_0 + \int_0^t v(t')\,dt'.\end{gathered}$$
 <p>Each integration adds a constant of integration, fixed by the initial condition. In 2D or 3D, do this component by component.</p>
             </div>
@@ -74,26 +74,26 @@ $$\begin{gathered}v(t) = v_0 + \int_0^t a(t')\,dt' \\ x(t) = x_0 + \int_0^t v(t'
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Impulse and the final momentum</h3>
             <div>
-<p>Integrating $m\dot v = F(t)$ over an interval gives the <strong>impulse</strong>, equal to the change in momentum [1, §Impulse and Power]; [3, §10.2]:</p>
+<p>Integrating $m\dot v = F(t)$ over an interval gives the <strong>impulse</strong>, equal to the change in momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Impulse and Power</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§10.2</span></span>:</p>
 $$\mathbf J = \int_{t_1}^{t_2}\mathbf F(t)\,dt = \mathbf p(t_2) - \mathbf p(t_1).$$
-<p>Geometrically, $|\mathbf J|$ is the area under the $|F|$-vs-$t$ graph. The average force over the interval is $\mathbf F_{\text{avg}} = \mathbf J/\Delta t$ [1].</p>
+<p>Geometrically, $|\mathbf J|$ is the area under the $|F|$-vs-$t$ graph. The average force over the interval is $\mathbf F_{\text{avg}} = \mathbf J/\Delta t$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> Power</h3>
             <div>
-<p>The <strong>instantaneous power</strong> delivered by the force to the particle is the rate at which it does work [1, §Impulse and Power]:</p>
+<p>The <strong>instantaneous power</strong> delivered by the force to the particle is the rate at which it does work <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Impulse and Power</span></span>:</p>
 $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
-<p>$P &gt; 0$ when the force and velocity point the same way (energy flows into the particle), and $P &lt; 0$ when they oppose each other (energy leaves). Over an interval, the total work is $W = \int P\,dt$ [1].</p>
-<p>Units: joule per second = <strong>watt</strong> (W). The horsepower comes from history: $1\ \text{hp} \approx 735\ \text{W}$ [1, Worked Example “Horsepower”].</p>
+<p>$P &gt; 0$ when the force and velocity point the same way (energy flows into the particle), and $P &lt; 0$ when they oppose each other (energy leaves). Over an interval, the total work is $W = \int P\,dt$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>Units: joule per second = <strong>watt</strong> (W). The horsepower comes from history: $1\ \text{hp} \approx 735\ \text{W}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example “Horsepower”</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> Worked recipe</h3>
             <div>
-<p>Given $F(t)$ along a line and the initial state, the full motion is [2, §4.6]:</p>
+<p>Given $F(t)$ along a line and the initial state, the full motion is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§4.6</span></span>:</p>
 <ol>
 <li>$a(t) = F(t)/m$;</li>
 <li>$v(t) = v_0 + \int_0^t a\,dt'$;</li>
@@ -106,14 +106,14 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>If the force depends on position or velocity rather than time, this direct integration fails and you have to solve a differential equation. The time-dependent case is special because $a(t)$ is given explicitly [1, §Equations of Motion].</p>
+<p>If the force depends on position or velocity rather than time, this direct integration fails and you have to solve a differential equation. The time-dependent case is special because $a(t)$ is given explicitly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Equations of Motion</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>Don't integrate $F(t)$ to get $v(t)$ directly; divide by $m$ first. The impulse $\int F\,dt$ gives $\Delta p = m\Delta v$, not $\Delta v$ [1]; [3, §10.2].</p>
+<p>Don't integrate $F(t)$ to get $v(t)$ directly; divide by $m$ first. The impulse $\int F\,dt$ gives $\Delta p = m\Delta v$, not $\Delta v$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§10.2</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -132,37 +132,37 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Second law [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Second law <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$a(t) = \frac{F(t)}{m}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Velocity from acceleration [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Velocity from acceleration <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$v(t) = v_0 + \int_0^t a(t')\,dt'$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Position from velocity [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Position from velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$x(t) = x_0 + \int_0^t v(t')\,dt'$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Impulse [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Impulse <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$J = \int_{t_1}^{t_2} F(t)\,dt = \Delta p$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Average force [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Average force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$F_{\text{avg}} = \frac{J}{\Delta t} = \frac{\Delta p}{\Delta t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Instantaneous power [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Instantaneous power <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$P = \mathbf F\cdot\mathbf v$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Work from power [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Work from power <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$W = \int_{t_1}^{t_2}P\,dt$$</div>
             </figure>
 
@@ -175,7 +175,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A particle of mass $m$ at rest at $x = 0$ is pushed by $F(t) = k\cos(\omega t)$ along a frictionless $x$-axis. Find $a(t)$, $v(t)$, $x(t)$ and the power delivered at time $t$. (Applying the general recipe from [1], §Equations of Motion.)</p>
+<p>A particle of mass $m$ at rest at $x = 0$ is pushed by $F(t) = k\cos(\omega t)$ along a frictionless $x$-axis. Find $a(t)$, $v(t)$, $x(t)$ and the power delivered at time $t$. (Applying the general recipe from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Equations of Motion.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -185,7 +185,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
 <p>$v(t) = \int_0^t a\,dt' = \dfrac{k}{m\omega}\sin(\omega t)$, using $v(0) = 0$.</p>
               </div></li>
               <li><div>
-<p>$x(t) = \int_0^t v\,dt' = \dfrac{k}{m\omega^2}\left[1 - \cos(\omega t)\right]$, using $x(0) = 0$.</p>
+<p>$x(t) = \int_0^t v\,dt' = \dfrac{k}{m\omega^2}\left <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">- \cos(\omega t)\right</span></span>$, using $x(0) = 0$.</p>
               </div></li>
               <li><div>
 <p>Power: $P(t) = F\,v = \dfrac{k^2}{m\omega}\sin(\omega t)\cos(\omega t) = \dfrac{k^2}{2m\omega}\sin(2\omega t)$.</p>
@@ -202,7 +202,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Same setup with $F(t) = a + bt$. Find $a(t)$, $v(t)$, $x(t)$ and the power at time $t$. (Applying the general recipe from [1], §Equations of Motion.)</p>
+<p>Same setup with $F(t) = a + bt$. Find $a(t)$, $v(t)$, $x(t)$ and the power at time $t$. (Applying the general recipe from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Equations of Motion.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -221,7 +221,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
             <div class="example-check">
               <p class="example-check-label">Check</p>
               <div>
-<p>Setting $b = 0$: $F = a$ constant, $v = at/m$, $x = at^2/(2m)$, matching the constant-force result [1, Worked Example “Motion of a Particle under a Constant Force”]. ✓</p>
+<p>Setting $b = 0$: $F = a$ constant, $v = at/m$, $x = at^2/(2m)$, matching the constant-force result <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example “Motion of a Particle under a Constant Force”</span></span>. ✓</p>
               </div>
             </div>
           </div>
@@ -229,7 +229,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A soccer ball of mass $0.5\ \text{kg}$ is kicked with a constant force of $200\ \text{N}$ for $0.1\ \text{s}$. Find the impulse and the ball's final speed. (From [1], Worked Example “Impulse — 1”.)</p>
+<p>A soccer ball of mass $0.5\ \text{kg}$ is kicked with a constant force of $200\ \text{N}$ for $0.1\ \text{s}$. Find the impulse and the ball's final speed. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example “Impulse — 1”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -253,7 +253,7 @@ $$P(t) = \frac{dW}{dt} = \mathbf F\cdot\mathbf v.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A $70\ \text{kg}$ person climbs stairs of height $20\ \text{m}$ in $10\ \text{s}$. Find the average power output. Compare with a 200 hp car. (From [1], Worked Examples “Power” and “Horsepower”.)</p>
+<p>A $70\ \text{kg}$ person climbs stairs of height $20\ \text{m}$ in $10\ \text{s}$. Find the average power output. Compare with a 200 hp car. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Examples “Power” and “Horsepower”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

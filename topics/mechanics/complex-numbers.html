@@ -32,13 +32,13 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>A complex number is a point on a flat map.</strong> Ordinary numbers sit on a line. Complex numbers need a whole plane: $z = x + iy$ means "go $x$ to the right and $y$ up". The special number $i$ is defined by $i^2 = -1$ [1]; [2].</p>
-<p><strong>Doing sums.</strong> Add by adding the right-parts and the up-parts separately. Multiply by expanding the brackets and replacing every $i^2$ with $-1$. Divide by multiplying top and bottom by the <strong>conjugate</strong> $\bar z = x - iy$ (the mirror image) [2].</p>
-<p><strong>Size and direction.</strong> Every point can also be described by how far it is from the centre, $r = |z| = \sqrt{x^2+y^2}$, and which way it points, the angle $\theta$. That is the <strong>polar form</strong> $z = r(\cos\theta + i\sin\theta)$ [1]. Careful: for points on the left side ($x &lt; 0$) the angle is not just $\tan^{-1}(y/x)$; add $\pi$ [1].</p>
+<p><strong>A complex number is a point on a flat map.</strong> Ordinary numbers sit on a line. Complex numbers need a whole plane: $z = x + iy$ means "go $x$ to the right and $y$ up". The special number $i$ is defined by $i^2 = -1$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Doing sums.</strong> Add by adding the right-parts and the up-parts separately. Multiply by expanding the brackets and replacing every $i^2$ with $-1$. Divide by multiplying top and bottom by the <strong>conjugate</strong> $\bar z = x - iy$ (the mirror image) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Size and direction.</strong> Every point can also be described by how far it is from the centre, $r = |z| = \sqrt{x^2+y^2}$, and which way it points, the angle $\theta$. That is the <strong>polar form</strong> $z = r(\cos\theta + i\sin\theta)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. Careful: for points on the left side ($x &lt; 0$) the angle is not just $\tan^{-1}(y/x)$; add $\pi$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
 <p><strong>Euler's formula: the magic link.</strong></p>
 $$e^{i\theta} = \cos\theta + i\sin\theta.$$
-<p>It says $e^{i\theta}$ is a point on a circle of radius $1$ at angle $\theta$ [1]; [2]. So any complex number is just $z = r\,e^{i\theta}$.</p>
-<p><strong>Why this is great.</strong> Multiplying becomes easy: <strong>multiply the sizes and add the angles</strong> [2]. Multiplying by $i$ turns a number by a quarter turn ($90^\circ$) without changing its size. That's why spinning and swinging things are so easy to describe with complex numbers [1]; [2].</p>
+<p>It says $e^{i\theta}$ is a point on a circle of radius $1$ at angle $\theta$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. So any complex number is just $z = r\,e^{i\theta}$.</p>
+<p><strong>Why this is great.</strong> Multiplying becomes easy: <strong>multiply the sizes and add the angles</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. Multiplying by $i$ turns a number by a quarter turn ($90^\circ$) without changing its size. That's why spinning and swinging things are so easy to describe with complex numbers <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
           </div>
         </section>
 
@@ -48,8 +48,8 @@ $$e^{i\theta} = \cos\theta + i\sin\theta.$$
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> Complex numbers and their algebra</h3>
             <div>
-<p>A <strong>complex number</strong> has the form $z = x + iy$, where $x$ and $y$ are real and the imaginary unit $i$ satisfies $i^2 = -1$. The real number $x = \operatorname{Re} z$ is the <em>real part</em> and $y = \operatorname{Im} z$ is the <em>imaginary part</em> [1, §Complex Numbers]; [2, §5.1].</p>
-<p>Complex numbers obey the usual rules of arithmetic, plus the single extra rule $i^2 = -1$. Addition works component by component. To multiply, expand the brackets and replace $i^2$ by $-1$ [2, §5.1]:</p>
+<p>A <strong>complex number</strong> has the form $z = x + iy$, where $x$ and $y$ are real and the imaginary unit $i$ satisfies $i^2 = -1$. The real number $x = \operatorname{Re} z$ is the <em>real part</em> and $y = \operatorname{Im} z$ is the <em>imaginary part</em> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Complex Numbers</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.1</span></span>.</p>
+<p>Complex numbers obey the usual rules of arithmetic, plus the single extra rule $i^2 = -1$. Addition works component by component. To multiply, expand the brackets and replace $i^2$ by $-1$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.1</span></span>:</p>
 $$(a+bi)(c+di) = (ac - bd) + (ad + bc)\,i.$$
             </div>
           </section>
@@ -57,31 +57,31 @@ $$(a+bi)(c+di) = (ac - bd) + (ad + bc)\,i.$$
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> The complex plane, conjugate and modulus</h3>
             <div>
-<p>Since $z = x + iy$ is fixed by the pair $(x, y)$, it can be drawn as a point in the <strong>complex plane</strong>: the real part on the horizontal axis and the imaginary part on the vertical axis [1]; [2, §5.1]. Adding complex numbers is then the same as adding vectors.</p>
-<p>The <strong>complex conjugate</strong> $\bar z = x - iy$ is the mirror image of $z$ in the real axis. The <strong>modulus</strong> $|z|$ is the distance from the origin [1]; [2, §5.2]:</p>
+<p>Since $z = x + iy$ is fixed by the pair $(x, y)$, it can be drawn as a point in the <strong>complex plane</strong>: the real part on the horizontal axis and the imaginary part on the vertical axis <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.1</span></span>. Adding complex numbers is then the same as adding vectors.</p>
+<p>The <strong>complex conjugate</strong> $\bar z = x - iy$ is the mirror image of $z$ in the real axis. The <strong>modulus</strong> $|z|$ is the distance from the origin <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.2</span></span>:</p>
 $$|z| = \sqrt{x^2 + y^2}, \qquad z\bar z = |z|^2.$$
-<p>The relation $z\bar z = |z|^2$ is how you divide: multiply top and bottom by the conjugate of the denominator, which makes the denominator real [2, §5.2]:</p>
+<p>The relation $z\bar z = |z|^2$ is how you divide: multiply top and bottom by the conjugate of the denominator, which makes the denominator real <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.2</span></span>:</p>
 $$\frac{1}{a+bi} = \frac{a-bi}{a^2+b^2}.$$
-<p>With complex numbers every quadratic equation has solutions, even when the discriminant is negative. More generally, every polynomial of degree $n$ has $n$ complex roots, counted with multiplicity (the fundamental theorem of algebra) [2, §5.2, §5.3].</p>
+<p>With complex numbers every quadratic equation has solutions, even when the discriminant is negative. More generally, every polynomial of degree $n$ has $n$ complex roots, counted with multiplicity (the fundamental theorem of algebra) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.2, §5.3</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Polar form</h3>
             <div>
-<p>Describe the point $z$ by its distance $r = |z|$ from the origin and the angle $\theta$ it makes with the positive real axis. This angle is the <strong>argument</strong>, $\theta = \arg z$. Then $x = r\cos\theta$ and $y = r\sin\theta$, which gives the <strong>polar form</strong> [1]:</p>
+<p>Describe the point $z$ by its distance $r = |z|$ from the origin and the angle $\theta$ it makes with the positive real axis. This angle is the <strong>argument</strong>, $\theta = \arg z$. Then $x = r\cos\theta$ and $y = r\sin\theta$, which gives the <strong>polar form</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
 $$z = r\,(\cos\theta + i\sin\theta).$$
-<p>For $x &gt; 0$ the argument is $\theta = \tan^{-1}(y/x)$. In general you must check which quadrant $z$ is in, because $y/x$ alone cannot tell $1+i$ from $-1-i$ [1]. The argument is only defined up to adding multiples of $2\pi$ [2, §6.3].</p>
+<p>For $x &gt; 0$ the argument is $\theta = \tan^{-1}(y/x)$. In general you must check which quadrant $z$ is in, because $y/x$ alone cannot tell $1+i$ from $-1-i$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. The argument is only defined up to adding multiples of $2\pi$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> Euler's formula</h3>
             <div>
-<p>Put $x = i\theta$ into the Taylor series $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$ and use $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, … The terms split into a real series and an imaginary series, which are exactly the Taylor series of $\cos\theta$ and $\sin\theta$ [1, §Complex Exponential Function]:</p>
+<p>Put $x = i\theta$ into the Taylor series $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$ and use $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, … The terms split into a real series and an imaginary series, which are exactly the Taylor series of $\cos\theta$ and $\sin\theta$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Complex Exponential Function</span></span>:</p>
 $$e^{i\theta} = \cos\theta + i\sin\theta.$$
-<p>This is <strong>Euler's formula</strong>. A second way to see it: $z(t) = \cos t + i\sin t$ satisfies $\dot z = iz$ with $z(0) = 1$, which is exactly the property that defines $e^{it}$ [2, §6.2].</p>
-<p>With Euler's formula the polar form becomes very compact, $z = r\,e^{i\theta}$. As $\theta$ runs from $0$ to $2\pi$, $e^{i\theta}$ goes once counterclockwise around the unit circle [2, §6.3]. Replacing $\theta$ by $-\theta$ and adding or subtracting gives cosine and sine in terms of exponentials [2, §6.2]:</p>
+<p>This is <strong>Euler's formula</strong>. A second way to see it: $z(t) = \cos t + i\sin t$ satisfies $\dot z = iz$ with $z(0) = 1$, which is exactly the property that defines $e^{it}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>.</p>
+<p>With Euler's formula the polar form becomes very compact, $z = r\,e^{i\theta}$. As $\theta$ runs from $0$ to $2\pi$, $e^{i\theta}$ goes once counterclockwise around the unit circle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>. Replacing $\theta$ by $-\theta$ and adding or subtracting gives cosine and sine in terms of exponentials <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>:</p>
 $$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}, \qquad \sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}.$$
             </div>
           </section>
@@ -89,23 +89,23 @@ $$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}, \qquad \sin\theta = \frac{e
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> Multiplication in polar form</h3>
             <div>
-<p>The exponential law $e^{i\alpha}e^{i\beta} = e^{i(\alpha+\beta)}$ holds for complex exponents too [2, §6.4]. So to multiply two complex numbers, <strong>multiply the moduli and add the arguments</strong>:</p>
+<p>The exponential law $e^{i\alpha}e^{i\beta} = e^{i(\alpha+\beta)}$ holds for complex exponents too <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.4</span></span>. So to multiply two complex numbers, <strong>multiply the moduli and add the arguments</strong>:</p>
 $$r_1 e^{i\theta_1}\cdot r_2 e^{i\theta_2} = r_1 r_2\,e^{i(\theta_1+\theta_2)}.$$
-<p>In particular, $z^n = r^n e^{in\theta}$. This makes powers and roots easy: an $n$-th root of $w = \rho\,e^{i\varphi}$ has modulus $\rho^{1/n}$ and argument $\varphi/n$, and the other roots are obtained by adding multiples of $2\pi/n$ to the angle [2, §6.4, §6.5].</p>
+<p>In particular, $z^n = r^n e^{in\theta}$. This makes powers and roots easy: an $n$-th root of $w = \rho\,e^{i\varphi}$ has modulus $\rho^{1/n}$ and argument $\varphi/n$, and the other roots are obtained by adding multiples of $2\pi/n$ to the angle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.4, §6.5</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>Multiplying by $i = e^{i\pi/2}$ rotates a complex number by $90^\circ$ counterclockwise without changing its length. This is why, for $z = r e^{i\omega t}$, the velocity $\dot z = i\omega z$ is perpendicular to the position, as in circular motion [1, §Complex Exponential Function]; [2, §6.4].</p>
+<p>Multiplying by $i = e^{i\pi/2}$ rotates a complex number by $90^\circ$ counterclockwise without changing its length. This is why, for $z = r e^{i\omega t}$, the velocity $\dot z = i\omega z$ is perpendicular to the position, as in circular motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Complex Exponential Function</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.4</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>$\tan^{-1}(y/x)$ gives the right argument only when $x &gt; 0$. For $x &lt; 0$ add $\pi$. For example, $-1-i$ has argument $-3\pi/4$ (or $5\pi/4$), not $\pi/4$ [1].</p>
+<p>$\tan^{-1}(y/x)$ gives the right argument only when $x &gt; 0$. For $x &lt; 0$ add $\pi$. For example, $-1-i$ has argument $-3\pi/4$ (or $5\pi/4$), not $\pi/4$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </aside>
         </section>
@@ -124,42 +124,42 @@ $$r_1 e^{i\theta_1}\cdot r_2 e^{i\theta_2} = r_1 r_2\,e^{i(\theta_1+\theta_2)}.$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Complex number [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Complex number <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$z = x + iy, \qquad i^2 = -1$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Product [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Product <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{aligned}&(a+bi)(c+di) \\ &\quad= (ac-bd) + (ad+bc)\,i\end{aligned}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Conjugate and modulus [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Conjugate and modulus <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\bar z = x - iy \\ |z| = \sqrt{x^2+y^2} = \sqrt{z\bar z}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Inverse [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Inverse <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\frac{1}{a+bi} = \frac{a-bi}{a^2+b^2}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Polar form [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Polar form <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$z = r(\cos\theta + i\sin\theta) = r\,e^{i\theta}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Euler's formula [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Euler's formula <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$e^{i\theta} = \cos\theta + i\sin\theta$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Cosine and sine from exponentials [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Cosine and sine from exponentials <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\cos\theta = \frac{e^{i\theta}+e^{-i\theta}}{2} \\ \sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Multiplication and powers [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Multiplication and powers <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered} r_1e^{i\theta_1}\,r_2e^{i\theta_2} = r_1r_2\,e^{i(\theta_1+\theta_2)} \\ z^n = r^n e^{in\theta}\end{gathered}$$</div>
             </figure>
 
@@ -172,7 +172,7 @@ $$r_1 e^{i\theta_1}\cdot r_2 e^{i\theta_2} = r_1 r_2\,e^{i(\theta_1+\theta_2)}.$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Compute $(1+2i)(3+4i)$. (From [2], §5.1.)</p>
+<p>Compute $(1+2i)(3+4i)$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, §5.1.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -193,7 +193,7 @@ $$r_1 e^{i\theta_1}\cdot r_2 e^{i\theta_2} = r_1 r_2\,e^{i(\theta_1+\theta_2)}.$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Write $(1+i)^{-1}$ and $\dfrac{1+i}{2-i}$ in the form $a + bi$. (Adapted from [2], Exercise 5.2.3.)</p>
+<p>Write $(1+i)^{-1}$ and $\dfrac{1+i}{2-i}$ in the form $a + bi$. (Adapted from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, Exercise 5.2.3.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -216,7 +216,7 @@ $$\begin{aligned}\frac{1+i}{2-i} &= \frac{(1+i)(2+i)}{5} \\ &= \frac{2 + 3i + i^
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Compute $(1+i)^4$ using the polar form. (Adapted from [2], Exercise 6.4.1.)</p>
+<p>Compute $(1+i)^4$ using the polar form. (Adapted from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, Exercise 6.4.1.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -238,7 +238,7 @@ $$\begin{aligned}(1+i)^4 &= (\sqrt2)^4\,e^{i\pi} \\ &= 4\,(\cos\pi + i\sin\pi) =
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Solve $x^2 + x + 1 = 0$. (Adapted from [2], Exercise 5.2.4.)</p>
+<p>Solve $x^2 + x + 1 = 0$. (Adapted from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, Exercise 5.2.4.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

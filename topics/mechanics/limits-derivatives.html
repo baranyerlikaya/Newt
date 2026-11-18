@@ -32,13 +32,13 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>A limit is "where you are heading".</strong> Imagine walking toward a door. Even if you stop one tiny step before it, everyone knows where you were heading: the door. A limit, $\lim_{x\to x_0} f(x)$, is the value $f(x)$ heads toward as $x$ gets closer and closer to $x_0$. What happens exactly <em>at</em> $x_0$ doesn't matter. If the value you're heading to and the value you land on are the same, the function is <strong>continuous</strong>: you can draw it without lifting your pencil [3].</p>
-<p><strong>A derivative is "how fast something changes right now".</strong> A car's speedometer shows how fast your position is changing at this very moment. To find it, measure how far the car goes in a short time and divide by that time. Then make the time shorter and shorter. The number you are heading toward (a limit again!) is the derivative [1]; [2]:</p>
+<p><strong>A limit is "where you are heading".</strong> Imagine walking toward a door. Even if you stop one tiny step before it, everyone knows where you were heading: the door. A limit, $\lim_{x\to x_0} f(x)$, is the value $f(x)$ heads toward as $x$ gets closer and closer to $x_0$. What happens exactly <em>at</em> $x_0$ doesn't matter. If the value you're heading to and the value you land on are the same, the function is <strong>continuous</strong>: you can draw it without lifting your pencil <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p><strong>A derivative is "how fast something changes right now".</strong> A car's speedometer shows how fast your position is changing at this very moment. To find it, measure how far the car goes in a short time and divide by that time. Then make the time shorter and shorter. The number you are heading toward (a limit again!) is the derivative <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
 $$f'(x) = \lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
-<p>On a graph it is the <strong>steepness</strong> (slope) of the line that just touches the curve at one point, the tangent [2]. Never just put $\Delta x = 0$ in: you get $0/0$. Simplify first, then let $\Delta x$ shrink [2].</p>
-<p><strong>The power rule is a shortcut.</strong> For $x^n$, bring the power down in front and lower it by one: $\frac{d}{dx}x^n = n\,x^{n-1}$. So $x^2 \to 2x$ and $x^3 \to 3x^2$ [1]; [2].</p>
-<p><strong>The chain rule is for "a function inside a function"</strong>, like a toy inside a box inside a bigger box. Take the derivative of the outer box (leave the inside alone), then multiply by the derivative of the inside: $\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x)$ [1]; [5]. Sums, products and fractions have their own simple rules, listed in the Key formulas below.</p>
-<p><strong>Doing it twice</strong> gives the second derivative. Position → velocity → acceleration. At the top of a hill, the slope is $0$ (flat), and the second derivative is negative (the curve bends down) [1].</p>
+<p>On a graph it is the <strong>steepness</strong> (slope) of the line that just touches the curve at one point, the tangent <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. Never just put $\Delta x = 0$ in: you get $0/0$. Simplify first, then let $\Delta x$ shrink <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>The power rule is a shortcut.</strong> For $x^n$, bring the power down in front and lower it by one: $\frac{d}{dx}x^n = n\,x^{n-1}$. So $x^2 \to 2x$ and $x^3 \to 3x^2$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>The chain rule is for "a function inside a function"</strong>, like a toy inside a box inside a bigger box. Take the derivative of the outer box (leave the inside alone), then multiply by the derivative of the inside: $\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 5">5</a></span>. Sums, products and fractions have their own simple rules, listed in the Key formulas below.</p>
+<p><strong>Doing it twice</strong> gives the second derivative. Position → velocity → acceleration. At the top of a hill, the slope is $0$ (flat), and the second derivative is negative (the curve bends down) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
           </div>
         </section>
 
@@ -51,18 +51,18 @@ $$f'(x) = \lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.$$
 <p>The limit $\lim_{x\to x_0} f(x) = L$ says that $f(x)$ gets as close as we like to $L$ when $x$ is close enough to $x_0$, but not equal to it. The value $f(x_0)$ itself plays no role in the limit.</p>
 <p>For many functions you can find the limit just by plugging in $x_0$, for example $\lim_{x\to 3} \frac{x^2+x}{x+1} = \frac{12}{4} = 3$. A function for which this always works at $x_0$ is called <strong>continuous</strong> there:</p>
 $$\lim_{x\to x_0} f(x) = f(x_0).$$
-<p>The limit can also be taken from one side only: $x \to x_0^+$ (from the right) or $x \to x_0^-$ (from the left). If the two one-sided limits differ, the function has a jump at $x_0$ and is not continuous there [3].</p>
+<p>The limit can also be taken from one side only: $x \to x_0^+$ (from the right) or $x \to x_0^-$ (from the left). If the two one-sided limits differ, the function has a jump at $x_0$ and is not continuous there <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> The derivative as a limit</h3>
             <div>
-<p>The <strong>derivative</strong> of $f$ at $x$ measures how fast the output changes when the input changes. Take a small step $\Delta x$, form the average rate of change (the <em>difference quotient</em>), and let the step shrink to zero [1, §Derivative]; [2]:</p>
+<p>The <strong>derivative</strong> of $f$ at $x$ measures how fast the output changes when the input changes. Take a small step $\Delta x$, form the average rate of change (the <em>difference quotient</em>), and let the step shrink to zero <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Derivative</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
 $$f'(x) = \frac{df}{dx} = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x}.$$
-<p><strong>Geometrically</strong>, the difference quotient is the slope of the secant line through two points of the graph. As the second point slides onto the first, the secant becomes the tangent line, so $f'(x_0)$ is the slope of the tangent at $x_0$. The tangent line there is $y - f(x_0) = f'(x_0)(x - x_0)$ [2].</p>
-<p><strong>Physically</strong>, the derivative is an instantaneous rate of change. If $y(t)$ is a position, $\Delta y/\Delta t$ is the average velocity over a time interval and $dy/dt$ is the velocity at one instant [2]; [3].</p>
-<p>Three notations are common in mechanics: Leibniz $\frac{df}{dx}$, Lagrange $f'(x)$, and Newton's dot $\dot f = \frac{df}{dt}$, which is used only for derivatives with respect to time [1, §Different Notations for Derivatives].</p>
+<p><strong>Geometrically</strong>, the difference quotient is the slope of the secant line through two points of the graph. As the second point slides onto the first, the secant becomes the tangent line, so $f'(x_0)$ is the slope of the tangent at $x_0$. The tangent line there is $y - f(x_0) = f'(x_0)(x - x_0)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Physically</strong>, the derivative is an instantaneous rate of change. If $y(t)$ is a position, $\Delta y/\Delta t$ is the average velocity over a time interval and $dy/dt$ is the velocity at one instant <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p>Three notations are common in mechanics: Leibniz $\frac{df}{dx}$, Lagrange $f'(x)$, and Newton's dot $\dot f = \frac{df}{dt}$, which is used only for derivatives with respect to time <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Different Notations for Derivatives</span></span>.</p>
             </div>
           </section>
 
@@ -72,10 +72,10 @@ $$f'(x) = \frac{df}{dx} = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Del
 <p>For $f(x) = x^n$ with $n = 1, 2, 3, \dots$, expand $(x+\Delta x)^n$ with the binomial theorem. Only the first two terms matter:</p>
 $$(x+\Delta x)^n = x^n + n x^{n-1}\Delta x + \dots$$
 <p>where the dots stand for terms containing $(\Delta x)^2$, $(\Delta x)^3$ and higher powers.</p>
-<p>Subtract $x^n$, divide by $\Delta x$, and let $\Delta x \to 0$. Every leftover term still contains a factor of $\Delta x$ and vanishes, so [2]</p>
+<p>Subtract $x^n$, divide by $\Delta x$, and let $\Delta x \to 0$. Every leftover term still contains a factor of $\Delta x$ and vanishes, so <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></p>
 $$\frac{d}{dx}x^n = n x^{n-1}.$$
-<p>The same formula holds for negative powers, $\frac{d}{dx}x^{-n} = -n x^{-n-1}$ (this follows from the chain rule below [5]), and in fact for any real exponent [1, §Derivatives of Common Functions].</p>
-<p>Together with the rules for sums, constant multiples, products and quotients, the power rule lets you differentiate any polynomial or rational function [1]; [4]:</p>
+<p>The same formula holds for negative powers, $\frac{d}{dx}x^{-n} = -n x^{-n-1}$ (this follows from the chain rule below <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 5">5</a></span>), and in fact for any real exponent <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Derivatives of Common Functions</span></span>.</p>
+<p>Together with the rules for sums, constant multiples, products and quotients, the power rule lets you differentiate any polynomial or rational function <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span>:</p>
 $$\begin{gathered} (f+g)' = f' + g', \qquad (cf)' = cf', \\ (fg)' = f'g + fg', \qquad \left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}. \end{gathered}$$
             </div>
           </section>
@@ -85,33 +85,33 @@ $$\begin{gathered} (f+g)' = f' + g', \qquad (cf)' = cf', \\ (fg)' = f'g + fg', \
             <div>
 <p>A <strong>composite function</strong> $f(g(x))$ feeds the output of $g$ into $f$. To differentiate it, let $u = g(x)$. A small change $\Delta x$ causes a change $\Delta u$, which in turn causes a change $\Delta y$ in $y = f(u)$. Writing</p>
 $$\frac{\Delta y}{\Delta x} = \frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}$$
-<p>and letting $\Delta x \to 0$ (then $\Delta u \to 0$ too, because $g$ is continuous) gives the <strong>chain rule</strong> [5]; [1]:</p>
+<p>and letting $\Delta x \to 0$ (then $\Delta u \to 0$ too, because $g$ is continuous) gives the <strong>chain rule</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 5">5</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
 $$\frac{dy}{dx} = \frac{dy}{du}\,\frac{du}{dx},$$
 <p>or, in Lagrange notation,</p>
 $$\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x).$$
-<p>In words: differentiate the outer function, keep the inside unchanged, then multiply by the derivative of the inside. The order matters, since $f(g(x))$ and $g(f(x))$ are different functions in general [5].</p>
+<p>In words: differentiate the outer function, keep the inside unchanged, then multiply by the derivative of the inside. The order matters, since $f(g(x))$ and $g(f(x))$ are different functions in general <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 5">5</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> Higher derivatives</h3>
             <div>
-<p>The derivative of a derivative is the <strong>second derivative</strong>, $f''(x) = \frac{d^2 f}{dx^2}$, and so on for higher orders [5]. In mechanics this is how acceleration comes from position: $v = \dot x$ and $a = \dot v = \ddot x$.</p>
-<p>The first two derivatives also locate extreme values. Where $f'(x) = 0$ the tangent is horizontal; if $f'' &lt; 0$ there, the graph is concave and the point is a maximum, and if $f'' &gt; 0$ it is convex and the point is a minimum [1, §Maxima and Minima, §Concave and Convex Functions].</p>
+<p>The derivative of a derivative is the <strong>second derivative</strong>, $f''(x) = \frac{d^2 f}{dx^2}$, and so on for higher orders <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 5">5</a></span>. In mechanics this is how acceleration comes from position: $v = \dot x$ and $a = \dot v = \ddot x$.</p>
+<p>The first two derivatives also locate extreme values. Where $f'(x) = 0$ the tangent is horizontal; if $f'' &lt; 0$ there, the graph is concave and the point is a maximum, and if $f'' &gt; 0$ it is convex and the point is a minimum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Maxima and Minima, §Concave and Convex Functions</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>If $f$ has a derivative at $x_0$, then $f$ is automatically continuous at $x_0$. The reverse is not true: a function can be continuous at a point where its graph has a corner and no tangent [3].</p>
+<p>If $f$ has a derivative at $x_0$, then $f$ is automatically continuous at $x_0$. The reverse is not true: a function can be continuous at a point where its graph has a corner and no tangent <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>You cannot find a derivative by setting $\Delta x = 0$ in the difference quotient straight away: that always gives $0/0$. First simplify algebraically so that $\Delta x$ cancels, and only then take the limit [2].</p>
+<p>You cannot find a derivative by setting $\Delta x = 0$ in the difference quotient straight away: that always gives $0/0$. First simplify algebraically so that $\Delta x$ cancels, and only then take the limit <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
             </div>
           </aside>
         </section>
@@ -130,42 +130,42 @@ $$\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x).$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Definition of the derivative [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Definition of the derivative <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$f'(x) = \lim_{\Delta x\to 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Continuity at $x_0$ [3]</span></figcaption>
+              <figcaption class="formula-label"><span>Continuity at $x_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\lim_{x\to x_0} f(x) = f(x_0)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Tangent line at $x_0$ [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Tangent line at $x_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$y = f(x_0) + f'(x_0)\,(x-x_0)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Power rule [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Power rule <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\frac{d}{dx}x^n = n\,x^{n-1}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Sum and constant rules [1, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Sum and constant rules <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$(f+g)' = f'+g', \qquad (cf)' = c\,f'$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Product rule [1, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Product rule <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$(fg)' = f'g + fg'$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Quotient rule [1, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Quotient rule <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Chain rule [1, 5]</span></figcaption>
+              <figcaption class="formula-label"><span>Chain rule <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 5">5</a></span></span></figcaption>
               <div class="formula-body">$$\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x)$$</div>
             </figure>
 
@@ -178,7 +178,7 @@ $$\frac{d}{dx}f(g(x)) = f'(g(x))\,g'(x).$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Use the definition of the derivative to differentiate $f(x) = \dfrac{1}{x}$. (From [2], Example 1.)</p>
+<p>Use the definition of the derivative to differentiate $f(x) = \dfrac{1}{x}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, Example 1.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -205,7 +205,7 @@ $$f'(x) = \lim_{\Delta x\to 0}\frac{-1}{(x+\Delta x)\,x} = -\frac{1}{x^2}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A pumpkin is dropped from a roof. Its height in feet after $t$ seconds is $y(t) = 400 - 16t^2$. Find its average speed during the fall and its velocity when it hits the ground. (From [2], "Physical interpretation of derivatives".)</p>
+<p>A pumpkin is dropped from a roof. Its height in feet after $t$ seconds is $y(t) = 400 - 16t^2$. Find its average speed during the fall and its velocity when it hits the ground. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, "Physical interpretation of derivatives".)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -229,7 +229,7 @@ $$f'(x) = \lim_{\Delta x\to 0}\frac{-1}{(x+\Delta x)\,x} = -\frac{1}{x^2}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Differentiate $f(x) = 3x^4 - 5x^2 + 7$ and $q(x) = e^{-x^2}$. (From [1], Worked Example 5(a).)</p>
+<p>Differentiate $f(x) = 3x^4 - 5x^2 + 7$ and $q(x) = e^{-x^2}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example 5(a).)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -246,7 +246,7 @@ $$q'(x) = e^{-x^2}\cdot(-2x) = -2x\,e^{-x^2}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A ball's height is $y(t) = 5 + 20t - 5t^2$ (metres, seconds). Find $v(t)$ and $a(t)$, and the time and value of the maximum height. Confirm it is a maximum. (From [1], Worked Example 5(b).)</p>
+<p>A ball's height is $y(t) = 5 + 20t - 5t^2$ (metres, seconds). Find $v(t)$ and $a(t)$, and the time and value of the maximum height. Confirm it is a maximum. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example 5(b).)</p>
             </div></div>
             <ol class="steps">
               <li><div>

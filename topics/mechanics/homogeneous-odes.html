@@ -32,19 +32,19 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>A differential equation is a riddle.</strong> "Find a function whose derivatives fit this rule." The <strong>order</strong> is the highest derivative in the rule. The answer always has some free numbers in it: one for first order, two for second order. You choose them from how things start, such as where something was and how fast it was moving [1]; [2].</p>
-<p><strong>First order: $\dot x = \lambda x$.</strong> "Things change in proportion to how much there is", like money earning interest. The answer is $x = x(0)\,e^{\lambda t}$: growth if $\lambda &gt; 0$, decay if $\lambda &lt; 0$ [2].</p>
-<p><strong>Second order: $\ddot x + b\dot x + cx = 0$.</strong> The trick is to guess $x = e^{\lambda t}$. Each derivative just multiplies by $\lambda$, so the riddle turns into an ordinary quadratic equation, the <strong>characteristic equation</strong> [1]; [2]:</p>
+<p><strong>A differential equation is a riddle.</strong> "Find a function whose derivatives fit this rule." The <strong>order</strong> is the highest derivative in the rule. The answer always has some free numbers in it: one for first order, two for second order. You choose them from how things start, such as where something was and how fast it was moving <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>First order: $\dot x = \lambda x$.</strong> "Things change in proportion to how much there is", like money earning interest. The answer is $x = x(0)\,e^{\lambda t}$: growth if $\lambda &gt; 0$, decay if $\lambda &lt; 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Second order: $\ddot x + b\dot x + cx = 0$.</strong> The trick is to guess $x = e^{\lambda t}$. Each derivative just multiplies by $\lambda$, so the riddle turns into an ordinary quadratic equation, the <strong>characteristic equation</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
 $$\lambda^2 + b\lambda + c = 0.$$
-<p>Its two answers decide the motion [1]; [2]:</p>
+<p>Its two answers decide the motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
 <ul>
 <li><strong>two different real roots</strong>: two exponentials, $x = Ae^{\lambda_1 t} + Be^{\lambda_2 t}$, no wiggling;</li>
 <li><strong>complex roots $\alpha \pm i\omega$</strong>: a wiggle with a growing or shrinking size, $x = e^{\alpha t}(C\cos\omega t + D\sin\omega t)$;</li>
 <li><strong>one repeated root</strong>: $x = (A + Bt)\,e^{\lambda t}$.</li>
 </ul>
-<p><strong>The spring.</strong> A mass on a spring follows $\ddot x + \omega_0^2 x = 0$ with $\omega_0 = \sqrt{k/m}$. It swings forever: $x = R\cos(\omega_0 t + \phi)$. Stiffer spring or lighter mass means faster swinging. How big the swing is ($R$) and where it starts ($\phi$) come from the start; $\omega_0$ doesn't [1].</p>
-<p><strong>Add friction</strong> ($\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$, $\gamma = b/2m$). A little friction ($\gamma &lt; \omega_0$): it swings, but the swings get smaller. Just enough ($\gamma = \omega_0$, critical): it slides back to the middle without swinging, sooner than with more friction. Too much ($\gamma &gt; \omega_0$): it creeps back slowly, still without swinging [1].</p>
-<p>Remember: second order needs <strong>two</strong> starting facts, the start position and the start velocity [1].</p>
+<p><strong>The spring.</strong> A mass on a spring follows $\ddot x + \omega_0^2 x = 0$ with $\omega_0 = \sqrt{k/m}$. It swings forever: $x = R\cos(\omega_0 t + \phi)$. Stiffer spring or lighter mass means faster swinging. How big the swing is ($R$) and where it starts ($\phi$) come from the start; $\omega_0$ doesn't <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Add friction</strong> ($\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$, $\gamma = b/2m$). A little friction ($\gamma &lt; \omega_0$): it swings, but the swings get smaller. Just enough ($\gamma = \omega_0$, critical): it slides back to the middle without swinging, sooner than with more friction. Too much ($\gamma &gt; \omega_0$): it creeps back slowly, still without swinging <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>Remember: second order needs <strong>two</strong> starting facts, the start position and the start velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
           </div>
         </section>
 
@@ -54,26 +54,26 @@ $$\lambda^2 + b\lambda + c = 0.$$
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> The language</h3>
             <div>
-<p>An <strong>ordinary differential equation</strong> (ODE) is a relation between an unknown function $x(t)$ and its derivatives; a solution is a function that satisfies it [2, §1.3]. Its <strong>order</strong> is the highest derivative that appears. It is <strong>linear</strong> if $x$ and its derivatives appear only to the first power, multiplied by coefficients that depend on $t$ alone, and <strong>homogeneous</strong> if there is no term without $x$ (the right-hand side is zero) [2, §3.1].</p>
-<p>The <strong>general solution</strong> contains free constants: one for a first-order equation, two for a second-order equation. They are fixed by <strong>initial conditions</strong>, for example $x(0)$ and $\dot x(0)$ in mechanics [1, §Solution to the Equation of Motion]; [2, §1.4, §3.1].</p>
-<p>Linear homogeneous equations have a key property, <strong>superposition</strong>: if $x_1$ and $x_2$ are solutions, then so is any combination $c_1x_1 + c_2x_2$ [2, §3.1]; [1].</p>
+<p>An <strong>ordinary differential equation</strong> (ODE) is a relation between an unknown function $x(t)$ and its derivatives; a solution is a function that satisfies it <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§1.3</span></span>. Its <strong>order</strong> is the highest derivative that appears. It is <strong>linear</strong> if $x$ and its derivatives appear only to the first power, multiplied by coefficients that depend on $t$ alone, and <strong>homogeneous</strong> if there is no term without $x$ (the right-hand side is zero) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1</span></span>.</p>
+<p>The <strong>general solution</strong> contains free constants: one for a first-order equation, two for a second-order equation. They are fixed by <strong>initial conditions</strong>, for example $x(0)$ and $\dot x(0)$ in mechanics <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Solution to the Equation of Motion</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§1.4, §3.1</span></span>.</p>
+<p>Linear homogeneous equations have a key property, <strong>superposition</strong>: if $x_1$ and $x_2$ are solutions, then so is any combination $c_1x_1 + c_2x_2$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> First order: ẋ + p(t)x = 0</h3>
             <div>
-<p>A first-order linear homogeneous equation can be separated and integrated. The general solution is [2, §3.1]</p>
+<p>A first-order linear homogeneous equation can be separated and integrated. The general solution is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1</span></span></p>
 $$x(t) = c\,e^{-\int_a^t p(\tau)\,d\tau}, \qquad c = x(a).$$
-<p>If $p$ is a constant, this is simply $x = c\,e^{-pt}$. Equivalently, $\dot x = \lambda x$ has the solution $x = x(0)\,e^{\lambda t}$: growth for $\lambda &gt; 0$, decay for $\lambda &lt; 0$ [2, §3.1, §6.1].</p>
-<p>Because an exponential is never zero, a solution is either zero everywhere or never zero [2, §3.1].</p>
+<p>If $p$ is a constant, this is simply $x = c\,e^{-pt}$. Equivalently, $\dot x = \lambda x$ has the solution $x = x(0)\,e^{\lambda t}$: growth for $\lambda &gt; 0$, decay for $\lambda &lt; 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1, §6.1</span></span>.</p>
+<p>Because an exponential is never zero, a solution is either zero everywhere or never zero <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Second order with constant coefficients</h3>
             <div>
-<p>Consider $\ddot x + b\,\dot x + c\,x = 0$ with constant $b$ and $c$. Try $x = e^{\lambda t}$. Each derivative brings down a factor $\lambda$, so the equation becomes $(\lambda^2 + b\lambda + c)\,e^{\lambda t} = 0$. The exponential is never zero, so $\lambda$ must solve the <strong>characteristic equation</strong> [1, §Solution to the Equation of Motion]; [2, §6.1]:</p>
+<p>Consider $\ddot x + b\,\dot x + c\,x = 0$ with constant $b$ and $c$. Try $x = e^{\lambda t}$. Each derivative brings down a factor $\lambda$, so the equation becomes $(\lambda^2 + b\lambda + c)\,e^{\lambda t} = 0$. The exponential is never zero, so $\lambda$ must solve the <strong>characteristic equation</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Solution to the Equation of Motion</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.1</span></span>:</p>
 $$\lambda^2 + b\lambda + c = 0, \qquad \lambda_{1,2} = \frac{-b \pm \sqrt{b^2 - 4c}}{2}.$$
 <p>Each root gives a solution $e^{\lambda t}$, and by superposition the general solution is a combination of two independent ones. What it looks like depends on the roots.</p>
             </div>
@@ -82,20 +82,20 @@ $$\lambda^2 + b\lambda + c = 0, \qquad \lambda_{1,2} = \frac{-b \pm \sqrt{b^2 - 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> The three cases</h3>
             <div>
-<p><strong>Two distinct real roots</strong> ($b^2 &gt; 4c$): $x = A\,e^{\lambda_1 t} + B\,e^{\lambda_2 t}$ [2, §6.1]; [1, §Overdamped Motion].</p>
-<p><strong>Complex pair</strong> $\lambda = \alpha \pm i\omega$ ($b^2 &lt; 4c$): the complex solutions $e^{(\alpha\pm i\omega)t}$ combine into two real ones, the real and imaginary parts of $e^{(\alpha+i\omega)t}$ [2, §6.2]:</p>
+<p><strong>Two distinct real roots</strong> ($b^2 &gt; 4c$): $x = A\,e^{\lambda_1 t} + B\,e^{\lambda_2 t}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.1</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Overdamped Motion</span></span>.</p>
+<p><strong>Complex pair</strong> $\lambda = \alpha \pm i\omega$ ($b^2 &lt; 4c$): the complex solutions $e^{(\alpha\pm i\omega)t}$ combine into two real ones, the real and imaginary parts of $e^{(\alpha+i\omega)t}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>:</p>
 $$\begin{aligned}x &= e^{\alpha t}\left(C\cos\omega t + D\sin\omega t\right) \\ &= R\,e^{\alpha t}\cos(\omega t + \phi).\end{aligned}$$
-<p><strong>Repeated root</strong> $\lambda_1 = \lambda_2 = \lambda$ ($b^2 = 4c$): $e^{\lambda t}$ is only one solution. The second is $t\,e^{\lambda t}$, so $x = (A + Bt)\,e^{\lambda t}$ [1, §Critically Damped Oscillations].</p>
+<p><strong>Repeated root</strong> $\lambda_1 = \lambda_2 = \lambda$ ($b^2 = 4c$): $e^{\lambda t}$ is only one solution. The second is $t\,e^{\lambda t}$, so $x = (A + Bt)\,e^{\lambda t}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Critically Damped Oscillations</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> The oscillator equations</h3>
             <div>
-<p>Newton's second law for a mass on a spring, $m\ddot x = -kx$, gives the <strong>simple harmonic oscillator</strong> [1, §Equation of Motion for Simple Oscillations]:</p>
+<p>Newton's second law for a mass on a spring, $m\ddot x = -kx$, gives the <strong>simple harmonic oscillator</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Equation of Motion for Simple Oscillations</span></span>:</p>
 $$\ddot x + \omega_0^2 x = 0, \qquad \omega_0 = \sqrt{k/m}.$$
-<p>The roots are $\lambda = \pm i\omega_0$, so $x = C\cos\omega_0 t + D\sin\omega_0 t = R\cos(\omega_0 t + \phi)$, with period $T = 2\pi/\omega_0$ [1].</p>
-<p>Adding a drag force $-b\dot x$ gives the <strong>damped oscillator</strong> $\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$ with $\gamma = b/2m$. Its roots $\lambda = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}$ produce exactly the three cases above [1, §Damped Oscillations]:</p>
+<p>The roots are $\lambda = \pm i\omega_0$, so $x = C\cos\omega_0 t + D\sin\omega_0 t = R\cos(\omega_0 t + \phi)$, with period $T = 2\pi/\omega_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>Adding a drag force $-b\dot x$ gives the <strong>damped oscillator</strong> $\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$ with $\gamma = b/2m$. Its roots $\lambda = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}$ produce exactly the three cases above <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Damped Oscillations</span></span>:</p>
 <ul>
 <li><strong>underdamped</strong> ($\gamma &lt; \omega_0$): $x = R\,e^{-\gamma t}\cos(\omega_1 t + \phi)$ with $\omega_1 = \sqrt{\omega_0^2 - \gamma^2}$;</li>
 <li><strong>critically damped</strong> ($\gamma = \omega_0$): $x = (A + Bt)\,e^{-\gamma t}$;</li>
@@ -107,14 +107,14 @@ $$\ddot x + \omega_0^2 x = 0, \qquad \omega_0 = \sqrt{k/m}.$$
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>The angular frequency $\omega_0$ depends only on the system ($k$ and $m$), not on the initial conditions. The amplitude $R$ and phase $\phi$ are the two free constants, and they are set by $x(0)$ and $\dot x(0)$ [1, §Physical Interpretation of the General Solution].</p>
+<p>The angular frequency $\omega_0$ depends only on the system ($k$ and $m$), not on the initial conditions. The amplitude $R$ and phase $\phi$ are the two free constants, and they are set by $x(0)$ and $\dot x(0)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Physical Interpretation of the General Solution</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>A second-order equation needs <em>two</em> initial conditions. Fixing only $x(0)$ leaves a whole family of possible motions. Use both the initial position and the initial velocity to find both constants [1, §Solution to the Equation of Motion].</p>
+<p>A second-order equation needs <em>two</em> initial conditions. Fixing only $x(0)$ leaves a whole family of possible motions. Use both the initial position and the initial velocity to find both constants <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Solution to the Equation of Motion</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -133,42 +133,42 @@ $$\ddot x + \omega_0^2 x = 0, \qquad \omega_0 = \sqrt{k/m}.$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>First-order homogeneous [2]</span></figcaption>
+              <figcaption class="formula-label"><span>First-order homogeneous <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\dot x + p(t)\,x = 0 \\ x = x(a)\,e^{-\int_a^t p\,d\tau}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Constant rate [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Constant rate <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\dot x = \lambda x \;\Rightarrow\; x = x(0)\,e^{\lambda t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Characteristic equation [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Characteristic equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\ddot x + b\dot x + cx = 0 \\ \lambda^2 + b\lambda + c = 0\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Distinct real roots [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Distinct real roots <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$x = A\,e^{\lambda_1 t} + B\,e^{\lambda_2 t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Complex roots $\alpha \pm i\omega$ [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Complex roots $\alpha \pm i\omega$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$x = e^{\alpha t}\left(C\cos\omega t + D\sin\omega t\right)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Repeated root [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Repeated root <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$x = (A + Bt)\,e^{\lambda t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Simple harmonic oscillator [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Simple harmonic oscillator <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\ddot x + \omega_0^2 x = 0 \\ x = x_0\cos\omega_0 t + \frac{v_0}{\omega_0}\sin\omega_0 t\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Damped oscillator [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Damped oscillator <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\ddot x + 2\gamma\dot x + \omega_0^2 x = 0 \\ \lambda = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}\end{gathered}$$</div>
             </figure>
 
@@ -181,7 +181,7 @@ $$\ddot x + \omega_0^2 x = 0, \qquad \omega_0 = \sqrt{k/m}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Solve $\ddot x + \omega_0^2 x = 0$ with $x(0) = x_0$ and $\dot x(0) = v_0$, and write the answer in amplitude–phase form. (From [1], §Solution to the Equation of Motion and §Amplitude-Phase Form.)</p>
+<p>Solve $\ddot x + \omega_0^2 x = 0$ with $x(0) = x_0$ and $\dot x(0) = v_0$, and write the answer in amplitude–phase form. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Solution to the Equation of Motion and §Amplitude-Phase Form.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -207,7 +207,7 @@ $$R = \sqrt{x_0^2 + \frac{v_0^2}{\omega_0^2}}, \qquad \tan\phi = -\frac{v_0}{\om
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Solve the critically damped equation $\ddot x + 2\gamma\dot x + \gamma^2 x = 0$ with $x(0) = x_0$, $\dot x(0) = v_0$. (From [1], §Critically Damped Oscillations.)</p>
+<p>Solve the critically damped equation $\ddot x + 2\gamma\dot x + \gamma^2 x = 0$ with $x(0) = x_0$, $\dot x(0) = v_0$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Critically Damped Oscillations.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -225,7 +225,7 @@ $$x(t) = \left[x_0 + (v_0 + \gamma x_0)\,t\right]e^{-\gamma t}.$$
             <div class="example-check">
               <p class="example-check-label">Check</p>
               <div>
-<p>At $t = 0$ this gives $x_0$ ✓. As $t \to \infty$, $t\,e^{-\gamma t} \to 0$, so the particle returns to equilibrium without oscillating, as [1] states.</p>
+<p>At $t = 0$ this gives $x_0$ ✓. As $t \to \infty$, $t\,e^{-\gamma t} \to 0$, so the particle returns to equilibrium without oscillating, as <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span> states.</p>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ $$x(t) = \left[x_0 + (v_0 + \gamma x_0)\,t\right]e^{-\gamma t}.$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Find the real general solution of $\ddot x + 2\dot x + 2x = 0$. (From [2], §6.1–6.2.)</p>
+<p>Find the real general solution of $\ddot x + 2\dot x + 2x = 0$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, §6.1–6.2.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -255,7 +255,7 @@ $$x(t) = e^{-t}\left(C\cos t + D\sin t\right).$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Money in a savings account earns interest continuously at rate $I$ per year, with no deposits or withdrawals. Write and solve the equation for the balance $x(t)$. (From [2], §2.1 and §3.1.)</p>
+<p>Money in a savings account earns interest continuously at rate $I$ per year, with no deposits or withdrawals. Write and solve the equation for the balance $x(t)$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, §2.1 and §3.1.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

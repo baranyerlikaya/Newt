@@ -32,14 +32,14 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>Some things just have a size</strong>, like your mass or the temperature. These are <strong>scalars</strong>. <strong>Other things have a size and a direction</strong>, like "walk 5 metres north" or "push to the left". These are <strong>vectors</strong>, drawn as arrows [1]; [2].</p>
-<p><strong>Adding arrows:</strong> put the second arrow's tail on the first arrow's tip. The sum goes from the very start to the very end [2]. In numbers, add the matching parts: $x$ with $x$, $y$ with $y$, $z$ with $z$ [1]. Careful: lengths don't simply add. Walking 4 km east and then 3 km north puts you only 5 km from home, not 7 [1].</p>
+<p><strong>Some things just have a size</strong>, like your mass or the temperature. These are <strong>scalars</strong>. <strong>Other things have a size and a direction</strong>, like "walk 5 metres north" or "push to the left". These are <strong>vectors</strong>, drawn as arrows <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Adding arrows:</strong> put the second arrow's tail on the first arrow's tip. The sum goes from the very start to the very end <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. In numbers, add the matching parts: $x$ with $x$, $y$ with $y$, $z$ with $z$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. Careful: lengths don't simply add. Walking 4 km east and then 3 km north puts you only 5 km from home, not 7 <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
 <p><strong>Two ways to multiply arrows:</strong></p>
 <ul>
-<li><strong>Dot product</strong>, $\mathbf A\cdot\mathbf B = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z$. The answer is a <em>number</em>. It asks "how much do these arrows point the same way?" It is biggest when they are lined up, zero when they are at right angles, and negative when they point against each other. Work is a dot product: $W = \mathbf F\cdot\mathbf d$ [1]; [3].</li>
-<li><strong>Cross product</strong>, $\mathbf A\times\mathbf B$. The answer is a new <em>arrow</em>, standing straight up from both. Its length $AB\sin\theta$ is the area of the parallelogram the two arrows make. Find its direction with your right hand: curl your fingers from $\mathbf A$ to $\mathbf B$, and your thumb points the way [1]; [2].</li>
+<li><strong>Dot product</strong>, $\mathbf A\cdot\mathbf B = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z$. The answer is a <em>number</em>. It asks "how much do these arrows point the same way?" It is biggest when they are lined up, zero when they are at right angles, and negative when they point against each other. Work is a dot product: $W = \mathbf F\cdot\mathbf d$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</li>
+<li><strong>Cross product</strong>, $\mathbf A\times\mathbf B$. The answer is a new <em>arrow</em>, standing straight up from both. Its length $AB\sin\theta$ is the area of the parallelogram the two arrows make. Find its direction with your right hand: curl your fingers from $\mathbf A$ to $\mathbf B$, and your thumb points the way <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</li>
 </ul>
-<p><strong>Order matters for the cross product:</strong> $\mathbf B\times\mathbf A = -\mathbf A\times\mathbf B$ (the thumb flips). For lined-up arrows it is zero [2]. Turning a wrench uses it: the torque is $\boldsymbol\tau = \mathbf r\times\mathbf F$ [1].</p>
+<p><strong>Order matters for the cross product:</strong> $\mathbf B\times\mathbf A = -\mathbf A\times\mathbf B$ (the thumb flips). For lined-up arrows it is zero <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. Turning a wrench uses it: the torque is $\boldsymbol\tau = \mathbf r\times\mathbf F$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
           </div>
         </section>
 
@@ -49,29 +49,29 @@
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> Scalars and vectors</h3>
             <div>
-<p>A <strong>scalar</strong> is described completely by one number with a unit, such as mass, temperature or energy. A <strong>vector</strong> has both a magnitude and a direction, and is drawn as an arrow whose length is the magnitude [1, §Scalars, §Vectors]; [2, §3.1]. Position, displacement, velocity, acceleration, force and momentum are vectors [2, §3.1.1].</p>
-<p>We write vectors in bold, $\mathbf A$, or with an arrow, $\vec A$. The magnitude is $|\mathbf A|$ or simply $A$ [1].</p>
+<p>A <strong>scalar</strong> is described completely by one number with a unit, such as mass, temperature or energy. A <strong>vector</strong> has both a magnitude and a direction, and is drawn as an arrow whose length is the magnitude <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Scalars, §Vectors</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1</span></span>. Position, displacement, velocity, acceleration, force and momentum are vectors <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1.1</span></span>.</p>
+<p>We write vectors in bold, $\mathbf A$, or with an arrow, $\vec A$. The magnitude is $|\mathbf A|$ or simply $A$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> Addition and scalar multiplication</h3>
             <div>
-<p>To add $\mathbf A$ and $\mathbf B$ geometrically, place the tail of $\mathbf B$ at the tip of $\mathbf A$; the sum runs from the tail of $\mathbf A$ to the tip of $\mathbf B$. Equivalently, draw both from the same point: the sum is the diagonal of the parallelogram they span [2, §3.1.2]. Addition is commutative and associative, $\mathbf A + \mathbf B = \mathbf B + \mathbf A$ [2, §3.1.2].</p>
-<p>Multiplying by a scalar $c$ stretches the vector by $|c|$; a negative $c$ also reverses its direction [1, §Scalar Multiplication].</p>
-<p>In components, both operations act term by term [1, §Components of Vectors, §Unit Vectors]:</p>
+<p>To add $\mathbf A$ and $\mathbf B$ geometrically, place the tail of $\mathbf B$ at the tip of $\mathbf A$; the sum runs from the tail of $\mathbf A$ to the tip of $\mathbf B$. Equivalently, draw both from the same point: the sum is the diagonal of the parallelogram they span <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1.2</span></span>. Addition is commutative and associative, $\mathbf A + \mathbf B = \mathbf B + \mathbf A$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.1.2</span></span>.</p>
+<p>Multiplying by a scalar $c$ stretches the vector by $|c|$; a negative $c$ also reverses its direction <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Scalar Multiplication</span></span>.</p>
+<p>In components, both operations act term by term <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Components of Vectors, §Unit Vectors</span></span>:</p>
 $$\begin{aligned}\mathbf A + \mathbf B &= (A_x + B_x)\hat\imath + (A_y + B_y)\hat\jmath \\ &\quad + (A_z + B_z)\hat k, \\ c\mathbf A &= cA_x\hat\imath + cA_y\hat\jmath + cA_z\hat k.\end{aligned}$$
-<p>A <strong>unit vector</strong> in the direction of $\mathbf A$ is $\hat{\mathbf a} = \mathbf A/|\mathbf A|$ [1, §Unit Vectors].</p>
+<p>A <strong>unit vector</strong> in the direction of $\mathbf A$ is $\hat{\mathbf a} = \mathbf A/|\mathbf A|$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Unit Vectors</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> The dot (scalar) product</h3>
             <div>
-<p>The <strong>dot product</strong> of two vectors is a <em>number</em>. With $\theta$ the angle between them ($0 \le \theta \le \pi$) [1, §Dot Product]; [3, §13.8.1]:</p>
+<p>The <strong>dot product</strong> of two vectors is a <em>number</em>. With $\theta$ the angle between them ($0 \le \theta \le \pi$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Dot Product</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§13.8.1</span></span>:</p>
 $$\mathbf A\cdot\mathbf B = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z.$$
-<p>The component formula follows from $\hat\imath\cdot\hat\imath = \hat\jmath\cdot\hat\jmath = \hat k\cdot\hat k = 1$ and $\hat\imath\cdot\hat\jmath = \hat\jmath\cdot\hat k = \hat\imath\cdot\hat k = 0$ [3, §13.8.1].</p>
-<p>What it is good for [1]; [3, §13.8]:</p>
+<p>The component formula follows from $\hat\imath\cdot\hat\imath = \hat\jmath\cdot\hat\jmath = \hat k\cdot\hat k = 1$ and $\hat\imath\cdot\hat\jmath = \hat\jmath\cdot\hat k = \hat\imath\cdot\hat k = 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§13.8.1</span></span>.</p>
+<p>What it is good for <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§13.8</span></span>:</p>
 <ul>
 <li><strong>angles</strong>: $\cos\theta = \dfrac{\mathbf A\cdot\mathbf B}{AB}$; the product is positive for acute angles, negative for obtuse ones, and zero exactly when the vectors are perpendicular;</li>
 <li><strong>length</strong>: $A = \sqrt{\mathbf A\cdot\mathbf A}$;</li>
@@ -84,26 +84,26 @@ $$\mathbf A\cdot\mathbf B = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z.$$
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> The cross (vector) product</h3>
             <div>
-<p>The <strong>cross product</strong> of two vectors is a <em>vector</em> perpendicular to both. Its magnitude is [1, §Cross Product]; [2, §3.4]</p>
+<p>The <strong>cross product</strong> of two vectors is a <em>vector</em> perpendicular to both. Its magnitude is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Cross Product</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.4</span></span></p>
 $$|\mathbf A\times\mathbf B| = AB\sin\theta,$$
-<p>which is the area of the parallelogram spanned by $\mathbf A$ and $\mathbf B$. Its direction is given by the <strong>right-hand rule</strong>: curl the fingers of your right hand from $\mathbf A$ towards $\mathbf B$; your thumb points along $\mathbf A\times\mathbf B$ [2, §3.4.1].</p>
-<p>Properties [2, §3.4.2]: it is <em>anticommutative</em>, $\mathbf B\times\mathbf A = -\mathbf A\times\mathbf B$; it is distributive over addition; and it vanishes for parallel vectors. For the unit vectors, $\hat\imath\times\hat\jmath = \hat k$, $\hat\jmath\times\hat k = \hat\imath$, $\hat k\times\hat\imath = \hat\jmath$, and $\hat\imath\times\hat\imath = 0$ etc. Expanding term by term gives [1, §Cross Product]:</p>
+<p>which is the area of the parallelogram spanned by $\mathbf A$ and $\mathbf B$. Its direction is given by the <strong>right-hand rule</strong>: curl the fingers of your right hand from $\mathbf A$ towards $\mathbf B$; your thumb points along $\mathbf A\times\mathbf B$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.4.1</span></span>.</p>
+<p>Properties <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.4.2</span></span>: it is <em>anticommutative</em>, $\mathbf B\times\mathbf A = -\mathbf A\times\mathbf B$; it is distributive over addition; and it vanishes for parallel vectors. For the unit vectors, $\hat\imath\times\hat\jmath = \hat k$, $\hat\jmath\times\hat k = \hat\imath$, $\hat k\times\hat\imath = \hat\jmath$, and $\hat\imath\times\hat\imath = 0$ etc. Expanding term by term gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Cross Product</span></span>:</p>
 $$\begin{aligned}\mathbf A\times\mathbf B = {}&(A_yB_z - A_zB_y)\,\hat\imath \\ &+ (A_zB_x - A_xB_z)\,\hat\jmath \\ &+ (A_xB_y - A_yB_x)\,\hat k.\end{aligned}$$
-<p>This is easiest to remember as a determinant with rows $(\hat\imath, \hat\jmath, \hat k)$, $(A_x, A_y, A_z)$, $(B_x, B_y, B_z)$ [1, Worked Example 4]. In mechanics the cross product gives the torque of a force, $\boldsymbol\tau = \mathbf r\times\mathbf F$ [1, Worked Example 4].</p>
+<p>This is easiest to remember as a determinant with rows $(\hat\imath, \hat\jmath, \hat k)$, $(A_x, A_y, A_z)$, $(B_x, B_y, B_z)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example 4</span></span>. In mechanics the cross product gives the torque of a force, $\boldsymbol\tau = \mathbf r\times\mathbf F$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example 4</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>Dot product → a scalar, largest when the vectors are parallel. Cross product → a vector, largest when they are perpendicular. Use the dot product for work and angles, and the cross product for torque and areas [1]; [2, §3.4]; [3, §13.8].</p>
+<p>Dot product → a scalar, largest when the vectors are parallel. Cross product → a vector, largest when they are perpendicular. Use the dot product for work and angles, and the cross product for torque and areas <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.4</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§13.8</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>Magnitudes don't add: $|\mathbf A + \mathbf B| \ne |\mathbf A| + |\mathbf B|$ unless the vectors point the same way. And the order matters in a cross product: $\mathbf A\times\mathbf B = -\mathbf B\times\mathbf A$ [1, Worked Example 2]; [2, §3.4.2].</p>
+<p>Magnitudes don't add: $|\mathbf A + \mathbf B| \ne |\mathbf A| + |\mathbf B|$ unless the vectors point the same way. And the order matters in a cross product: $\mathbf A\times\mathbf B = -\mathbf B\times\mathbf A$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example 2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.4.2</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -122,42 +122,42 @@ $$\begin{aligned}\mathbf A\times\mathbf B = {}&(A_yB_z - A_zB_y)\,\hat\imath \\ 
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Magnitude and unit vector [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Magnitude and unit vector <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}|\mathbf A| = \sqrt{A_x^2+A_y^2+A_z^2} \\ \hat{\mathbf a} = \mathbf A/|\mathbf A|\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Dot product [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Dot product <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\mathbf A\cdot\mathbf B = AB\cos\theta \\ = A_xB_x + A_yB_y + A_zB_z\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Angle between vectors [3]</span></figcaption>
+              <figcaption class="formula-label"><span>Angle between vectors <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$\cos\theta = \frac{\mathbf A\cdot\mathbf B}{AB}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Projection of A on B [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Projection of A on B <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$A_\parallel = \mathbf A\cdot\hat{\mathbf b} = \frac{\mathbf A\cdot\mathbf B}{B}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Cross product magnitude [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Cross product magnitude <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$|\mathbf A\times\mathbf B| = AB\sin\theta$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Cross product in components [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Cross product in components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf A\times\mathbf B = \begin{vmatrix}\hat\imath & \hat\jmath & \hat k\\ A_x & A_y & A_z\\ B_x & B_y & B_z\end{vmatrix}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Anticommutativity [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Anticommutativity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\mathbf B\times\mathbf A = -\,\mathbf A\times\mathbf B$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Work and torque [1, 3]</span></figcaption>
+              <figcaption class="formula-label"><span>Work and torque <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
               <div class="formula-body">$$W = \mathbf F\cdot\mathbf d, \qquad \boldsymbol\tau = \mathbf r\times\mathbf F$$</div>
             </figure>
 
@@ -170,7 +170,7 @@ $$\begin{aligned}\mathbf A\times\mathbf B = {}&(A_yB_z - A_zB_y)\,\hat\imath \\ 
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Let $\mathbf A = 3\hat\imath - \hat\jmath + 2\hat k$ and $\mathbf B = -\hat\imath + 4\hat\jmath + 2\hat k$. Find $\mathbf A + \mathbf B$, $|\mathbf A + \mathbf B|$ and $2\mathbf A - 3\mathbf B$. Then find the force $\mathbf F_3$ that keeps a particle in equilibrium under $\mathbf F_1 = (5\hat\imath + 2\hat\jmath)\ \text{N}$ and $\mathbf F_2 = (-3\hat\imath + 6\hat\jmath)\ \text{N}$. (From [1], Worked Example 2.)</p>
+<p>Let $\mathbf A = 3\hat\imath - \hat\jmath + 2\hat k$ and $\mathbf B = -\hat\imath + 4\hat\jmath + 2\hat k$. Find $\mathbf A + \mathbf B$, $|\mathbf A + \mathbf B|$ and $2\mathbf A - 3\mathbf B$. Then find the force $\mathbf F_3$ that keeps a particle in equilibrium under $\mathbf F_1 = (5\hat\imath + 2\hat\jmath)\ \text{N}$ and $\mathbf F_2 = (-3\hat\imath + 6\hat\jmath)\ \text{N}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example 2.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -194,7 +194,7 @@ $$\begin{aligned}\mathbf A\times\mathbf B = {}&(A_yB_z - A_zB_y)\,\hat\imath \\ 
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Let $\mathbf A = 2\hat\imath + 3\hat\jmath - \hat k$ and $\mathbf B = \hat\imath - 2\hat\jmath + 2\hat k$. Find $\mathbf A\cdot\mathbf B$, the angle between them, and the projection of $\mathbf A$ on $\mathbf B$. Also find the work done by $\mathbf F = (3\hat\imath + 4\hat\jmath)\ \text{N}$ over $\mathbf d = (2\hat\imath - \hat\jmath)\ \text{m}$. (From [1], Worked Example 3.)</p>
+<p>Let $\mathbf A = 2\hat\imath + 3\hat\jmath - \hat k$ and $\mathbf B = \hat\imath - 2\hat\jmath + 2\hat k$. Find $\mathbf A\cdot\mathbf B$, the angle between them, and the projection of $\mathbf A$ on $\mathbf B$. Also find the work done by $\mathbf F = (3\hat\imath + 4\hat\jmath)\ \text{N}$ over $\mathbf d = (2\hat\imath - \hat\jmath)\ \text{m}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example 3.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -220,7 +220,7 @@ $$\cos\theta = \frac{-6}{3\sqrt{14}} \approx -0.535,$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Let $\mathbf A = 2\hat\imath + \hat\jmath - \hat k$ and $\mathbf B = \hat\imath + 2\hat\jmath + \hat k$. Compute $\mathbf A\times\mathbf B$, the area of the parallelogram they span, and the torque $\boldsymbol\tau = \mathbf r\times\mathbf F$ for $\mathbf r = (2\hat\imath + \hat\jmath)\ \text{m}$ and $\mathbf F = 3\hat\jmath\ \text{N}$. (From [1], Worked Example 4.)</p>
+<p>Let $\mathbf A = 2\hat\imath + \hat\jmath - \hat k$ and $\mathbf B = \hat\imath + 2\hat\jmath + \hat k$. Compute $\mathbf A\times\mathbf B$, the area of the parallelogram they span, and the torque $\boldsymbol\tau = \mathbf r\times\mathbf F$ for $\mathbf r = (2\hat\imath + \hat\jmath)\ \text{m}$ and $\mathbf F = 3\hat\jmath\ \text{N}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example 4.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

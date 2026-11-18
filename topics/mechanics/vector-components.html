@@ -32,16 +32,16 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>Split it up.</strong> An arrow pointing diagonally is the same as "this much to the right" plus "this much up". Those two pieces are its <strong>components</strong>. For an arrow of length $A$ at angle $\theta$: $A_x = A\cos\theta$ and $A_y = A\sin\theta$ [2].</p>
-<p><strong>Motion works the same way.</strong> Imagine a ball rolling diagonally across a floor with lights shining straight down and from the side. Its shadow on one wall moves only left–right; its shadow on the other wall moves only up–down. Each shadow is a simple one-line motion. Put them together and you get the real motion [4].</p>
-<p>So you can treat each direction on its own [3]; [4]:</p>
+<p><strong>Split it up.</strong> An arrow pointing diagonally is the same as "this much to the right" plus "this much up". Those two pieces are its <strong>components</strong>. For an arrow of length $A$ at angle $\theta$: $A_x = A\cos\theta$ and $A_y = A\sin\theta$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Motion works the same way.</strong> Imagine a ball rolling diagonally across a floor with lights shining straight down and from the side. Its shadow on one wall moves only left–right; its shadow on the other wall moves only up–down. Each shadow is a simple one-line motion. Put them together and you get the real motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span>.</p>
+<p>So you can treat each direction on its own <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span>:</p>
 <ul>
 <li>$x$-velocity $v_x = \dot x$, $y$-velocity $v_y = \dot y$;</li>
 <li>$x$-acceleration $a_x = \dot v_x$, $y$-acceleration $a_y = \dot v_y$.</li>
 </ul>
-<p><strong>Putting it back together.</strong> The real speed is <em>not</em> $v_x + v_y$. The two parts are at right angles, so use Pythagoras: $v = \sqrt{v_x^2 + v_y^2}$. The direction comes from $\tan\theta = v_y/v_x$; check the signs to see which way it really points [2].</p>
-<p>The velocity arrow always points along the path, and the path's steepness is $dy/dx = v_y/v_x$ [4].</p>
-<p><strong>You choose the axes.</strong> Turning your axes changes the numbers $x, y$, but not the arrow itself or its length. Pick the axes that make the problem easiest [2].</p>
+<p><strong>Putting it back together.</strong> The real speed is <em>not</em> $v_x + v_y$. The two parts are at right angles, so use Pythagoras: $v = \sqrt{v_x^2 + v_y^2}$. The direction comes from $\tan\theta = v_y/v_x$; check the signs to see which way it really points <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p>The velocity arrow always points along the path, and the path's steepness is $dy/dx = v_y/v_x$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span>.</p>
+<p><strong>You choose the axes.</strong> Turning your axes changes the numbers $x, y$, but not the arrow itself or its length. Pick the axes that make the problem easiest <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
           </div>
         </section>
 
@@ -51,53 +51,53 @@
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> Components of a vector</h3>
             <div>
-<p>A vector in the $xy$-plane that has length $A$ and makes an angle $\theta$ counterclockwise from the $+x$-axis has components [2, §3.3]:</p>
+<p>A vector in the $xy$-plane that has length $A$ and makes an angle $\theta$ counterclockwise from the $+x$-axis has components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.3</span></span>:</p>
 $$\begin{gathered}A_x = A\cos\theta, \qquad A_y = A\sin\theta, \\ \mathbf A = A_x\,\hat\imath + A_y\,\hat\jmath.\end{gathered}$$
-<p>Going back, $A = \sqrt{A_x^2 + A_y^2}$ and $\tan\theta = A_y/A_x$. Because $\tan$ repeats every $180^\circ$, use the signs of $A_x$ and $A_y$ to pick the right quadrant [2, §3.3]; [1, §Components of Vectors].</p>
+<p>Going back, $A = \sqrt{A_x^2 + A_y^2}$ and $\tan\theta = A_y/A_x$. Because $\tan$ repeats every $180^\circ$, use the signs of $A_x$ and $A_y$ to pick the right quadrant <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.3</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Components of Vectors</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> Motion in components</h3>
             <div>
-<p>The position of a moving particle is $\mathbf r(t) = x(t)\,\hat\imath + y(t)\,\hat\jmath + z(t)\,\hat k$. Because $\hat\imath$, $\hat\jmath$, $\hat k$ are constant, differentiating the vector means differentiating each component [3, §The Instantaneous Velocity Vector]; [4, §5.1]:</p>
+<p>The position of a moving particle is $\mathbf r(t) = x(t)\,\hat\imath + y(t)\,\hat\jmath + z(t)\,\hat k$. Because $\hat\imath$, $\hat\jmath$, $\hat k$ are constant, differentiating the vector means differentiating each component <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§The Instantaneous Velocity Vector</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a> <span class="srcref-detail">§5.1</span></span>:</p>
 $$\mathbf v = \dot x\,\hat\imath + \dot y\,\hat\jmath + \dot z\,\hat k = v_x\hat\imath + v_y\hat\jmath + v_z\hat k,$$
 $$\mathbf a = \dot v_x\,\hat\imath + \dot v_y\,\hat\jmath + \dot v_z\,\hat k = a_x\hat\imath + a_y\hat\jmath + a_z\hat k.$$
-<p>So a motion in two or three dimensions is several one-dimensional motions running at the same time, one along each axis, each with its own $x$–$t$, $v$–$t$ and $a$–$t$ relations [4, §5.1]. Integration works the same way: integrate each component of $\mathbf a$ to get $\mathbf v$, with one initial condition per component [3, §Connecting position, velocity, and acceleration].</p>
+<p>So a motion in two or three dimensions is several one-dimensional motions running at the same time, one along each axis, each with its own $x$–$t$, $v$–$t$ and $a$–$t$ relations <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a> <span class="srcref-detail">§5.1</span></span>. Integration works the same way: integrate each component of $\mathbf a$ to get $\mathbf v$, with one initial condition per component <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§Connecting position, velocity, and acceleration</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Speed and direction of motion</h3>
             <div>
-<p>The speed is the length of the velocity vector, and its direction gives the direction of motion [3]; [4, §5.2]:</p>
+<p>The speed is the length of the velocity vector, and its direction gives the direction of motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a> <span class="srcref-detail">§5.2</span></span>:</p>
 $$v = \sqrt{v_x^2 + v_y^2 + v_z^2},$$
 <p>and in the plane the direction of motion makes an angle $\theta$ with the $x$-axis where</p>
 $$\tan\theta = \frac{v_y}{v_x}.$$
-<p>The velocity is always tangent to the trajectory. In the plane, the slope of the path $y(x)$ is $\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt} = \dfrac{v_y}{v_x}$ [4, §5.2].</p>
+<p>The velocity is always tangent to the trajectory. In the plane, the slope of the path $y(x)$ is $\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt} = \dfrac{v_y}{v_x}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a> <span class="srcref-detail">§5.2</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> The choice of axes</h3>
             <div>
-<p>The components depend on the axes; the vector does not. If the axes are rotated by an angle $\theta$, the same position vector has new components [2, §3.3.2]</p>
+<p>The components depend on the axes; the vector does not. If the axes are rotated by an angle $\theta$, the same position vector has new components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.3.2</span></span></p>
 $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
-<p>and its length $\sqrt{x^2+y^2} = \sqrt{x'^2+y'^2}$ is unchanged. Choose the axes that make the problem simplest, for example one axis along a fixed force [2, §3.2].</p>
+<p>and its length $\sqrt{x^2+y^2} = \sqrt{x'^2+y'^2}$ is unchanged. Choose the axes that make the problem simplest, for example one axis along a fixed force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.2</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>The components are independent only in the sense of bookkeeping: each obeys its own equation. They share the same time $t$, which is what ties them into one motion [4, §5.1].</p>
+<p>The components are independent only in the sense of bookkeeping: each obeys its own equation. They share the same time $t$, which is what ties them into one motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a> <span class="srcref-detail">§5.1</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>Don't add speeds component by component. $v_x$ and $v_y$ add as perpendicular sides of a right triangle: $v = \sqrt{v_x^2 + v_y^2}$, not $v_x + v_y$ [2, §3.3].</p>
+<p>Don't add speeds component by component. $v_x$ and $v_y$ add as perpendicular sides of a right triangle: $v = \sqrt{v_x^2 + v_y^2}$, not $v_x + v_y$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.3</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -116,37 +116,37 @@ $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Components from length and angle [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Components from length and angle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$A_x = A\cos\theta, \qquad A_y = A\sin\theta$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Length and angle from components [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Length and angle from components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}A = \sqrt{A_x^2+A_y^2} \\ \tan\theta = \frac{A_y}{A_x}\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Velocity components [3, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Velocity components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$v_x = \dot x, \quad v_y = \dot y, \quad v_z = \dot z$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Acceleration components [3, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Acceleration components <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$a_x = \dot v_x = \ddot x, \quad a_y = \ddot y, \quad a_z = \ddot z$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Speed [3, 4]</span></figcaption>
+              <figcaption class="formula-label"><span>Speed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$v = \sqrt{v_x^2 + v_y^2 + v_z^2}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Slope of the trajectory [4]</span></figcaption>
+              <figcaption class="formula-label"><span>Slope of the trajectory <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span></span></figcaption>
               <div class="formula-body">$$\frac{dy}{dx} = \frac{v_y}{v_x}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Rotated axes [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Rotated axes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}x' = x\cos\theta + y\sin\theta \\ y' = -x\sin\theta + y\cos\theta\end{gathered}$$</div>
             </figure>
 
@@ -159,7 +159,7 @@ $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Two particles move as $\mathbf r_1 = (t^2+1)\,\hat\imath + 2t\,\hat\jmath$ and $\mathbf r_2 = (5-t)\,\hat\imath + (t^2-1)\,\hat\jmath$. Find their displacements and average velocities for $0 \le t \le 2$, and their velocities $\mathbf v_1(t)$, $\mathbf v_2(t)$. (From [3], Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”.)</p>
+<p>Two particles move as $\mathbf r_1 = (t^2+1)\,\hat\imath + 2t\,\hat\jmath$ and $\mathbf r_2 = (5-t)\,\hat\imath + (t^2-1)\,\hat\jmath$. Find their displacements and average velocities for $0 \le t \le 2$, and their velocities $\mathbf v_1(t)$, $\mathbf v_2(t)$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>, Worked Example “Displacement, Average Velocity, Instantaneous Velocity, and Collision”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -175,7 +175,7 @@ $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
             <div class="example-check">
               <p class="example-check-label">Check</p>
               <div>
-<p>For particle 2, $v_x$ is constant, so its average equals its instantaneous value, $-1$. ✓ And $v_{2y} = 2t$ is linear, so its average over $[0,2]$ is its value at $t = 1$, namely $2$. ✓</p>
+<p>For particle 2, $v_x$ is constant, so its average equals its instantaneous value, $-1$. ✓ And $v_{2y} = 2t$ is linear, so its average over $ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 0">0</a><a href="#references" class="badge srcref" title="Source 2">2</a></span>$ is its value at $t = 1$, namely $2$. ✓</p>
               </div>
             </div>
           </div>
@@ -183,7 +183,7 @@ $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A particle moves as $\mathbf r(t) = R\cos(\omega t)\,\hat\imath + R\sin(\omega t)\,\hat\jmath$. Find $\mathbf v$, the speed and $\mathbf a$, and show that $\mathbf r\cdot\mathbf v = 0$. (From [3], Worked Example “Uniform Circular Motion”.)</p>
+<p>A particle moves as $\mathbf r(t) = R\cos(\omega t)\,\hat\imath + R\sin(\omega t)\,\hat\jmath$. Find $\mathbf v$, the speed and $\mathbf a$, and show that $\mathbf r\cdot\mathbf v = 0$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>, Worked Example “Uniform Circular Motion”.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -207,7 +207,7 @@ $$x' = x\cos\theta + y\sin\theta, \qquad y' = -x\sin\theta + y\cos\theta,$$
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A stone is thrown at $v_0 = 20\ \text{m/s}$, $45^\circ$ above the horizontal. Find the velocity components, and the slope of the path at launch. (From [4], Example 5.1.)</p>
+<p>A stone is thrown at $v_0 = 20\ \text{m/s}$, $45^\circ$ above the horizontal. Find the velocity components, and the slope of the path at launch. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 4">4</a></span>, Example 5.1.)</p>
             </div></div>
             <ol class="steps">
               <li><div>

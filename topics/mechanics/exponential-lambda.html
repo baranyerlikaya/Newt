@@ -32,15 +32,15 @@
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
           <div>
-<p><strong>One rule for everything:</strong> $\frac{d}{dt}e^{\lambda t} = \lambda\,e^{\lambda t}$. The speed of change is always $\lambda$ times the current value [1]; [2]. What $e^{\lambda t}$ looks like depends only on the number $\lambda$:</p>
+<p><strong>One rule for everything:</strong> $\frac{d}{dt}e^{\lambda t} = \lambda\,e^{\lambda t}$. The speed of change is always $\lambda$ times the current value <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. What $e^{\lambda t}$ looks like depends only on the number $\lambda$:</p>
 <ul>
-<li><strong>$\lambda$ real and positive:</strong> it grows faster and faster, like a snowball rolling downhill [1].</li>
-<li><strong>$\lambda$ real and negative:</strong> it shrinks toward zero, like a cooling cup of tea [1].</li>
-<li><strong>$\lambda = i\omega$ (imaginary):</strong> it doesn't grow or shrink at all. It goes round and round a circle, $e^{i\omega t} = \cos\omega t + i\sin\omega t$. Its real part swings back and forth like a spring [1]; [2].</li>
-<li><strong>$\lambda = \alpha + i\omega$ (complex):</strong> both at once: $e^{\alpha t}(\cos\omega t + i\sin\omega t)$. It spirals outward if $\alpha &gt; 0$ and inward if $\alpha &lt; 0$ [2].</li>
+<li><strong>$\lambda$ real and positive:</strong> it grows faster and faster, like a snowball rolling downhill <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</li>
+<li><strong>$\lambda$ real and negative:</strong> it shrinks toward zero, like a cooling cup of tea <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</li>
+<li><strong>$\lambda = i\omega$ (imaginary):</strong> it doesn't grow or shrink at all. It goes round and round a circle, $e^{i\omega t} = \cos\omega t + i\sin\omega t$. Its real part swings back and forth like a spring <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</li>
+<li><strong>$\lambda = \alpha + i\omega$ (complex):</strong> both at once: $e^{\alpha t}(\cos\omega t + i\sin\omega t)$. It spirals outward if $\alpha &gt; 0$ and inward if $\alpha &lt; 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</li>
 </ul>
-<p><strong>Easy way to remember:</strong> the real part of $\lambda$ controls the <em>size</em> (grow or shrink). The imaginary part controls the <em>spinning</em> (how fast it wiggles) [2].</p>
-<p><strong>Back to the real world.</strong> Real things have real positions. Calculate with the complex exponential, then keep only the real part at the end. You get real motions like $e^{\alpha t}\cos\omega t$, a wiggle that slowly dies out [1]; [2]. Do this only after derivatives and additions; products of two oscillations, such as energy, must be computed with the real functions [2].</p>
+<p><strong>Easy way to remember:</strong> the real part of $\lambda$ controls the <em>size</em> (grow or shrink). The imaginary part controls the <em>spinning</em> (how fast it wiggles) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>Back to the real world.</strong> Real things have real positions. Calculate with the complex exponential, then keep only the real part at the end. You get real motions like $e^{\alpha t}\cos\omega t$, a wiggle that slowly dies out <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. Do this only after derivatives and additions; products of two oscillations, such as energy, must be computed with the real functions <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
           </div>
         </section>
 
@@ -50,64 +50,64 @@
           <section class="subsection" id="theory-1">
             <h3><span class="num"></span> The defining property</h3>
             <div>
-<p>For any constant $\lambda$, the chain rule gives [1, §The Exponential Function]:</p>
+<p>For any constant $\lambda$, the chain rule gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§The Exponential Function</span></span>:</p>
 $$\frac{d}{dt}e^{\lambda t} = \lambda\,e^{\lambda t}.$$
-<p>Read the other way round: $x(t) = e^{\lambda t}$ is the solution of $\dot x = \lambda x$ with $x(0) = 1$. Its rate of change is always proportional to its current value, with factor $\lambda$. MIT's notes call this the <strong>exponential principle</strong> and use it as the definition of $e^{\lambda t}$, so that it holds for complex $\lambda$ too [2, §6.1, §6.2].</p>
-<p>An exponential is never zero. That is what lets you cancel it when you substitute $e^{\lambda t}$ into a linear equation of motion [2, §6.1].</p>
+<p>Read the other way round: $x(t) = e^{\lambda t}$ is the solution of $\dot x = \lambda x$ with $x(0) = 1$. Its rate of change is always proportional to its current value, with factor $\lambda$. MIT's notes call this the <strong>exponential principle</strong> and use it as the definition of $e^{\lambda t}$, so that it holds for complex $\lambda$ too <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.1, §6.2</span></span>.</p>
+<p>An exponential is never zero. That is what lets you cancel it when you substitute $e^{\lambda t}$ into a linear equation of motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.1</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-2">
             <h3><span class="num"></span> Real λ: growth and decay</h3>
             <div>
-<p>If $\lambda$ is real, $e^{\lambda t}$ is a positive real function. For $\lambda &gt; 0$ it grows exponentially, and for $\lambda &lt; 0$ it decays towards zero. A particle with position $x(t) = e^{\lambda t}$ always has velocity $\lambda x$: proportional to its position [1].</p>
+<p>If $\lambda$ is real, $e^{\lambda t}$ is a positive real function. For $\lambda &gt; 0$ it grows exponentially, and for $\lambda &lt; 0$ it decays towards zero. A particle with position $x(t) = e^{\lambda t}$ always has velocity $\lambda x$: proportional to its position <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-3">
             <h3><span class="num"></span> Imaginary λ = iω: rotation</h3>
             <div>
-<p>For $\lambda = i\omega$ with $\omega$ real, Euler's formula gives [1, §Complex Exponential Function]; [2, §6.2]</p>
+<p>For $\lambda = i\omega$ with $\omega$ real, Euler's formula gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Complex Exponential Function</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span></p>
 $$e^{i\omega t} = \cos\omega t + i\sin\omega t.$$
-<p>This point has modulus $1$ for all $t$, so it moves around the unit circle in the complex plane with angular velocity $\omega$ (counterclockwise for $\omega &gt; 0$) [2, §6.3]. Its real part $\cos\omega t$ and imaginary part $\sin\omega t$ are oscillations along two perpendicular axes; together they make the circular motion [1].</p>
-<p>The derivative is $\frac{d}{dt}e^{i\omega t} = i\omega\,e^{i\omega t}$. The factor $i$ turns the velocity $90^\circ$ from the position, exactly as in uniform circular motion, and $|\dot z| = \omega|z|$ [1].</p>
+<p>This point has modulus $1$ for all $t$, so it moves around the unit circle in the complex plane with angular velocity $\omega$ (counterclockwise for $\omega &gt; 0$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>. Its real part $\cos\omega t$ and imaginary part $\sin\omega t$ are oscillations along two perpendicular axes; together they make the circular motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>The derivative is $\frac{d}{dt}e^{i\omega t} = i\omega\,e^{i\omega t}$. The factor $i$ turns the velocity $90^\circ$ from the position, exactly as in uniform circular motion, and $|\dot z| = \omega|z|$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-4">
             <h3><span class="num"></span> Complex λ = α + iω: spirals</h3>
             <div>
-<p>For a general complex $\lambda = \alpha + i\omega$, the exponential law splits the exponential into a real factor and a rotating factor [2, §6.2]:</p>
+<p>For a general complex $\lambda = \alpha + i\omega$, the exponential law splits the exponential into a real factor and a rotating factor <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>:</p>
 $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).$$
-<p>The modulus is $e^{\alpha t}$ and the argument is $\omega t$ [2, §6.3]. So the real part $\alpha$ sets the <em>size</em> and the imaginary part $\omega$ sets the <em>rotation</em>:</p>
+<p>The modulus is $e^{\alpha t}$ and the argument is $\omega t$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>. So the real part $\alpha$ sets the <em>size</em> and the imaginary part $\omega$ sets the <em>rotation</em>:</p>
 <ul>
 <li>$\alpha &gt; 0$: a spiral running outwards, growing exponentially while it winds;</li>
 <li>$\alpha &lt; 0$: a spiral decaying towards the origin;</li>
 <li>$\alpha = 0$: a circle; and if $\omega = 0$, the point stays on the positive real axis.</li>
 </ul>
-<p>This is the combination of exponential growth or decay with oscillation, and it is what damped oscillators look like [1]; [2, §6.3].</p>
+<p>This is the combination of exponential growth or decay with oscillation, and it is what damped oscillators look like <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>.</p>
             </div>
           </section>
 
           <section class="subsection" id="theory-5">
             <h3><span class="num"></span> Getting real motion back</h3>
             <div>
-<p>Physical positions are real. The bridge is the <strong>reality principle</strong>: if a complex function $z = x + iy$ solves a linear equation whose coefficients are real, then its real part $x$ and its imaginary part $y$ are each real solutions [2, §6.2]. This works because differentiation acts on the real and imaginary parts separately.</p>
-<p>So from $e^{(\alpha+i\omega)t}$ you get the two real functions $e^{\alpha t}\cos\omega t$ and $e^{\alpha t}\sin\omega t$. In practice: do the calculation with one complex exponential, and take the real part at the end [1, Worked Example "Oscillatory Motion and the Complex Exponential"]; [2, §6.2].</p>
+<p>Physical positions are real. The bridge is the <strong>reality principle</strong>: if a complex function $z = x + iy$ solves a linear equation whose coefficients are real, then its real part $x$ and its imaginary part $y$ are each real solutions <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>. This works because differentiation acts on the real and imaginary parts separately.</p>
+<p>So from $e^{(\alpha+i\omega)t}$ you get the two real functions $e^{\alpha t}\cos\omega t$ and $e^{\alpha t}\sin\omega t$. In practice: do the calculation with one complex exponential, and take the real part at the end <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example "Oscillatory Motion and the Complex Exponential"</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.2</span></span>.</p>
             </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
             <div>
-<p>Only the real part of $\lambda$ changes the size of $e^{\lambda t}$: $|e^{(\alpha+i\omega)t}| = e^{\alpha t}$. The imaginary part only rotates it [2, §6.3].</p>
+<p>Only the real part of $\lambda$ changes the size of $e^{\lambda t}$: $|e^{(\alpha+i\omega)t}| = e^{\alpha t}$. The imaginary part only rotates it <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§6.3</span></span>.</p>
             </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
             <div>
-<p>Take the real part only at the very end, after all derivatives and linear operations. Products are different: $\operatorname{Re}(z_1 z_2) \ne \operatorname{Re}(z_1)\operatorname{Re}(z_2)$ in general, so quantities that are products of two oscillations (such as energy or power) must be computed from the real functions [2, §5.1].</p>
+<p>Take the real part only at the very end, after all derivatives and linear operations. Products are different: $\operatorname{Re}(z_1 z_2) \ne \operatorname{Re}(z_1)\operatorname{Re}(z_2)$ in general, so quantities that are products of two oscillations (such as energy or power) must be computed from the real functions <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§5.1</span></span>.</p>
             </div>
           </aside>
         </section>
@@ -126,32 +126,32 @@ $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span>Exponential principle [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Exponential principle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\frac{d}{dt}e^{\lambda t} = \lambda\,e^{\lambda t}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Euler's formula with time [1, 2]</span></figcaption>
+              <figcaption class="formula-label"><span>Euler's formula with time <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$e^{i\omega t} = \cos\omega t + i\sin\omega t$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Complex exponent [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Complex exponent <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$e^{(\alpha+i\omega)t} = e^{\alpha t}(\cos\omega t + i\sin\omega t)$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Modulus and argument [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Modulus and argument <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\left|e^{(\alpha+i\omega)t}\right| = e^{\alpha t} \\ \arg e^{(\alpha+i\omega)t} = \omega t\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Velocity of $z = e^{\lambda t}$ [1]</span></figcaption>
+              <figcaption class="formula-label"><span>Velocity of $z = e^{\lambda t}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
               <div class="formula-body">$$\begin{gathered}\dot z = \lambda z \\ |\dot z| = |\lambda|\,|z| = \sqrt{\alpha^2+\omega^2}\,|z|\end{gathered}$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span>Real solutions from $\lambda = \alpha \pm i\omega$ [2]</span></figcaption>
+              <figcaption class="formula-label"><span>Real solutions from $\lambda = \alpha \pm i\omega$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
               <div class="formula-body">$$e^{\alpha t}\cos\omega t, \qquad e^{\alpha t}\sin\omega t$$</div>
             </figure>
 
@@ -164,7 +164,7 @@ $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Let $z(t) = A\,e^{i(\omega t+\phi)}$ with real constants $A$, $\omega$, $\phi$. Find its real and imaginary parts and the curve it traces, compute $\dot z$ and $\ddot z$, and show that $\ddot z + \omega^2 z = 0$. (From [1], Worked Example "Oscillatory Motion and the Complex Exponential".)</p>
+<p>Let $z(t) = A\,e^{i(\omega t+\phi)}$ with real constants $A$, $\omega$, $\phi$. Find its real and imaginary parts and the curve it traces, compute $\dot z$ and $\ddot z$, and show that $\ddot z + \omega^2 z = 0$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example "Oscillatory Motion and the Complex Exponential".)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -191,7 +191,7 @@ $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>Describe $z(t) = e^{(-1+i)t}$ and give two real functions obtained from it. (From [2], §6.2.)</p>
+<p>Describe $z(t) = e^{(-1+i)t}$ and give two real functions obtained from it. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, §6.2.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
@@ -201,7 +201,7 @@ $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).
 <p>Its modulus $e^{-t}$ shrinks while its argument $t$ grows, so $z$ spirals counterclockwise into the origin.</p>
               </div></li>
               <li><div>
-<p>Real part $e^{-t}\cos t$ and imaginary part $e^{-t}\sin t$: oscillations whose amplitude decays exponentially. In [2] both are shown to solve $\ddot x + 2\dot x + 2x = 0$, whose characteristic roots are $-1 \pm i$.</p>
+<p>Real part $e^{-t}\cos t$ and imaginary part $e^{-t}\sin t$: oscillations whose amplitude decays exponentially. In <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span> both are shown to solve $\ddot x + 2\dot x + 2x = 0$, whose characteristic roots are $-1 \pm i$.</p>
               </div></li>
             </ol>
             <div class="example-check">
@@ -215,7 +215,7 @@ $$e^{(\alpha+i\omega)t} = e^{\alpha t}\left(\cos\omega t + i\sin\omega t\right).
           <div class="example">
             <p class="example-label">Example</p>
             <div class="example-problem"><div>
-<p>A point moves in the complex plane as $z(t) = e^{(\alpha+i\omega)t}$. Show that its speed is $\sqrt{\alpha^2+\omega^2}\,|z|$. (From [1], §Complex Exponential Function.)</p>
+<p>A point moves in the complex plane as $z(t) = e^{(\alpha+i\omega)t}$. Show that its speed is $\sqrt{\alpha^2+\omega^2}\,|z|$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Complex Exponential Function.)</p>
             </div></div>
             <ol class="steps">
               <li><div>
