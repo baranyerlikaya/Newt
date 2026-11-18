@@ -53,7 +53,7 @@ window.PHYSREF_NAV = [
     id: 'conservation',
     title: 'Conservation Theorems',
     topics: [
-      { id: 'momentum-conservation', title: 'Conservation of Linear and Angular Momentum',        file: 'topics/mechanics/momentum-conservation.html', status: 'soon' },
+      { id: 'momentum-conservation', title: 'Conservation of Linear and Angular Momentum',        file: 'topics/mechanics/momentum-conservation.html', status: 'ready' },
       { id: 'work-energy',         title: 'Work and Kinetic Energy, Work–Energy Theorem',         file: 'topics/mechanics/work-energy.html',         status: 'soon' },
       { id: 'potential-energy',    title: 'Conservative Forces and Potential Energy',             file: 'topics/mechanics/potential-energy.html',    status: 'soon' },
       { id: 'energy-conservation', title: 'Conservation of Total Energy, Energy as Equation of Motion', file: 'topics/mechanics/energy-conservation.html', status: 'soon' },
