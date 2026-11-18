@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Torque, Angular Momentum · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="torque-angular-momentum">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,102 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Torque, Angular Momentum</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">Angular momentum L = r × p and torque τ = r × F, and the rotational form of Newton's second law dL/dt = τ.</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Rotation needs its own "momentum" and its own "force":</strong></p>
+<ul>
+<li><strong>Angular momentum</strong> $\mathbf L = \mathbf r\times\mathbf p$: how much a thing's motion goes around a chosen point. Bigger if it's far from the point, or moving fast perpendicular to the line to it [1]; [2].</li>
+<li><strong>Torque</strong> $\boldsymbol\tau = \mathbf r\times\mathbf F$: how much a force twists a thing about a chosen point. A long wrench gives you more torque with the same hand force — moment arm matters [1]; [3].</li>
+</ul>
+<p>Rule for direction: curl your right-hand fingers from $\mathbf r$ to the second vector; your thumb points along $\mathbf L$ or $\boldsymbol\tau$.</p>
+<p><strong>The rotational Newton's second law:</strong> torque changes angular momentum at exactly the rate of the torque [1]; [2]:</p>
+$$\boxed{\frac{d\mathbf L}{dt} = \boldsymbol\tau.}$$
+<p>That's the <em>same</em> shape as $d\mathbf p/dt = \mathbf F$, just rotational.</p>
+<p><strong>No torque? Angular momentum is conserved.</strong> A skater pulls in their arms → smaller "spread", smaller $I$ → spins faster, because $L$ stays the same [1]; [2].</p>
+<p><strong>Pick the pivot cleverly.</strong> Forces passing through a chosen point give no torque about it. Choosing the pivot of a hinge usually kills the unknown hinge force [3].</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Angular momentum of a particle</h3>
+            <div>
+<p>The <strong>angular momentum</strong> of a particle about a reference point $O$ is [1, §Angular-Momentum Form of the 2nd Axiom]; [2, §19.2]</p>
+$$\mathbf L = \mathbf r \times \mathbf p,$$
+<p>where $\mathbf r$ is the particle's position relative to $O$ and $\mathbf p = m\mathbf v$ its momentum. Its magnitude is $|\mathbf L| = rp\sin\phi = r p_\perp = p r_\perp$, where $\phi$ is the angle between $\mathbf r$ and $\mathbf p$ [2, §19.2]. Units: kg·m²/s.</p>
+<p>By the right-hand rule, $\mathbf L$ is perpendicular to the plane spanned by $\mathbf r$ and $\mathbf p$ [2, §19.2.2].</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Torque of a force</h3>
+            <div>
+<p>The <strong>torque</strong> of a force $\mathbf F$ about the same point $O$ is [1]; [3, §17.3]</p>
+$$\boldsymbol\tau = \mathbf r \times \mathbf F.$$
+<p>Its magnitude $|\boldsymbol\tau| = rF\sin\phi$ depends on the force, the distance from the pivot, and the angle between $\mathbf r$ and $\mathbf F$. Units: N·m. A force pointing along $\mathbf r$ (towards or away from the pivot) produces no torque [3, §17.3].</p>
+<p>The <strong>moment arm</strong> is $r_\perp = r\sin\phi$, the perpendicular distance from the pivot to the line of action of the force. Then $|\boldsymbol\tau| = r_\perp F$ [3, §17.3].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Rotational second law: dL/dt = τ</h3>
+            <div>
+<p>Differentiate $\mathbf L = \mathbf r\times\mathbf p$ by the product rule [1]:</p>
+$$\frac{d\mathbf L}{dt} = \dot{\mathbf r}\times\mathbf p + \mathbf r\times\dot{\mathbf p}.$$
+<p>For constant mass, $\dot{\mathbf r}\times\mathbf p = \mathbf v\times(m\mathbf v) = 0$. And by Newton's second law, $\dot{\mathbf p} = \mathbf F$. So [1]; [2, §19.3]</p>
+$$\boxed{\frac{d\mathbf L}{dt} = \boldsymbol\tau.}$$
+<p>This is the rotational analogue of $d\mathbf p/dt = \mathbf F$: a torque changes angular momentum at the rate given by the torque [1].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> The analogy</h3>
+            <div>
+<p>Translation and rotation about a fixed point run in parallel [1, §Angular-Momentum Form of the 2nd Axiom]:</p>
+<ul>
+<li>$\mathbf p$ (linear momentum) ↔ $\mathbf L$ (angular momentum)</li>
+<li>$\mathbf F$ (force) ↔ $\boldsymbol\tau$ (torque)</li>
+<li>$\mathbf F = d\mathbf p/dt$ ↔ $\boldsymbol\tau = d\mathbf L/dt$</li>
+</ul>
+<p>If the net torque about $O$ is zero, $\mathbf L$ about $O$ is conserved; this is the rotational version of momentum conservation [1, §Conservation of Angular Momentum]; [2, §19.4].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Choice of reference point</h3>
+            <div>
+<p>Both $\mathbf L$ and $\boldsymbol\tau$ depend on the chosen reference point $O$. Choose $O$ wisely: pick a point where some forces have no torque (e.g. on the line of action, so $\mathbf r\times\mathbf F = 0$), to simplify the equation [3, §17.3]. Common choices are the pivot of a hinge or the centre of a circle.</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>$\mathbf L$ is defined even for a particle moving in a straight line. If the line misses the origin by a perpendicular distance $b$, then $|\mathbf L| = mvb$, and $\mathbf L$ is constant because no force (hence no torque) acts [2, §19.2].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>$\boldsymbol\tau$ and $\mathbf L$ about different points are different vectors. When you write $\boldsymbol\tau = d\mathbf L/dt$, both must be taken about the <em>same</em> point [3, §17.3].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="torqueL">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">A particle at the end of a rod of length $r$. A force $\mathbf F$ is applied, with its angle $\phi$ from $\mathbf r$ set by the slider. The torque magnitude $|\boldsymbol\tau| = rF\sin\phi$ is shown live: maximum when $\mathbf F$ is perpendicular to $\mathbf r$ ($\phi = 90°$), zero when parallel ($\phi = 0$ or $180°$). The direction (out of or into the page) comes from the right-hand rule. The rod rotates in response to the torque.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +129,40 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Angular momentum [1, 2]</span></figcaption>
+              <div class="formula-body">$$\mathbf L = \mathbf r \times \mathbf p$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Magnitude [2]</span></figcaption>
+              <div class="formula-body">$$|\mathbf L| = rp\sin\phi = r p_\perp$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Torque [1, 3]</span></figcaption>
+              <div class="formula-body">$$\boldsymbol\tau = \mathbf r \times \mathbf F$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Torque magnitude and moment arm [3]</span></figcaption>
+              <div class="formula-body">$$|\boldsymbol\tau| = rF\sin\phi = r_\perp F$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rotational second law [1, 2]</span></figcaption>
+              <div class="formula-body">$$\frac{d\mathbf L}{dt} = \boldsymbol\tau$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Conservation of L [1, 2]</span></figcaption>
+              <div class="formula-body">$$\boldsymbol\tau_{\text{ext}} = 0 \;\Rightarrow\; \mathbf L = \text{const}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular momentum in a circle, radius R</span></figcaption>
+              <div class="formula-body">$$L = mvR = mR^2\omega$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +171,76 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>A particle of mass $m$ moves in a circle of radius $R$ with speed $v$. Find the magnitude of its angular momentum about the centre. (From [2], §19.2.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>$\mathbf r$ points from the centre to the particle; $\mathbf v$ is tangent, so $\mathbf r\perp\mathbf v$ and $\phi = 90^\circ$.</p>
+              </div></li>
+              <li><div>
+<p>$|\mathbf L| = r\,p\sin90^\circ = R\,mv$.</p>
+              </div></li>
+              <li><div>
+<p>Using $v = R\omega$: $L = mR^2\omega$.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>$\mathbf L$ points along the axis (out of the page for counterclockwise motion). Its magnitude is positive and constant for uniform circular motion ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A force $\mathbf F = 3\hat\jmath\ \text{N}$ is applied at position $\mathbf r = (2\hat\imath + \hat\jmath)\ \text{m}$. Find the torque about the origin. (From the course's vector worked example [4, Example 4]; also [3, §17.3].)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\boldsymbol\tau = \mathbf r\times\mathbf F = (2\hat\imath + \hat\jmath)\times 3\hat\jmath$.</p>
+              </div></li>
+              <li><div>
+<p>Expand: $6(\hat\imath\times\hat\jmath) + 3(\hat\jmath\times\hat\jmath) = 6\hat k + 0$.</p>
+              </div></li>
+              <li><div>
+<p>So $\boldsymbol\tau = 6\hat k\ \text{N·m}$, pointing out of the $xy$-plane.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The $\hat\jmath$-component of $\mathbf r$ is parallel to $\mathbf F$ and gives no torque. Only the $2\hat\imath$ component matters, giving $2 \times 3 = 6$ N·m. ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A pendulum bob of mass $m$ swings on a string of length $L$. About the pivot, find the angular momentum and torque at the angle $\theta$ from vertical, when the bob has tangential speed $v$. Show $\dot L = \tau$ gives the pendulum equation. (Adapted from [1], with the pendulum setup from [5], §Simple pendulum.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Position: $\mathbf r$ points from the pivot down and outward along the string, $|\mathbf r| = L$. Momentum: tangential, magnitude $mv$, perpendicular to $\mathbf r$.</p>
+              </div></li>
+              <li><div>
+<p>$|\mathbf L| = mvL = mL^2\dot\theta$, perpendicular to the plane of swing.</p>
+              </div></li>
+              <li><div>
+<p>Only gravity gives a torque. Component perpendicular to $\mathbf r$: $mg\sin\theta$, moment arm $L$: $|\boldsymbol\tau| = mgL\sin\theta$ (restoring).</p>
+              </div></li>
+              <li><div>
+<p>$\dot L = \tau$: $mL^2\ddot\theta = -mgL\sin\theta$, i.e. $\ddot\theta + (g/L)\sin\theta = 0$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>For small $\theta$, $\sin\theta \approx \theta$: $\ddot\theta + (g/L)\theta = 0$, the simple-harmonic pendulum equation with $\omega_0 = \sqrt{g/L}$. ✓</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +248,11 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Angular-Momentum Form of the 2nd Axiom, §Conservation of Angular Momentum. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 19 "Angular Momentum", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §19.2 Angular Momentum about a Point for a Particle, §19.3 Torque and the Time Derivative of Angular Momentum. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter19.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 17 "Two Dimensional Rotational Dynamics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §17.3 Torque. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter17.pdf">PDF</a></span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 1: Mathematical Tools</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. Worked Example 4 (Cross Product, Torque). <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/mathematical-tools/main.pdf">PDF</a></span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 4: Small Oscillations</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Simple (mathematical) pendulum. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/small-oscillations/main.pdf">PDF</a></span></li>
           </ol>
         </section>
 
