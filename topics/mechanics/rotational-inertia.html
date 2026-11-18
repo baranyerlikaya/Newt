@@ -6,13 +6,13 @@
   <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
   <title>Rotational Inertia of a System of Particles · Newt</title>
   <link rel="stylesheet" href="../../lib/katex.min.css">
-  <link rel="stylesheet" href="../../style.css?v=24">
+  <link rel="stylesheet" href="../../style.css?v=27">
   <script defer src="../../lib/katex.min.js"></script>
   <script defer src="../../lib/auto-render.min.js"></script>
-  <script defer src="../../lib/render-math.js?v=24"></script>
-  <script defer src="../../nav.js?v=24"></script>
-  <script defer src="../../app.js?v=24"></script>
-  <script defer src="../../assets/viz.js?v=24"></script>
+  <script defer src="../../lib/render-math.js?v=27"></script>
+  <script defer src="../../nav.js?v=27"></script>
+  <script defer src="../../app.js?v=27"></script>
+  <script defer src="../../assets/viz.js?v=27"></script>
 </head>
 <body class="layout-doc" data-root="../../" data-topic="rotational-inertia">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,45 +26,92 @@
         <header class="doc-header">
           <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
           <h1 class="doc-title">Rotational Inertia of a System of Particles</h1>
-          <p class="doc-lede"><span class="slot" data-slot="description">[Description]</span></p>
+          <p class="doc-lede">For a system of particles rotating together about an axis, the moment of inertia I = Σmᵢrᵢ² plays the role of mass, and the rotational kinetic energy is ½Iω².</p>
         </header>
 
         <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
           <h2 id="basics-h">In short</h2>
-          <div class="slot slot-block" data-slot="basic">[Basic explanation]</div>
+          <div>
+<p><strong>Mass for spinning.</strong> For straight-line motion, how hard something is to push depends on its mass $m$. For spinning, the same job is done by the <strong>moment of inertia</strong> $I$ — how hard it is to twist [2]:</p>
+$$I = \sum_i m_i r_i^2.$$
+<p>Add up each piece of mass times the square of its distance from the axis. Far-out mass counts way more than close-in mass (it's squared).</p>
+<p><strong>Kinetic energy of spinning:</strong> swap the symbols in $K = \tfrac12 mv^2$ for rotational ones [2]:</p>
+$$K_{\text{rot}} = \tfrac12 I\omega^2.$$
+<p><strong>Angular momentum</strong> is also $I\omega$ for an object spinning about an axis [1]; [3].</p>
+<p><strong>Figure-skater trick.</strong> Pull arms in → mass moves closer to the axis → $I$ drops → with no outside torque, $L = I\omega$ stays the same, so $\omega$ shoots up. That's why they spin faster [1]; [2].</p>
+<p>$I$ depends on <em>which axis</em> you spin about. A rod is much easier to spin around its length than around its middle.</p>
+          </div>
         </section>
 
         <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
           <h2 id="theory-h">Theory</h2>
 
           <section class="subsection" id="theory-1">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> A system of particles about a fixed axis</h3>
+            <div>
+<p>Consider $N$ particles rotating together about a fixed axis, each at perpendicular distance $r_i$ from the axis. Because the system is rigid, all share the same angular velocity $\omega$ [2, §16.3.1]. Each particle moves on a circle at tangential speed $v_i = r_i\omega$.</p>
+            </div>
           </section>
 
           <section class="subsection" id="theory-2">
-            <h3><span class="num"></span> <span class="slot" data-slot="subsection-title">[Subsection title]</span></h3>
-            <div class="slot slot-block" data-slot="theory">[Theory]</div>
+            <h3><span class="num"></span> Rotational kinetic energy</h3>
+            <div>
+<p>Add up each particle's kinetic energy $\tfrac12 m_i v_i^2 = \tfrac12 m_i r_i^2\omega^2$ [2, §16.3.1]:</p>
+$$K_{\text{rot}} = \sum_{i=1}^N \tfrac12 m_i r_i^2 \omega^2 = \tfrac12\left(\sum_i m_i r_i^2\right)\omega^2.$$
+<p>The quantity in parentheses only depends on the geometry and masses, not on $\omega$:</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The moment of inertia</h3>
+            <div>
+<p>The <strong>moment of inertia</strong> about the axis is [2, §16.3.1]</p>
+$$\boxed{I = \sum_i m_i r_i^2.}$$
+<p>Units: kg·m². Then the rotational kinetic energy takes the simple form</p>
+$$K_{\text{rot}} = \tfrac12 I\omega^2,$$
+<p>which is the rotational analogue of $K = \tfrac12 mv^2$. Here $I$ plays the role of mass and $\omega$ the role of velocity.</p>
+<p>For a continuous body, the sum becomes an integral $I = \int r^2\,dm$ [2, §16.3.1]. Simple results: a thin rod of mass $M$ and length $L$ about its centre, $I = ML^2/12$; a uniform disc of mass $M$ and radius $R$ about its symmetry axis, $I = \tfrac12MR^2$ [2, §16.3.2, Example 16.2].</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Angular momentum of the system</h3>
+            <div>
+<p>For the same rigid rotation about a fixed axis, add up each particle's angular momentum component along the axis: $L_z = \sum_i m_i r_i v_i = \sum_i m_i r_i^2\omega = I\omega$. So [1, §Angular-Momentum Form of the 2nd Axiom]; [3, §19.7]</p>
+$$L_z = I\omega.$$
+<p>Rotational mass $I$ links angular velocity to angular momentum the way inertial mass links $\mathbf v$ to $\mathbf p$.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Depending on the axis</h3>
+            <div>
+<p>$I$ is not a property of the body alone; it depends on which axis you spin it about. Mass that is far from the axis counts quadratically (via $r^2$) and dominates. Pulling mass inward lowers $I$ without changing the masses themselves [1]; [2, §16.3.1].</p>
+            </div>
           </section>
 
           <aside class="callout callout-note" role="note">
             <p class="callout-label">Note</p>
-            <div class="slot slot-block" data-slot="note">[Note]</div>
+            <div>
+<p>$r_i$ in $I = \sum m_i r_i^2$ is the <em>perpendicular</em> distance from the particle to the <em>rotation axis</em>, not the distance to a point. For a particle on the axis itself, its contribution is zero [2, §16.3.1].</p>
+            </div>
           </aside>
 
           <aside class="callout callout-warning" role="note">
             <p class="callout-label">Warning</p>
-            <div class="slot slot-block" data-slot="warning">[Warning]</div>
+            <div>
+<p>$I$ is additive for a given axis: if two bodies rotate together about the same axis, $I_{\text{total}} = I_1 + I_2$. It is <em>not</em> additive across different axes [2, §16.3.1].</p>
+            </div>
           </aside>
         </section>
 
         <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
           <h2 id="visualization-h">Visualization</h2>
-          <figure class="viz" data-viz="">
-            <div class="viz-stage"><div class="slot slot-block" data-slot="visualization">[Visualization]</div></div>
+          <figure class="viz" data-viz="moi">
+            <div class="viz-stage"></div>
             <figcaption class="viz-bar"></figcaption>
           </figure>
-          <p class="viz-caption"><span class="slot" data-slot="viz-caption">[Caption]</span></p>
+          <p class="viz-caption">Four point masses (each 1 kg) on a cross, two at radius $r_1$ and two at radius $r_2$. The moment of inertia $I = 2m_1r_1^2 + 2m_2r_2^2$ and the rotational kinetic energy $\tfrac12 I\omega^2$ are shown live. Pull $r_1$ and $r_2$ inward and $I$ (and $K$) drop quickly — the $r^2$ dependence is dramatic. Change $\omega$ to see how $K$ scales as $\omega^2$.</p>
         </section>
 
         <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
@@ -72,14 +119,40 @@
 
           <div class="formula-list">
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Moment of inertia (discrete) [2]</span></figcaption>
+              <div class="formula-body">$$I = \sum_{i=1}^N m_i r_i^2$$</div>
             </figure>
 
             <figure class="formula">
-              <figcaption class="formula-label"><span class="slot" data-slot="formula-label">[Label]</span></figcaption>
-              <div class="formula-body"><span class="slot" data-slot="formula">[Formula]</span></div>
+              <figcaption class="formula-label"><span>Moment of inertia (continuous) [2]</span></figcaption>
+              <div class="formula-body">$$I = \int r^2\,dm$$</div>
             </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rotational kinetic energy [2]</span></figcaption>
+              <div class="formula-body">$$K_{\text{rot}} = \tfrac12 I\omega^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular momentum about the axis [1, 3]</span></figcaption>
+              <div class="formula-body">$$L_z = I\omega$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Thin rod about centre [2]</span></figcaption>
+              <div class="formula-body">$$I = \tfrac1{12}ML^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Uniform disc about symmetry axis [2]</span></figcaption>
+              <div class="formula-body">$$I = \tfrac12 MR^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Single particle on a circle</span></figcaption>
+              <div class="formula-body">$$I = m R^2$$</div>
+            </figure>
+
           </div>
         </section>
 
@@ -88,15 +161,70 @@
 
           <div class="example">
             <p class="example-label">Example</p>
-            <div class="example-problem"><div class="slot slot-block" data-slot="problem">[Problem]</div></div>
+            <div class="example-problem"><div>
+<p>Two point masses $m$ each are fixed to the ends of a massless rod of length $2R$; the rod spins about its centre. Find $I$, $K_{\text{rot}}$ at angular velocity $\omega$, and $L$. (Direct application of [2], §16.3.1.)</p>
+            </div></div>
             <ol class="steps">
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
-              <li><div class="slot slot-block" data-slot="step">[Step]</div></li>
+              <li><div>
+<p>Each mass is at distance $R$ from the axis: $I = mR^2 + mR^2 = 2mR^2$.</p>
+              </div></li>
+              <li><div>
+<p>$K_{\text{rot}} = \tfrac12 I\omega^2 = mR^2\omega^2$.</p>
+              </div></li>
+              <li><div>
+<p>$L = I\omega = 2mR^2\omega$ along the axis.</p>
+              </div></li>
             </ol>
             <div class="example-check">
               <p class="example-check-label">Check</p>
-              <div class="slot slot-block" data-slot="check">[Check]</div>
+              <div>
+<p>Directly: each mass has $K_i = \tfrac12 m(R\omega)^2 = \tfrac12 mR^2\omega^2$; two of them give $mR^2\omega^2$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Four point masses of $1\ \text{kg}$ each sit at the corners of a $2\ \text{m} \times 2\ \text{m}$ square, connected by massless rods. Find the moment of inertia about an axis through the centre, perpendicular to the square. (Direct application of [2], §16.3.1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Each mass is at distance $\sqrt{1^2 + 1^2} = \sqrt2\ \text{m}$ from the centre.</p>
+              </div></li>
+              <li><div>
+<p>$I = 4 \times 1 \times (\sqrt2)^2 = 8\ \text{kg·m}^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Half-size square (sides 1 m instead of 2): each $r = \sqrt{0.5}$, so $I = 4 \times 0.5 = 2\ \text{kg·m}^2$. Four times smaller area, four times smaller $I$ ✓ (since area scales as $r^2$).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A skater has moment of inertia $I_1 = 5\ \text{kg·m}^2$ with arms outstretched and $I_2 = 2\ \text{kg·m}^2$ with arms pulled in. She starts spinning at $\omega_1 = 2\ \text{rev/s}$, then pulls her arms in. Find her final angular velocity and the change in rotational kinetic energy. (Based on [1], Worked Example “Conservation of angular momentum”; the example uses $I_f = I/2$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>No external torque: $L$ is conserved. $I_1\omega_1 = I_2\omega_2$, so $\omega_2 = (I_1/I_2)\omega_1 = (5/2)\times 2 = 5\ \text{rev/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$K_1 = \tfrac12 I_1\omega_1^2$, $K_2 = \tfrac12 I_2\omega_2^2 = \tfrac12 I_2(I_1/I_2)^2\omega_1^2 = (I_1/I_2)K_1 = 2.5 K_1$.</p>
+              </div></li>
+              <li><div>
+<p>Her kinetic energy grows by a factor $I_1/I_2 = 2.5$. The extra energy comes from the work her muscles do pulling the arms in [1, Worked Example “Conservation of angular momentum”].</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Angular momentum: $5 \times 2 = 2 \times 5 = 10\ \text{kg·m}^2/\text{s}$ in both states ✓.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -104,8 +232,9 @@
         <section class="doc-section" id="references" aria-labelledby="references-h">
           <h2 id="references-h">References</h2>
           <ol class="refs">
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
-            <li><span class="slot" data-slot="reference">[Reference]</span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Angular-Momentum Form of the 2nd Axiom; Worked Example “Conservation of angular momentum”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 16 "Two Dimensional Rotational Kinematics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §16.3 Rotational Kinetic Energy and Moment of Inertia; Example 16.2. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter16.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 19 "Angular Momentum", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §19.7 Angular Momentum and Torque for Fixed Axis Rotation. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter19.pdf">PDF</a></span></li>
           </ol>
         </section>
 
