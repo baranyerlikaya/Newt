@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Linearly Accelerating Frames · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="accelerating-frames">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Linearly Accelerating Frames</h1>
+          <p class="doc-lede">In a frame that accelerates linearly with A, the equation of motion picks up a fictitious force −mA. Everything else stays the same.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>In a car that speeds up, you feel pushed backward.</strong> Nothing is actually pushing you. Your body wants to keep its old speed (Newton's first law), but the seat is coming up faster than before.</p>
+<p>If you <em>insist</em> on using the car as your reference frame (easier because the seat is at rest), you have to invent an extra "force" to explain why you're pressed back. That's the <strong>fictitious force</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf F_{\text{fic}} = -m\mathbf A,$$
+<p>where $\mathbf A$ is the car's acceleration. Opposite direction to the acceleration, and it looks exactly like gravity (same for every mass).</p>
+<p><strong>Then Newton's second law works again in the car's frame</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf F_{\text{real}} + \mathbf F_{\text{fic}} = m\mathbf a'.$$
+<p><strong>Useful tricks:</strong></p>
+<ul>
+<li>A pendulum in an accelerating car hangs tilted. You can compute by just adding $-m\mathbf A$ to gravity.</li>
+<li>In a free-falling lift, the fictitious force cancels gravity exactly — you feel weightless.</li>
+<li>Astronauts in the ISS "float" because their frame is in free fall, not because gravity is absent.</li>
+</ul>
+<p><strong>Equivalence principle:</strong> gravity and acceleration are indistinguishable locally. Einstein built general relativity on this <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Setup</h3>
+            <div>
+<p>Let frame $O'$ accelerate linearly at $\mathbf A$ relative to an inertial frame $O$ (origins coincide at $t = 0$). Positions are related by <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.2</span></span>:</p>
+$$\mathbf r = \mathbf r' + \mathbf R(t), \qquad \ddot{\mathbf R} = \mathbf A.$$
+<p>Differentiating twice gives the accelerations <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf a = \mathbf a' + \mathbf A.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Newton's second law in the non-inertial frame</h3>
+            <div>
+<p>In the inertial frame: $m\mathbf a = \mathbf F_{\text{physical}}$. Substituting <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.2</span></span>:</p>
+$$m\mathbf a' = \mathbf F_{\text{physical}} - m\mathbf A.$$
+<p>Define the <strong>fictitious force</strong></p>
+$$\mathbf F_{\text{fic}} = -m\mathbf A.$$
+<p>Then in the accelerating frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\boxed{\mathbf F_{\text{physical}} + \mathbf F_{\text{fic}} = m\mathbf a'.}$$
+<p>Same form as Newton's law, with an extra "pseudo-force" that points opposite to the frame's acceleration. Everything else carries through.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Why it's useful</h3>
+            <div>
+<p>Working in the accelerating frame is often easier because objects attached to the frame are at rest there. Pendulum in a car, water in a bucket — they look simple in the frame moving with the car.</p>
+<p>The fictitious force has no reaction partner. You can't find the body "exerting" it. That's the dead giveaway that you are in a non-inertial frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Equivalence principle</h3>
+            <div>
+<p>The fictitious force is uniform, proportional to mass — <em>exactly like gravity</em>. An observer inside a sealed accelerating box can't tell whether the extra force is gravity or the box accelerating in the opposite direction. This is Einstein's <strong>equivalence principle</strong>, the starting point for general relativity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.2, Concept Question 1</span></span>.</p>
+<p>Example: in free fall (box accelerating at $g$ downward), the fictitious force cancels gravity exactly. You feel weightless. Same for astronauts in orbit.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>For systems in free fall together with a body (orbit, falling lift), the fictitious force exactly cancels gravity. That's why the body appears "weightless" in such a frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Fictitious forces are a consequence of the choice of frame, not of any physical interaction. Compute them from $-m\mathbf A$; don't look for a source <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="accframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A pendulum inside a car accelerating to the right at $A$. In the car's frame the bob is at rest, with three forces balanced: gravity $mg$ downward, tension along the string, and the fictitious force $-mA$ backward. The string tilts backward by $\arctan(A/g)$ from the vertical. Set $A = 0$: fictitious force vanishes, string hangs straight down, car is an inertial frame.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Position in accelerating frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf r = \mathbf r' + \mathbf R(t)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Acceleration <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf a = \mathbf a' + \mathbf A$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Fictitious force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{fic}} = -m\mathbf A$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Modified Newton's law <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{phys}} + \mathbf F_{\text{fic}} = m\mathbf a'$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Effective gravity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf g_{\text{eff}} = \mathbf g - \mathbf A$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A pendulum hangs from the roof of a car accelerating at $\mathbf A$. In equilibrium (as seen in the car), at what angle does the string hang? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>In the car frame the bob is at rest. Forces: gravity $m\mathbf g$ down, tension along string, fictitious $-m\mathbf A$ backward.</p>
+              </div></li>
+              <li><div>
+<p>Equilibrium: tension cancels $m(\mathbf g - \mathbf A)$.</p>
+              </div></li>
+              <li><div>
+<p>The string lines up with $\mathbf g - \mathbf A$: tilted backward by $\arctan(A/g)$ from vertical.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$A = 0$: hangs straight down ✓. Large $A$: nearly flat against the roof, pointing backward ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>You're in a lift accelerating downward at $a &lt; g$. What do you feel your weight is? (Standard application.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Lift frame: fictitious force $-m\mathbf A = +ma$ upward (since $\mathbf A$ points down).</p>
+              </div></li>
+              <li><div>
+<p>Effective gravity: $g_{\text{eff}} = g - a$ downward.</p>
+              </div></li>
+              <li><div>
+<p>You feel a weight $m(g-a) &lt; mg$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Free fall ($a = g$): weightless ✓. Lift accelerating up ($a &lt; 0$): heavier than normal, as expected ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Why do astronauts in the ISS float? (Conceptual, from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Concept Question 1 analogue.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>The ISS is in a circular orbit — accelerating centripetally with $\mathbf A = -g_{\text{orb}}\hat r$ toward Earth.</p>
+              </div></li>
+              <li><div>
+<p>Inside the ISS frame, the fictitious force on an astronaut is $-m\mathbf A = +mg_{\text{orb}}\hat r$ outward.</p>
+              </div></li>
+              <li><div>
+<p>Earth's gravity provides $-mg_{\text{orb}}\hat r$ inward on the astronaut. They cancel exactly: $g_{\text{eff}} = 0$, hence weightless.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Gravity isn't weak at the ISS (it's still ~89% of surface gravity). Astronauts float because the station is in free fall around Earth ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 31 "Non-Inertial Rotating Reference Frames", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §31.2 Linearly Accelerating Reference Frames; Example 1, Concept Question 1. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter31.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

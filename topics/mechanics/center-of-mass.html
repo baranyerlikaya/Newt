@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Centre of Mass · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="center-of-mass">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Centre of Mass</h1>
+          <p class="doc-lede">For a system of N particles, the centre of mass R = Σmᵢrᵢ/M is the mass-weighted average position. Its motion captures the system's bulk translation.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>The centre of mass is the "average location" of a bunch of mass</strong>, weighted by how much mass is where <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf R = \frac{\sum_i m_i\mathbf r_i}{M}.$$
+<p>For a heavy object and a light object, the CM is close to the heavy one.</p>
+<p><strong>For uniform symmetric shapes</strong> (sphere, cube, rod, disc), the CM is at the geometric centre. A hammer's CM is up near the head because most of its mass is there.</p>
+<p><strong>Why we care:</strong> if you throw a complicated spinning object (like a wrench) in the air, its CM traces a simple parabola — just as if the whole thing were a point mass. All the complicated spinning happens around the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>The system's momentum</strong> is just $\mathbf p = M\mathbf V_{\text{CM}}$. For external forces: $\mathbf F_{\text{ext}} = M\mathbf A_{\text{CM}}$. Newton's second law written for the CM looks exactly like it does for a single particle — regardless of how many pieces are inside <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Earth-Moon:</strong> their CM is about 1700 km <em>below Earth's surface</em>. So as the Moon goes around Earth, Earth really wobbles slightly around a point inside itself.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Definition</h3>
+            <div>
+<p>The <strong>centre of mass</strong> of $N$ particles is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>:</p>
+$$\mathbf R = \frac{1}{M}\sum_{i=1}^{N} m_i\mathbf r_i, \qquad M = \sum_i m_i.$$
+<p>It is a mass-weighted average: particles of larger mass pull $\mathbf R$ toward them. For a continuous body <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>:</p>
+$$\mathbf R = \frac{1}{M}\int\mathbf r\,dm.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Where it is for common shapes</h3>
+            <div>
+<p>For uniform bodies, the CM is at the geometric centre of symmetry <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5, Example 10.3</span></span>:</p>
+<ul>
+<li>Uniform rod: midpoint.</li>
+<li>Uniform disc, sphere: centre.</li>
+<li>Uniform triangle: intersection of the medians (not centroid, but same place).</li>
+</ul>
+<p>For two bodies, the CM lies on the line joining them at distances $d_1 = m_2 r/(m_1+m_2)$ from body 1 and $d_2 = m_1 r/(m_1+m_2)$ from body 2 (inverse mass ratio) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Velocity and momentum</h3>
+            <div>
+<p>Differentiate: the CM velocity is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span></p>
+$$\mathbf V_{\text{CM}} = \dot{\mathbf R} = \frac{1}{M}\sum_i m_i\dot{\mathbf r}_i = \frac{\mathbf p_{\text{sys}}}{M}.$$
+<p>So <strong>the total momentum of the system equals its mass times the CM velocity</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. If you know only the CM motion, you know the total momentum — everything else is internal.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Kinetic energy split</h3>
+            <div>
+<p>Decompose each particle's velocity as $\mathbf v_i = \mathbf V_{\text{CM}} + \mathbf v_i'$, where $\mathbf v_i'$ is the velocity relative to the CM. The kinetic energy splits <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>:</p>
+$$K = \tfrac12 M V_{\text{CM}}^2 + K',$$
+<p>where $K' = \sum_i \tfrac12 m_i v_i'^2$ is the kinetic energy measured in the CM frame. Bulk motion plus internal motion — never mixed.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Reference bodies for continuous mass</h3>
+            <div>
+<p>For a body of continuous mass density $\rho(\mathbf r)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5, Example 10.3</span></span>:</p>
+$$\mathbf R = \frac{1}{M}\int\mathbf r\,\rho(\mathbf r)\,dV.$$
+<p>For a uniform rod of length $L$ along the $x$-axis: $R_x = \int_0^L x\,(\lambda\,dx)/M = L/2$.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The centre of mass of two or more rigid bodies stuck together is found by putting each body's full mass at its own CM, then taking the weighted average — you don't have to re-integrate over the whole shape <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>CM is <em>not</em> the same as the "geometric centre" for non-uniform bodies. A hammer's CM is near the head, not in the middle of the handle, because most of the mass is in the head <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="cmframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Two bodies orbit their common centre of mass. The CM is the dot in the middle; neither body is at it (unless they have equal mass). Lighter body → bigger orbit; heavier body → smaller orbit around the CM. The product $m\times d$ is the same for both.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Discrete CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf R = \frac{\sum_i m_i\mathbf r_i}{M}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Continuous CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf R = \frac{1}{M}\int\mathbf r\,dm$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Two bodies <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf R = \frac{m_1\mathbf r_1 + m_2\mathbf r_2}{m_1+m_2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Total momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf p_{\text{sys}} = M\mathbf V_{\text{CM}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Kinetic energy split <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$K = \tfrac12 M V_{\text{CM}}^2 + K'$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Earth-Moon system: $m_E = 5.97\times 10^{24}$, $m_M = 7.35\times 10^{22}$, separation $3.84\times 10^8\ \text{m}$. Where is the CM? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 10.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Mass ratio: $m_M/(m_E+m_M) = 7.35/604 \approx 0.0122$.</p>
+              </div></li>
+              <li><div>
+<p>Distance from Earth's centre to CM: $0.0122\times 3.84\times 10^8 \approx 4.67\times 10^6\ \text{m}$.</p>
+              </div></li>
+              <li><div>
+<p>Earth's radius is $6.37\times 10^6\ \text{m}$, so the CM is <em>inside</em> the Earth, about 1700 km below its surface.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Earth-Moon rotation is about that point, not about Earth's centre. Earth "wobbles" slightly as the Moon orbits ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Uniform rod of mass $M$ and length $L$: find the position of its CM. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 10.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Linear density $\lambda = M/L$.</p>
+              </div></li>
+              <li><div>
+<p>$R = \int_0^L x\,\lambda\,dx/M = (\lambda L^2/2)/M = L/2$.</p>
+              </div></li>
+              <li><div>
+<p>The midpoint, as expected by symmetry.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The symmetry of a uniform rod means the CM must lie on the axis of symmetry — the geometric centre ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Two bodies, $m_1 = 1\ \text{kg}$ at $\mathbf r_1 = \hat\imath$ and $m_2 = 3\ \text{kg}$ at $\mathbf r_2 = 5\hat\imath$. Find the CM.</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$M = 4\ \text{kg}$. $\mathbf R = (1\cdot 1 + 3\cdot 5)\hat\imath/4 = 16\hat\imath/4 = 4\hat\imath$.</p>
+              </div></li>
+              <li><div>
+<p>CM is 1 unit from $m_2$ (the heavier body) and 3 units from $m_1$ — inverse mass ratio.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$d_1 = m_2(r_2-r_1)/(m_1+m_2) = 3\cdot 4/4 = 3$ ✓, and $d_2 = m_1(r_2-r_1)/(m_1+m_2) = 1$ ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 10 "Momentum, System of Particles, and Conservation of Momentum", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §10.4 System of Particles, §10.5 Center of Mass; Examples 10.2, 10.3. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter10.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

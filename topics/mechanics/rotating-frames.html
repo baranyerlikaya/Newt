@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Rotating Frames and Centrifugal Force · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="rotating-frames">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Rotating Frames and Centrifugal Force</h1>
+          <p class="doc-lede">In a frame rotating with angular velocity Ω, Newton's second law gains two fictitious forces: centrifugal F_cf = +mΩ²r outward, and Coriolis F_Cor = −2mΩ×v'.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>In a rotating frame</strong> (a merry-go-round, Earth's surface), Newton's laws don't just need the one fictitious force from linear acceleration — they need <em>two</em> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li><strong>Centrifugal</strong>: $\mathbf F_{\text{cf}} = m\Omega^2\mathbf r_\perp$ pointing <em>outward</em> from the axis. Felt whether you're moving or not.</li>
+<li><strong>Coriolis</strong>: $\mathbf F_{\text{Cor}} = -2m\boldsymbol\Omega\times\mathbf v'$. Only felt when you <em>move</em> in the rotating frame. Perpendicular to your motion.</li>
+</ul>
+<p><strong>Centrifugal</strong> is the "thrown outward" feeling on a merry-go-round. It's really just your inertia — you want to go straight, the floor curves under you.</p>
+<p><strong>Coriolis</strong> bends moving things to the <strong>right</strong> in the Northern Hemisphere, to the <strong>left</strong> in the Southern. It doesn't speed things up or slow them down; it only turns them.</p>
+<p><strong>Earth's rotation</strong> makes you about $0.3\%$ lighter at the equator than at the poles, because centrifugal pulls you outward (opposing gravity) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Next page (Coriolis & Earth):</strong> hurricanes, trade winds, long-range artillery, Foucault's pendulum — all consequences of Coriolis.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Rotating frame kinematics</h3>
+            <div>
+<p>For a frame rotating about a fixed axis with constant angular velocity $\boldsymbol\Omega$, the derivative of any vector $\mathbf Q$ in the rotating frame differs from its derivative in the inertial frame by <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.4, Appendix 31.A</span></span>:</p>
+$$\left(\frac{d\mathbf Q}{dt}\right)_{\text{inertial}} = \left(\frac{d\mathbf Q}{dt}\right)_{\text{rot}} + \boldsymbol\Omega\times\mathbf Q.$$
+<p>Applying this twice to the position vector gives the acceleration relation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.4.2</span></span>:</p>
+$$\mathbf a_{\text{inertial}} = \mathbf a' + 2\boldsymbol\Omega\times\mathbf v' + \boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf r),$$
+<p>where $\mathbf v'$ and $\mathbf a'$ are velocity and acceleration measured in the rotating frame.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Fictitious forces</h3>
+            <div>
+<p>Rewrite Newton's second law in the rotating frame: $m\mathbf a' = \mathbf F_{\text{physical}} - m\,2\boldsymbol\Omega\times\mathbf v' - m\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf r)$, so <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.4.2</span></span>:</p>
+$$\mathbf F_{\text{physical}} + \mathbf F_{\text{Coriolis}} + \mathbf F_{\text{centrifugal}} = m\mathbf a',$$
+<p>with</p>
+$$\mathbf F_{\text{Coriolis}} = -2m\,\boldsymbol\Omega\times\mathbf v',$$
+$$\mathbf F_{\text{centrifugal}} = -m\,\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf r).$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Centrifugal force</h3>
+            <div>
+<p>For $\boldsymbol\Omega$ along $\hat z$ and $\mathbf r_\perp$ the perpendicular distance from the axis <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.2</span></span>:</p>
+$$\mathbf F_{\text{cf}} = +m\Omega^2\,\mathbf r_\perp.$$
+<p>Points <strong>outward</strong>, perpendicular to the rotation axis, and grows linearly with distance. It doesn't depend on the body's motion in the rotating frame.</p>
+<p>In a merry-go-round, this is the "throwing outward" you feel — really just your inertia wanting to go straight while the floor turns under you <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Coriolis force</h3>
+            <div>
+<p>$\mathbf F_{\text{Cor}} = -2m\boldsymbol\Omega\times\mathbf v'$ acts only on bodies that are <em>moving</em> in the rotating frame. It is perpendicular to $\mathbf v'$ (like a magnetic force), so it doesn't change the speed, only the direction <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.3</span></span>.</p>
+<p>In the Northern Hemisphere ($\boldsymbol\Omega$ pointing out of the ground), it deflects a moving body to the <em>right</em>. In the Southern Hemisphere, to the <em>left</em>. We will see consequences in Topic 10.3 (Motion on Earth).</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> A useful rewrite for astronomy</h3>
+            <div>
+<p>For a body <em>at rest</em> in the rotating frame ($\mathbf v' = 0$), only centrifugal acts. For a body <em>moving</em> through the rotating frame, both do. This is why rotating-frame physics is more tangled than linearly-accelerating-frame physics.</p>
+<p>If the rotating frame's axis also moves (orbits), you get more terms; the full treatment is in <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>In the rotating frame of the Earth, the centrifugal force gives an "effective" gravity slightly smaller than $GM_E/R_E^2$, and tilted away from the rotation axis. Measurements of $g$ at the equator vs the pole reveal this correction (plus Earth's oblateness) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.2, Example 6</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>"Centrifugal" and "centripetal" are opposite in direction. Centripetal is the <em>real</em> inward force (e.g., tension) in the inertial frame; centrifugal is the <em>fictitious</em> outward force in the rotating frame. Don't use both at once <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="rotframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A puck released on a rotating turntable. In the turntable's frame, the Coriolis force bends its path. Increase $\Omega$ (faster rotation): stronger deflection. Set $\Omega = 0$: the puck moves in a straight line, no fictitious force, the frame is inertial.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rotating-frame acceleration <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf a = \mathbf a' + 2\boldsymbol\Omega\times\mathbf v' + \boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf r)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Newton's law, rotating frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{phys}} + \mathbf F_{\text{Cor}} + \mathbf F_{\text{cf}} = m\mathbf a'$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Coriolis force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{Cor}} = -2m\,\boldsymbol\Omega\times\mathbf v'$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Centrifugal force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{cf}} = +m\Omega^2\,\mathbf r_\perp$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Effective gravity (rotating Earth) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf g_{\text{eff}} = \mathbf g + \Omega^2 R\cos\lambda\,\hat r_\perp$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A mass sits at rest on a rotating platform at radius $r$. In the rotating frame, what force keeps it at rest? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 4.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>In the rotating frame $\mathbf v' = 0$, so only centrifugal acts: $\mathbf F_{\text{cf}} = +m\Omega^2 r$ outward.</p>
+              </div></li>
+              <li><div>
+<p>Physical force: static friction from the platform, inward, with magnitude $m\Omega^2 r$.</p>
+              </div></li>
+              <li><div>
+<p>In the inertial frame: friction supplies the centripetal force needed to keep the mass going in a circle. Same physics, different accounting.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Maximum $r$ before sliding: $\mu_s mg \ge m\Omega^2 r$, so $r_{\max} = \mu_s g/\Omega^2$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A puck slides outward on a frictionless rotating turntable with speed $v'$ (in the turntable frame). What's the Coriolis force on it? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\boldsymbol\Omega = \Omega\hat z$ (axis of turntable). $\mathbf v' = v'\hat r$ (outward in the rotating frame).</p>
+              </div></li>
+              <li><div>
+<p>$\mathbf F_{\text{Cor}} = -2m\boldsymbol\Omega\times\mathbf v' = -2m\Omega v'(\hat z\times\hat r) = -2m\Omega v'\hat\theta$.</p>
+              </div></li>
+              <li><div>
+<p>Points opposite to the direction of rotation (clockwise if the turntable rotates CCW). The puck appears to curve <em>backward</em> as it slides outward — in the inertial frame, it goes in a straight line and the turntable rotates under it.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Coriolis is perpendicular to $\mathbf v'$: it doesn't change the puck's speed in the turntable frame, just bends its path ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Correction to $g$ at the equator due to Earth's rotation. $\Omega = 2\pi/86400 \approx 7.27\times 10^{-5}\ \text{rad/s}$, $R_E = 6.37\times 10^6\ \text{m}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 6.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>At the equator, centrifugal is radially outward with magnitude $\Omega^2 R_E$ per unit mass.</p>
+              </div></li>
+              <li><div>
+<p>$\Omega^2 R_E = (7.27\times 10^{-5})^2 \times 6.37\times 10^6 \approx 0.0337\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>So $g_{\text{eff}} \approx 9.81 - 0.034 \approx 9.78\ \text{m/s}^2$ at the equator — about $0.3\%$ smaller than at the pole.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Measured: $g_{\text{eq}} \approx 9.78$, $g_{\text{pole}} \approx 9.83\ \text{m/s}^2$ — the extra 0.02 comes from Earth's oblate shape ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 31 "Non-Inertial Rotating Reference Frames", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §31.3 Angular Velocity of a Rigid Body, §31.4 Non-inertial Rotating Reference Frame, §31.5 Motion on the Earth; Examples 2, 4, 6. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter31.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

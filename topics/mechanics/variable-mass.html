@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Variable Mass: the Rocket Equation · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="variable-mass">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Variable Mass: the Rocket Equation</h1>
+          <p class="doc-lede">A rocket loses mass by ejecting exhaust. In gravity-free space, momentum conservation gives Tsiolkovsky's equation Δv = u ln(m₀/m).</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>A rocket shoots out exhaust backward and gains momentum forward</strong>, by Newton's third law. The hard part is the mass keeps changing.</p>
+<p><strong>The rocket equation</strong> — one of the most important in aerospace <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\Delta v = u\,\ln\!\frac{m_0}{m}.$$
+<ul>
+<li>$u$: exhaust speed (how fast the gas leaves, in the rocket's frame).</li>
+<li>$m_0$: mass before the burn.</li>
+<li>$m$: mass after.</li>
+</ul>
+<p><strong>The log is cruel.</strong> To double $\Delta v$ you must <em>square</em> the mass ratio. To get $\Delta v = 2u$, $m_0/m = e^2 \approx 7.4$: you burn $87\%$ of your mass. For $\Delta v = 3u$, you burn $95\%$.</p>
+<p>That's why rockets are mostly fuel — think of Saturn V, almost entirely propellant with a tiny capsule on top <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Going up Earth's gravity well</strong> costs an extra $gt_b$ (the "gravity loss"). The faster you burn, the less you pay. Fast burns mean high thrust engines <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Staging</strong> — dropping empty tanks — helps because the log grows slowly: a lighter rocket needs less fuel to accelerate. Every real orbital rocket has multiple stages.</p>
+<p><strong>Ion engines</strong> trade thrust for exhaust speed: $u$ ten times bigger means a much better mass ratio, but a flea's push. Good for deep-space probes, not for lift-off.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The problem of variable mass</h3>
+            <div>
+<p>A rocket isn't just one lump of matter — it continuously spits out hot gas. $F = ma$ for the rocket alone is wrong, because the system is losing mass. The right place to apply Newton's laws is to the <em>whole</em> (rocket + exhaust so far), or to apply momentum conservation directly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§12.3</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Derivation of the rocket equation</h3>
+            <div>
+<p>Rocket of mass $m$ moves at velocity $v$. In a short time $dt$ it ejects a tiny bit of mass $|dm|$ ($dm &lt; 0$) at velocity $v - u$ (where $u &gt; 0$ is the exhaust speed <em>relative to the rocket</em>) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§12.3.1</span></span>.</p>
+<p>Momentum conservation (no external force):</p>
+$$mv = (m + dm)(v + dv) + (-dm)(v - u).$$
+<p>Expanding and keeping first-order terms gives the <strong>rocket equation</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$m\,dv = -u\,dm \quad\Longrightarrow\quad dv = -u\,\frac{dm}{m}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Tsiolkovsky's equation</h3>
+            <div>
+<p>Integrate from initial mass $m_0$ and velocity $v_0 = 0$ to current mass $m$ and velocity $v$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§12.3.1</span></span>:</p>
+$$\boxed{\Delta v = u\,\ln\!\frac{m_0}{m}.}$$
+<p>This is Konstantin Tsiolkovsky's equation (1903). The rocket gains velocity in proportion to the exhaust speed and the <em>log</em> of the mass ratio. Logarithm is harsh: to double $\Delta v$ you must square the mass ratio.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> With gravity</h3>
+            <div>
+<p>In a constant gravitational field, the exhaust still conserves momentum in the local frame, but gravity decelerates the rocket. If the rocket burns fuel at a rate $|\dot m|$ for time $t_b$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§12.3.2</span></span>:</p>
+$$\Delta v = u\,\ln\!\frac{m_0}{m} - g t_b.$$
+<p>The "gravity loss" term $gt_b$ punishes slow burns: faster thrust is more efficient when fighting gravity.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Staging</h3>
+            <div>
+<p>Because Tsiolkovsky's equation is logarithmic, carrying unneeded empty tanks is costly. By dropping empty stages, each remaining stage starts with a smaller $m_0$ but also a much smaller $m$, so $\Delta v$ accumulates more efficiently. Single-stage-to-orbit is extremely hard; multi-stage rockets (Saturn V, Falcon 9) are the standard <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§12.3</span></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Exhaust speed $u$ is the key design parameter. Chemical rockets: $u \sim 3\ \text{km/s}$ (kerosene/LOX) to $4.4\ \text{km/s}$ (LH₂/LOX). Ion thrusters: $u \sim 30\ \text{km/s}$ — great efficiency but tiny thrust. Nuclear or fusion rockets would reach even higher <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$u$ is the exhaust velocity <em>relative to the rocket</em>, not relative to the ground. A rocket moving at $5\ \text{km/s}$ with $u = 3\ \text{km/s}$ ejects gas moving backward at $2\ \text{km/s}$ in the ground frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="carts">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A simplified "rocket" picture. Cart 1 (dark, mass $m_1$) is the exhaust, cart 2 (grey, mass $m_2$) is the rocket. Momentum conservation: $m_1v_1 + m_2v_2 = \text{const}$, so if $m_1$ is kicked backward, $m_2$ gets pushed forward. Change $m_1$ and $m_2$ to see the mass-ratio effect. The real rocket equation is this idea repeated continuously over a long burn.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Mass loss rate (burn rate) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\dot m < 0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rocket equation (differential) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$m\,dv = -u\,dm$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Tsiolkovsky's equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\Delta v = u\,\ln\!\frac{m_0}{m}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>With constant gravity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\Delta v = u\,\ln\!\frac{m_0}{m} - gt_b$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Thrust <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$F_{\text{thrust}} = |\dot m|\,u$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A rocket with exhaust speed $u = 3\ \text{km/s}$ burns $80\%$ of its mass as fuel. Find $\Delta v$ (ignoring gravity). (Standard application of Tsiolkovsky's equation.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$m/m_0 = 0.2$, so $\ln(m_0/m) = \ln 5 \approx 1.61$.</p>
+              </div></li>
+              <li><div>
+<p>$\Delta v = 3\times 1.61 \approx 4.83\ \text{km/s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Less than one Earth orbital velocity (${\sim}8\ \text{km/s}$). To reach orbit from the ground requires a mass fraction of fuel even higher, plus staging, plus overcoming gravity ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>To reach Earth orbital velocity $\Delta v = 8\ \text{km/s}$ in gravity-free space with chemical exhaust $u = 3\ \text{km/s}$, what mass fraction must be fuel? (Standard application.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\Delta v/u = 8/3 \approx 2.67 = \ln(m_0/m)$, so $m_0/m \approx e^{2.67} \approx 14.4$.</p>
+              </div></li>
+              <li><div>
+<p>Fuel fraction: $1 - m/m_0 \approx 1 - 1/14.4 \approx 93\%$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>And this ignores gravity losses. Real-world Falcon 9: first-stage fuel fraction $\sim 95\%$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Thrust from a $500\ \text{kg/s}$ burn at $u = 4\ \text{km/s}$. (Direct $F = \dot m\,u$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$F = |\dot m|u = 500 \times 4000 = 2.0\times 10^6\ \text{N} = 2\ \text{MN}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Consistent with upper-stage rocket engines (a Merlin Vacuum produces about 1 MN) ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 12 "Momentum and the Flow of Mass", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §12.1 Introduction, §12.3 Rocket Propulsion, §12.3.1 Rocket Equation in Gravity-free Space, §12.3.2 Rocket in a Constant Gravitational Field. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter12.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

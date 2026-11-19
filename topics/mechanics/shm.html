@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Simple Harmonic Motion · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="shm">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Simple Harmonic Motion</h1>
+          <p class="doc-lede">A mass on a spring released from rest oscillates forever: x(t) = R cos(ω₀t + φ). The equation ẍ + ω₀²x = 0 and its solution, the amplitude-phase form, period and frequency.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Mass on a spring, released and left alone.</strong> It bounces back and forth forever (no friction yet). That's <strong>simple harmonic motion (SHM)</strong>.</p>
+<p>The equation of motion is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\ddot x = -\omega_0^2 x, \qquad \omega_0 = \sqrt{k/m}.$$
+<p>The acceleration is always pointing back toward the centre, and it's biggest when you're farthest away.</p>
+<p><strong>The answer</strong> is a cosine <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$x(t) = R\cos(\omega_0 t + \phi).$$
+<ul>
+<li><strong>Amplitude</strong> $R$: how far it swings. Set by how you let go.</li>
+<li><strong>Phase</strong> $\phi$: where in the cycle you start the clock.</li>
+<li><strong>Angular frequency</strong> $\omega_0$: how fast it swings. Set by the spring and mass only — stiff spring, light mass → faster <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</li>
+</ul>
+<p><strong>Period</strong> (time for one full bounce): $T = 2\pi/\omega_0 = 2\pi\sqrt{m/k}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>The big surprise:</strong> the period doesn't depend on the amplitude. Push the spring a lot or a little — same beat.</p>
+<p><strong>Pendulum:</strong> same equation, $\omega_0 = \sqrt{g/L}$. A 1 m pendulum ticks about every 2 s <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Everything oscillates like this near equilibrium.</strong> Any dip in a potential energy curve looks like a tiny parabola from close up — and parabolas give springs <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The equation of motion</h3>
+            <div>
+<p>A mass $m$ on a spring of force constant $k$ (with equilibrium at $x = 0$) feels a <strong>restoring force</strong> $F = -kx$. Newton's second law gives the <strong>simple harmonic oscillator</strong> equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Equation of Motion for Simple Oscillations</span></span>:</p>
+$$\ddot x + \omega_0^2 x = 0, \qquad \omega_0 = \sqrt{k/m}.$$
+<p>The quantity $\omega_0$, the <strong>natural angular frequency</strong>, is determined by the system alone (not by how you start it) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Solution via e^{λt}</h3>
+            <div>
+<p>Try $x = e^{\lambda t}$. Plugging in gives the characteristic equation $\lambda^2 + \omega_0^2 = 0$, with roots $\lambda = \pm i\omega_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Solution to the Equation of Motion</span></span>. The two complex solutions $e^{\pm i\omega_0 t}$ combine into a real two-parameter family:</p>
+$$x(t) = C\cos\omega_0 t + D\sin\omega_0 t.$$
+<p>Initial conditions $x(0) = x_0$, $\dot x(0) = v_0$ fix $C = x_0$ and $D = v_0/\omega_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$x(t) = x_0\cos\omega_0 t + \frac{v_0}{\omega_0}\sin\omega_0 t.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Amplitude-phase form</h3>
+            <div>
+<p>The general solution can also be written as <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Amplitude-Phase Form</span></span>:</p>
+$$x(t) = R\cos(\omega_0 t + \phi),$$
+<p>where the <strong>amplitude</strong> $R$ and <strong>initial phase</strong> $\phi$ are set by the initial conditions <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$R = \sqrt{x_0^2 + \frac{v_0^2}{\omega_0^2}}, \qquad \tan\phi = -\frac{v_0}{\omega_0 x_0}.$$
+<p>$R$ is the maximum displacement from equilibrium; $\phi$ sets "where in the cycle" you start the clock <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Period and frequency</h3>
+            <div>
+<p>The motion repeats after the <strong>period</strong> $T = 2\pi/\omega_0$. The ordinary <strong>frequency</strong> (hertz) is $f = 1/T = \omega_0/(2\pi)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Physical Interpretation of the General Solution</span></span>. Neither depends on the amplitude — stiffer spring or lighter mass oscillates faster, but a bigger swing doesn't change the beat.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Where SHM shows up</h3>
+            <div>
+<p>Any system sitting at a <em>stable</em> equilibrium, when disturbed a little, oscillates approximately with $\omega_0 = \sqrt{U''(x_0)/m}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Stable and Unstable Equilibrium</span></span> — a point we developed in Topic 5.5. Hence pendulums, molecules in a bond, and bridges in the wind all share this same equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§14.6</span></span>.</p>
+<p>For the <strong>simple pendulum</strong> of length $L$: expanding gravity to first order in the angle, $\ddot\theta + (g/L)\theta = 0$, so $\omega_0 = \sqrt{g/L}$ and the period is $T = 2\pi\sqrt{L/g}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Worked Example "Simple pendulum"</span></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The initial conditions set $R$ and $\phi$; the physics sets $\omega_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. Two different initial conditions give two different oscillations with exactly the same beat.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$\omega_0$ is called <em>angular frequency</em> and lives in rad/s. The <em>ordinary</em> frequency $f$ lives in Hz. They differ by a factor of $2\pi$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="spring">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A mass on a spring released from $x = 1$. With friction $b = 0$ it is a simple harmonic oscillator: $x(t) = \cos(\omega_0 t)$, a perfect cosine whose period is $T = 2\pi/\omega_0$. $\omega_0$ shown in the top-right corner changes when you change $k$ or $m$, but nothing changes the amplitude or beat of a given run. Try $k = 12$, $m = 1$: $\omega_0 \approx 3.46\ \text{rad/s}$, so $T \approx 1.8\ \text{s}$.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>SHM equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\ddot x + \omega_0^2 x = 0, \quad \omega_0 = \sqrt{k/m}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>General solution <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$x(t) = C\cos\omega_0 t + D\sin\omega_0 t$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Amplitude-phase form <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$x(t) = R\cos(\omega_0 t + \phi)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>From initial conditions <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{gathered}R = \sqrt{x_0^2 + v_0^2/\omega_0^2} \\ \tan\phi = -v_0/(\omega_0 x_0)\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Period and frequency <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$T = \frac{2\pi}{\omega_0}, \quad f = \frac{\omega_0}{2\pi}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Simple pendulum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\omega_0 = \sqrt{g/L}, \quad T = 2\pi\sqrt{L/g}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Small oscillations about $x_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\omega_0 = \sqrt{U''(x_0)/m}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A mass on a spring is released from rest at $x = x_0$. Find $x(t)$, the maximum speed and the period. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Solution to the Equation of Motion and §Amplitude-Phase Form.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Initial conditions: $x(0) = x_0$, $\dot x(0) = 0$. Then $C = x_0$, $D = 0$, so $x(t) = x_0\cos\omega_0 t$.</p>
+              </div></li>
+              <li><div>
+<p>Maximum speed at $x = 0$: $|v|_{\max} = R\omega_0 = x_0\omega_0$.</p>
+              </div></li>
+              <li><div>
+<p>Period $T = 2\pi/\omega_0 = 2\pi\sqrt{m/k}$, independent of $x_0$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Larger mass → slower oscillation (bigger $T$), stiffer spring → faster, but you can double the amplitude without changing the period at all ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A simple pendulum of length $L = 1\ \text{m}$ is released from $\theta_0 = 0.1\ \text{rad}$ at rest. Find its period and the amplitude of $\theta(t)$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Example "Simple pendulum".)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Small-angle equation: $\ddot\theta + (g/L)\theta = 0$, so $\omega_0 = \sqrt{g/L} \approx \sqrt{9.81} \approx 3.13\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>Period $T = 2\pi/\omega_0 \approx 2.01\ \text{s}$.</p>
+              </div></li>
+              <li><div>
+<p>$\theta(0) = 0.1$, $\dot\theta(0) = 0$, so $\theta(t) = 0.1\cos(3.13\,t)$: amplitude $0.1\ \text{rad}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>For small amplitudes the period depends only on $L$ and $g$. A pendulum clock with a $1\ \text{m}$ bob ticks about every second, matching the standard-pendulum design ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For $U(x) = k(x^3 - 3x)$, find the small-oscillation frequency about the stable equilibrium. (From Topic 5.5 Example 1 and <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Stable and Unstable Equilibrium.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Stable equilibrium at $x_0 = 1$, with $U''(1) = 6k$.</p>
+              </div></li>
+              <li><div>
+<p>Small oscillations: $\omega_0 = \sqrt{U''(x_0)/m} = \sqrt{6k/m}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Same shape as the spring result with the local "effective stiffness" $6k$. ✓</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>İ. Yalçınkaya, <em>Chapter 4: Small Oscillations</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Equation of Motion for Simple Oscillations, §Solution to the Equation of Motion, §Amplitude-Phase Form, §Physical Interpretation of the General Solution, §Stable and Unstable Equilibrium; Worked Example “Simple pendulum”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/small-oscillations/main.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 14 "Potential Energy and Conservation of Energy", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §14.6 Spring Force Energy Diagram. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter14.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

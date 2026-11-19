@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Damped Oscillations · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="damped-oscillations">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Damped Oscillations</h1>
+          <p class="doc-lede">Adding a drag force −bẋ gives ẍ + 2γẋ + ω₀²x = 0, with three regimes depending on γ/ω₀: underdamped (oscillates while decaying), critically damped and overdamped.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Add friction and the oscillation dies out.</strong> How it dies depends on how strong the damping is compared to the natural frequency $\omega_0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>Use the ratio $\gamma = b/(2m)$ versus $\omega_0$:</p>
+<ul>
+<li><strong>Weak damping ($\gamma &lt; \omega_0$): "underdamped".</strong> Oscillates while shrinking. A guitar string, a child's swing, a tuning fork.</li>
+<li><strong>Just-right damping ($\gamma = \omega_0$): "critically damped".</strong> No oscillation, returns to rest as fast as possible. Shock absorbers, door closers.</li>
+<li><strong>Heavy damping ($\gamma &gt; \omega_0$): "overdamped".</strong> Also no oscillation, but <em>slower</em> than critical. Slamming a car door with hydraulic damping.</li>
+</ul>
+<p><strong>Quality factor $Q = \omega_0/(2\gamma)$</strong> measures how good the oscillator is at keeping going <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>A violin string: $Q \sim 10^3$, so it rings for about $300$ cycles.</li>
+<li>A car suspension: $Q \approx 1$, bounces barely once.</li>
+<li>Quartz crystal in a watch: $Q \sim 10^5$.</li>
+</ul>
+<p>Per cycle, the fraction of energy lost is $\Delta E/E \approx 2\pi/Q$: high $Q$ = loses little per cycle = rings long <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The equation</h3>
+            <div>
+<p>Add a damping force $F_d = -b\dot x$ (fluid drag at low speeds) to Hooke's law: $m\ddot x = -kx - b\dot x$. Rearranging with $\gamma = b/(2m)$ and $\omega_0 = \sqrt{k/m}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Damped Oscillations</span></span>:</p>
+$$\ddot x + 2\gamma\dot x + \omega_0^2 x = 0.$$
+<p>Try $x = e^{\lambda t}$: the characteristic equation is $\lambda^2 + 2\gamma\lambda + \omega_0^2 = 0$, with roots</p>
+$$\lambda_{1,2} = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}.$$
+<p>Three cases depending on the sign of the discriminant <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Underdamped (γ < ω₀)</h3>
+            <div>
+<p>Complex roots $\lambda = -\gamma \pm i\omega_1$ where $\omega_1 = \sqrt{\omega_0^2 - \gamma^2}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Underdamped Oscillations</span></span>:</p>
+$$x(t) = R\,e^{-\gamma t}\cos(\omega_1 t + \phi).$$
+<p>A cosine inside an exponentially decaying envelope. The damped angular frequency $\omega_1$ is slightly lower than $\omega_0$ — more damping means slower oscillations <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>After one period $T = 2\pi/\omega_1$ the amplitude has shrunk by a factor $e^{-\gamma T}$. The energy drops by $e^{-2\gamma T}$ per period: $E(t+T) = E(t)\,e^{-2\gamma T}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Critically damped (γ = ω₀)</h3>
+            <div>
+<p>Repeated real root $\lambda = -\gamma$. The general solution is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Critically Damped Oscillations</span></span>:</p>
+$$x(t) = (A + Bt)\,e^{-\gamma t}.$$
+<p>No oscillation, and the return to equilibrium is the <em>fastest</em> smooth decay — exactly the right damping for shock absorbers and door closers <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Overdamped (γ > ω₀)</h3>
+            <div>
+<p>Two distinct real negative roots $\lambda_{1,2} = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}$. Both exponentials decay <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Overdamped Motion</span></span>:</p>
+$$x(t) = A\,e^{\lambda_1 t} + B\,e^{\lambda_2 t}.$$
+<p>The mass crawls back to equilibrium without oscillating. Heavy damping makes the approach <em>slower</em> than critical <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Quality factor</h3>
+            <div>
+<p>The <strong>quality factor</strong> $Q$ measures how long the oscillations last <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Quality Factor</span></span>:</p>
+$$Q = \frac{\omega_0}{2\gamma}.$$
+<p>For weak damping ($\gamma \ll \omega_0$), the fractional energy lost per cycle is $\Delta E/E \approx 2\pi/Q$. A violin string has $Q \sim 10^3$, a car shock absorber $Q \sim 1$, a quartz crystal $Q \sim 10^5$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>The amplitude drops to $1/e$ in $t_{1/e} = 1/\gamma$. The number of cycles in this time is $N \approx Q/\pi$: a high-$Q$ oscillator rings many times before fading <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>$\omega_0$ is the natural frequency of the <em>undamped</em> system. The actual oscillation when there is damping is at $\omega_1 &lt; \omega_0$. For high-$Q$ systems $\omega_1 \approx \omega_0(1 - 1/(8Q^2))$ — the correction is tiny <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Critical damping gives the <em>fastest return to rest</em>, not the fastest return to the origin. If you want to zero a measuring instrument quickly without overshooting, you want critical damping; if you want to damp an oscillation out as quickly as possible, slightly underdamped can be faster at first but overshoots <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="spring">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A mass on a spring with damping $b$. Keep $k = 12$, $m = 1$, so $\omega_0 \approx 3.46$ and critical damping is at $b = 2\sqrt{km} \approx 6.9$.
+$b = 0$: no damping, oscillates forever.
+$b = 0.3$ (default): weak damping, oscillates while the envelope shrinks exponentially.
+$b = 7$: critically damped, returns to rest quickly without oscillating.
+$b = 20$: overdamped, crawls back more slowly.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Damped oscillator equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\ddot x + 2\gamma\dot x + \omega_0^2 x = 0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Characteristic roots <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\lambda = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Underdamped (γ < ω₀) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{gathered}x = R e^{-\gamma t}\cos(\omega_1 t + \phi) \\ \omega_1 = \sqrt{\omega_0^2 - \gamma^2}\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Critically damped (γ = ω₀) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$x = (A + Bt)\,e^{-\gamma t}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Overdamped (γ > ω₀) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$x = A e^{\lambda_1 t} + B e^{\lambda_2 t}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energy decay (underdamped) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$E(t) = E_0\,e^{-2\gamma t}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Quality factor <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$Q = \frac{\omega_0}{2\gamma}, \qquad \frac{\Delta E}{E} \approx \frac{2\pi}{Q}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $1\ \text{kg}$ mass on a spring $k = 100\ \text{N/m}$ has damping $b = 2\ \text{kg/s}$. Find $\gamma$, $\omega_0$, which regime, $\omega_1$, $Q$ and $t_{1/e}$. (Direct application of <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\omega_0 = \sqrt{k/m} = 10\ \text{rad/s}$. $\gamma = b/(2m) = 1\ \text{s}^{-1}$.</p>
+              </div></li>
+              <li><div>
+<p>$\gamma &lt; \omega_0$: underdamped. $\omega_1 = \sqrt{100 - 1} \approx 9.95\ \text{rad/s}$ — very close to $\omega_0$.</p>
+              </div></li>
+              <li><div>
+<p>$Q = \omega_0/(2\gamma) = 5$. $t_{1/e} = 1/\gamma = 1\ \text{s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Cycles before amplitude drops to $1/e$: $N \approx Q/\pi \approx 1.6$ — about 1–2 oscillations before noticeable decay ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For what damping $b$ is a mass-spring system critically damped? Use $m$ and $k$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Critically Damped Oscillations.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Critical: $\gamma = \omega_0$, i.e. $b/(2m) = \sqrt{k/m}$.</p>
+              </div></li>
+              <li><div>
+<p>Solve: $b_{\text{crit}} = 2\sqrt{km}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Dimensionally $\sqrt{kg \cdot N/m} = \sqrt{kg^2/s^2} = kg/s$ ✓, correct units for a drag coefficient.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A guitar string rings for $N$ cycles before dropping to $1/e$. Estimate its $Q$ and the time the note lasts if $f = 440\ \text{Hz}$. (Application of <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §Quality Factor.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$Q \approx \pi N$. For $N = 300$ cycles: $Q \approx 942$.</p>
+              </div></li>
+              <li><div>
+<p>$t_{1/e} = Q/(\pi f) \approx 942/(\pi \times 440) \approx 0.68\ \text{s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Matches a plucked steel string that rings noticeably for about a second before fading. ✓</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>İ. Yalçınkaya, <em>Chapter 4: Small Oscillations</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Damped Oscillations, §Underdamped Oscillations, §Critically Damped Oscillations, §Overdamped Motion, §Quality Factor; Worked Examples “Determining the damping constant from amplitude decay”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/small-oscillations/main.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

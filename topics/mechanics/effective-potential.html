@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Effective Potential and Turning Points · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="effective-potential">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Effective Potential and Turning Points</h1>
+          <p class="doc-lede">For a particle in a central potential U(r), angular momentum conservation reduces the motion to one dimension in the effective potential U_eff(r) = U(r) + L²/(2μr²).</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>For a central force</strong> (gravity, Coulomb attraction, spring pulling to a centre), angular momentum $L$ is conserved. That reduces the 2D problem to a 1D problem in a modified potential <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p>The <strong>effective potential</strong> is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>:</p>
+$$U_{\text{eff}}(r) = U(r) + \underbrace{\frac{L^2}{2\mu r^2}}_{\text{centrifugal barrier}}.$$
+<p>The extra bit is the <strong>centrifugal barrier</strong>. It acts like a wall at small $r$ because, by angular momentum conservation, the closer you get the faster you spin — and spinning fast takes energy.</p>
+<p><strong>Reading the graph of $U_{\text{eff}}$</strong>: pretend you're a particle sliding on it. You can only be where $E \ge U_{\text{eff}}(r)$:</p>
+<ul>
+<li>Trapped in a dip? You oscillate back and forth between two $r$ values: a <strong>bound orbit</strong>, like a planet around the Sun (ellipse).</li>
+<li>Sitting right at the bottom of the dip? A <strong>circular orbit</strong>.</li>
+<li>Above the barrier? You come in, bounce off at some closest approach $r_{\min}$, and fly away: an <strong>unbound orbit</strong> (hyperbola — comets, scattering).</li>
+</ul>
+<p><strong>Falling in is hard.</strong> Unless $L = 0$ (purely radial motion), the centrifugal barrier always prevents you reaching $r = 0$. That's why the Earth doesn't spiral into the Sun <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Central motion: planar, conserving L</h3>
+            <div>
+<p>A particle of (reduced) mass $\mu$ in a central potential $U(r)$ has angular momentum $\mathbf L = \mu\,\mathbf r\times\dot{\mathbf r}$ conserved (central force → no torque) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. Motion stays in the plane perpendicular to $\mathbf L$. Use polar coordinates $(r,\theta)$ in that plane. Then <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§20.2</span></span>:</p>
+$$L = \mu r^2\dot\theta = \text{const}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Energy in polar form</h3>
+            <div>
+<p>The speed squared in polar coordinates is $\dot r^2 + r^2\dot\theta^2$. The energy is</p>
+$$E = \tfrac12\mu(\dot r^2 + r^2\dot\theta^2) + U(r).$$
+<p>Replace $\dot\theta = L/(\mu r^2)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§20.2</span></span>:</p>
+$$E = \tfrac12\mu\dot r^2 + \underbrace{\frac{L^2}{2\mu r^2} + U(r)}_{U_{\text{eff}}(r)}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The effective potential</h3>
+            <div>
+<p>The second term is the <strong>effective potential</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§20.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2</span></span>:</p>
+$$\boxed{U_{\text{eff}}(r) = U(r) + \frac{L^2}{2\mu r^2}.}$$
+<p>The extra $L^2/(2\mu r^2)$ is the <strong>centrifugal barrier</strong>: a repulsive term that grows as $r \to 0$. It doesn't come from a real force — it comes from angular momentum conservation, which forces faster rotation at smaller $r$.</p>
+<p>The radial motion now looks like 1D motion of a particle in $U_{\text{eff}}(r)$: $\tfrac12\mu\dot r^2 = E - U_{\text{eff}}(r)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Turning points and bound motion</h3>
+            <div>
+<p>Since $\tfrac12\mu\dot r^2 \ge 0$, the motion is restricted to $r$ with $E \ge U_{\text{eff}}(r)$. The boundaries where $E = U_{\text{eff}}$ are <strong>turning points</strong>: there $\dot r = 0$ instantaneously but $\dot\theta = L/(\mu r^2) \ne 0$, so the particle doesn't stop — it just reverses its radial motion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2</span></span>.</p>
+<p>If there are two turning points $r_{\min}, r_{\max}$, the orbit is <strong>bound</strong> (oscillates between them). If there is only one ($r_{\min}$) and $U_{\text{eff}} \to 0$ at infinity, the orbit is <strong>unbound</strong> — the particle comes in from $\infty$, reaches the closest approach, and flies back out <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§20.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Shape of U_eff for inverse-square gravity</h3>
+            <div>
+<p>For $U(r) = -GMm/r$, the effective potential has a well <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2.1</span></span>:</p>
+<ul>
+<li>Deep well at intermediate $r$: minimum at $r = L^2/(GMm^2\mu)$.</li>
+<li>Centrifugal barrier as $r \to 0^+$ — the particle can't fall to $r = 0$ unless $L = 0$.</li>
+<li>Approaches 0 as $r \to \infty$.</li>
+</ul>
+<p>Depending on the total energy $E$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2.1</span></span>:</p>
+<ul>
+<li>$E &lt; 0$ and $E$ above the well's minimum: bound ellipse.</li>
+<li>$E &lt; 0$ exactly at the minimum: circular orbit.</li>
+<li>$E = 0$: parabola, barely unbound.</li>
+<li>$E &gt; 0$: hyperbola.</li>
+</ul>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The centrifugal barrier is not a force in the lab frame — it comes from writing the radial equation while using angular momentum conservation. In the rotating frame of the orbit, it <em>is</em> a real centrifugal force (Topic 10.2) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$L$ is a property of the orbit — set by the initial conditions. Change $L$ and the whole $U_{\text{eff}}$ changes. Only for $L = 0$ does the particle move on a radial line and can reach $r = 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§3.2</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="potwell">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">The idea with a different potential. Think of the central-force $U_{\text{eff}}(r)$: a well and a horizontal $E$ line. A particle with energy $E$ trapped in the well oscillates between the two turning points (perihelion and aphelion) while whirling around the centre — an ellipse. Raise $E$ above the well walls and it escapes. Here the $x$-axis plays the role of $r$ and the valley walls are from gravity's $-1/r$ (deepening it) plus the centrifugal $+L^2/r^2$ (lifting it near zero).</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$L = \mu r^2\dot\theta = \text{const}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$E = \tfrac12\mu\dot r^2 + U_{\text{eff}}(r)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Effective potential <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
+              <div class="formula-body">$$U_{\text{eff}}(r) = U(r) + \frac{L^2}{2\mu r^2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Turning points <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
+              <div class="formula-body">$$E = U_{\text{eff}}(r_{\text{turning}})$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Radial speed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
+              <div class="formula-body">$$\dot r = \pm\sqrt{\tfrac{2}{\mu}\,[E - U_{\text{eff}}(r)]}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Circular orbit radius (min of $U_{	ext{eff}}$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span></span></figcaption>
+              <div class="formula-body">$$\left.\frac{dU_{\text{eff}}}{dr}\right|_{r_c} = 0$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For the gravitational potential $U = -GMm/r$, find the radius $r_c$ of a circular orbit and the corresponding $L$ in terms of $r_c$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>, §3.2.1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$U_{\text{eff}} = -GMm/r + L^2/(2\mu r^2)$. Set $dU_{\text{eff}}/dr = 0$:</p>
+$$\frac{GMm}{r^2} - \frac{L^2}{\mu r^3} = 0$$
+$$\Rightarrow L^2 = GMm\mu r_c.$$
+              </div></li>
+              <li><div>
+<p>With $\mu \approx m$ (Sun-planet): $L^2 = GMm^2 r_c$, so $L = m\sqrt{GMr_c}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Orbital speed $v = L/(mr_c) = \sqrt{GM/r_c}$, matching Topic 7.2 ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For $U = -GMm/r$, find the two turning points of an elliptical orbit with energy $E$ and angular momentum $L$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>, §3.2.1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$E = U_{\text{eff}}(r) \Rightarrow E + GMm/r - L^2/(2\mu r^2) = 0$. Multiply by $r^2$:</p>
+$$E r^2 + GMm\,r - \frac{L^2}{2\mu} = 0.$$
+              </div></li>
+              <li><div>
+<p>Quadratic in $r$: $r_{\pm} = \dfrac{-GMm \pm \sqrt{(GMm)^2 + 2EL^2/\mu}}{2E}$.</p>
+              </div></li>
+              <li><div>
+<p>For $E &lt; 0$ (bound) these give $r_{\min}$ (perihelion) and $r_{\max}$ (aphelion). Their average, $(r_+ + r_-)/2 = -GMm/(2E) = a$, is the semi-major axis — consistent with Topic 7.3.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Sum of the roots: $r_+ + r_- = -GMm/E$ (from Vieta). So $a = -GMm/(2E)$, equivalent to $E = -GMm/(2a)$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>For a repulsive inverse-square (like-charge Coulomb), $U(r) = k/r$ with $k &gt; 0$. Show that $U_{\text{eff}}$ has no well: every orbit is unbound. (Classical scattering, <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§20.4</span></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$U_{\text{eff}} = k/r + L^2/(2\mu r^2)$: both terms positive, both decrease as $r \to \infty$.</p>
+              </div></li>
+              <li><div>
+<p>$U_{\text{eff}}$ is monotonically decreasing for $r &gt; 0$ (no minimum).</p>
+              </div></li>
+              <li><div>
+<p>So any $E &gt; 0$ gives a single turning point $r_{\min}$ (closest approach) and the orbit is a hyperbola heading back out.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>This is exactly the setup for Rutherford scattering (Topic 8.4), where alpha particles come in, bend around the nucleus, and fly away ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Central-Force Motion</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Direct Consequences of the Definitions (angular momentum conservation). <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/central-force-motion/main.pdf">PDF</a></span></li>
+            <li><span>N. Harnew, <em>Introduction to Classical Mechanics</em>, Lectures 20–29, University of Oxford, Hilary Term 2017. §20.2 Hyperbolic orbit: the distance of closest approach. <a href="https://users.physics.ox.ac.uk/~harnew/lectures/mechanics-lectures-20to29.pdf">PDF</a></span></li>
+            <li><span>J. Shapiro, <em>Classical Mechanics</em>, Ch. 3 "Two Body Central Forces", Rutgers University. §3.1.2 Reduction to one dimension (defines effective potential), §3.2 Integrating the motion. <a href="https://www.physics.rutgers.edu/~shapiro/507/book4.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

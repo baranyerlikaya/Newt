@@ -1010,6 +1010,221 @@
     }
   });
 
+  V.register('drivenosc', {
+    params: {
+      w: { label: 'ω', min: 0.1, max: 3, value: 1, unit: 'rad/s', digits: 2 },
+      g: { label: 'γ', min: 0.02, max: 0.5, value: 0.1, unit: '1/s', digits: 2 }
+    },
+    duration: 40,
+    init: function (p) { return { y: [0, 0] }; },
+    step: function (s, dt, p) {
+      stepRK4(s, dt, function (y) { return [y[1], -2 * p.g * y[1] - 1 * y[0] + 1 * Math.cos(p.w * (s.t = (s.t || 0) + 0))]; });
+    },
+    draw: function (c, w, h, s, p, t) {
+      // Steady-state amplitude A(w) curve
+      var A = function (W) { return (1 / 1) / Math.sqrt(Math.pow(1 - W * W, 2) + Math.pow(2 * p.g * W, 2)); };
+      var W = 0, Amax = 0.1;
+      for (W = 0.05; W < 3; W += 0.02) Amax = Math.max(Amax, A(W));
+      D.grid(c, w, h, 32);
+      var gx0 = 40, gx1 = w - 16, gy = h - 40, gh = h - 60;
+      D.line(c, gx0, gy, gx1, gy, FAINT, 1); D.line(c, gx0, gy, gx0, gy - gh, FAINT, 1);
+      D.plot(c, A, 0.05, 2.5, function (ww) { return gx0 + ww / 2.5 * (gx1 - gx0); }, function (a) { return gy - a / Amax * gh; }, INK, 2);
+      var cur = A(p.w);
+      D.dot(c, gx0 + p.w / 2.5 * (gx1 - gx0), gy - cur / Amax * gh, 6, INK);
+      D.label(c, 'A(ω)', 10, gy - gh + 12);
+      D.label(c, 'ω/ω₀', gx1 - 20, gy + 14);
+      D.line(c, gx0 + 1 / 2.5 * (gx1 - gx0), gy, gx0 + 1 / 2.5 * (gx1 - gx0), gy - gh, FAINT, 1, [2, 3]);
+      D.label(c, 'ω₀ = 1', gx0 + 1 / 2.5 * (gx1 - gx0) + 6, gy - gh + 24);
+      D.label(c, 'current ω = ' + p.w.toFixed(2) + ', A = ' + cur.toFixed(2) + ' (Q ≈ ' + (1 / (2 * p.g)).toFixed(1) + ')', 10, 20, 'left', INK);
+    }
+  });
+
+  V.register('phasespace', {
+    params: {
+      g: { label: 'γ', min: 0, max: 1, value: 0, unit: '1/s', digits: 2 }
+    },
+    duration: 20,
+    init: function () { return { y: [1.5, 0], trail: [] }; },
+    step: function (s, dt, p) {
+      stepRK4(s, dt, function (y) { return [y[1], -2 * p.g * y[1] - 1 * y[0]]; });
+      s.trail.push([s.y[0], s.y[1]]);
+      if (s.trail.length > 400) s.trail.shift();
+    },
+    draw: function (c, w, h, s, p) {
+      var sc = Math.min(w, h) * 0.3, cx = w / 2, cy = h / 2;
+      D.grid(c, w, h, 32);
+      D.line(c, cx - sc * 1.3, cy, cx + sc * 1.3, cy, FAINT, 1);
+      D.line(c, cx, cy - sc * 1.3, cx, cy + sc * 1.3, FAINT, 1);
+      c.beginPath();
+      s.trail.forEach(function (q, i) { var x = cx + q[0] * sc / 2, y = cy - q[1] * sc / 2; if (i) c.lineTo(x, y); else c.moveTo(x, y); });
+      c.strokeStyle = MUTED; c.lineWidth = 1.5; c.stroke();
+      D.dot(c, cx + s.y[0] * sc / 2, cy - s.y[1] * sc / 2, 6, INK);
+      D.label(c, 'x', cx + sc * 1.3 + 4, cy);
+      D.label(c, 'v', cx - 10, cy - sc * 1.3 + 4, 'right');
+      D.label(c, p.g < 0.01 ? 'ellipse (energy conserved)' : 'spiral inward (energy dissipated)', 10, 20, 'left', INK);
+    }
+  });
+
+  V.register('gravity', {
+    params: {
+      M: { label: 'M', min: 0.5, max: 10, value: 5, unit: '×10²⁴ kg', digits: 1 },
+      r: { label: 'r', min: 1, max: 5, value: 2, unit: '×10⁷ m', digits: 1 }
+    },
+    init: function () { return {}; },
+    draw: function (c, w, h, s, p) {
+      var G = 6.674;
+      var g = G * p.M / (p.r * p.r);
+      var cx = w / 2, cy = h / 2;
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, 24, FAINT, 1);
+      D.dot(c, cx, cy, 14, INK);
+      D.label(c, 'M', cx, cy + 32, 'center');
+      var px = cx + p.r * 30, py = cy;
+      D.ring(c, cx, cy, p.r * 30, FAINT, 1, [3, 3]);
+      D.dot(c, px, py, 7, INK);
+      D.arrow(c, px, py, px - g * 8, py, INK, 2);
+      D.label(c, 'F = GMm/r² ∝ 1/r²', 10, 20, 'left', INK);
+      D.label(c, 'g_at_r = ' + g.toFixed(2) + ' m/s² (×10⁻³)', 10, 38);
+      D.label(c, 'r', (cx + px) / 2, cy - 10, 'center');
+    }
+  });
+
+  V.register('kepler', {
+    params: {
+      e: { label: 'e', min: 0, max: 0.9, value: 0.5, digits: 2 }
+    },
+    duration: 20,
+    init: function () { return { th: 0 }; },
+    step: function (s, dt, p) {
+      // area sweep: dθ/dt = L/(mr²) so for constant L, slower at larger r
+      var r = 1 / (1 + p.e * Math.cos(s.th));
+      s.th += dt / (r * r) * 0.5;
+      if (s.th > 2 * Math.PI) s.th -= 2 * Math.PI;
+    },
+    draw: function (c, w, h, s, p) {
+      var sc = Math.min(w, h) * 0.3, cx = w / 2, cy = h / 2;
+      D.grid(c, w, h, 32);
+      // ellipse: r = a(1-e²)/(1 + e cos θ) with focus at origin
+      var a = 1, e = p.e, A = a * (1 - e * e);
+      c.beginPath();
+      for (var i = 0; i <= 200; i++) {
+        var th = i / 200 * 2 * Math.PI;
+        var r = A / (1 + e * Math.cos(th));
+        var x = cx + r * Math.cos(th) * sc, y = cy - r * Math.sin(th) * sc;
+        if (i) c.lineTo(x, y); else c.moveTo(x, y);
+      }
+      c.strokeStyle = INK; c.lineWidth = 1.5; c.stroke();
+      // Sun at focus
+      D.dot(c, cx, cy, 8, INK);
+      // planet
+      var r0 = A / (1 + e * Math.cos(s.th));
+      var px = cx + r0 * Math.cos(s.th) * sc, py = cy - r0 * Math.sin(s.th) * sc;
+      // shade the swept area
+      c.beginPath();
+      c.moveTo(cx, cy);
+      for (var k = 0; k < 20; k++) {
+        var dt2 = k / 20;
+        var thk = s.th - dt2 * 0.5;
+        var rk = A / (1 + e * Math.cos(thk));
+        c.lineTo(cx + rk * Math.cos(thk) * sc, cy - rk * Math.sin(thk) * sc);
+      }
+      c.closePath();
+      c.fillStyle = 'rgba(20,20,20,0.15)'; c.fill();
+      D.line(c, cx, cy, px, py, MUTED, 1);
+      D.dot(c, px, py, 7, INK);
+      D.label(c, 'e = ' + e.toFixed(2) + ' (0 = circle, →1 = very elongated)', 10, 20, 'left', INK);
+      D.label(c, 'Kepler 2: equal areas in equal times', 10, h - 16);
+    }
+  });
+
+  V.register('cmframe', {
+    params: {
+      m1: { label: 'm₁', min: 0.5, max: 4, value: 1, unit: 'kg', digits: 1 },
+      m2: { label: 'm₂', min: 0.5, max: 4, value: 2, unit: 'kg', digits: 1 }
+    },
+    duration: 8,
+    init: function () { return { th: 0 }; },
+    step: function (s, dt, p) { s.th += dt; },
+    draw: function (c, w, h, s, p) {
+      var M = p.m1 + p.m2, cx = w / 2, cy = h / 2, R = 60;
+      // CM at midpoint, planets orbiting around CM at different distances
+      var d1 = R * p.m2 / M, d2 = R * p.m1 / M;
+      D.grid(c, w, h, 32);
+      D.dot(c, cx, cy, 3, MUTED);
+      D.label(c, 'CM', cx + 6, cy - 6);
+      D.ring(c, cx, cy, d1, FAINT, 1, [3, 3]);
+      D.ring(c, cx, cy, d2, FAINT, 1, [3, 3]);
+      var p1x = cx + d1 * Math.cos(s.th), p1y = cy - d1 * Math.sin(s.th);
+      var p2x = cx - d2 * Math.cos(s.th), p2y = cy + d2 * Math.sin(s.th);
+      D.dot(c, p1x, p1y, 5 + p.m1 * 2, INK);
+      D.dot(c, p2x, p2y, 5 + p.m2 * 2, MUTED);
+      D.line(c, p1x, p1y, p2x, p2y, FAINT, 1);
+      D.label(c, 'm₁', p1x + 8, p1y);
+      D.label(c, 'm₂', p2x + 8, p2y);
+      D.label(c, 'CM stays at rest; m₁d₁ = m₂d₂', 10, 20, 'left', INK);
+      D.label(c, 'd₁ = ' + d1.toFixed(0) + ', d₂ = ' + d2.toFixed(0), 10, 38);
+    }
+  });
+
+  V.register('rolling', {
+    params: {
+      v: { label: 'v', min: 0.5, max: 3, value: 1.5, unit: 'm/s', digits: 1 }
+    },
+    duration: 10,
+    init: function () { return { x: 0 }; },
+    step: function (s, dt, p) { s.x += p.v * dt * 30; if (s.x > 800) s.x = 0; },
+    draw: function (c, w, h, s, p) {
+      var R = 40, base = h * 0.6, cx = 40 + (s.x % (w - 120)), cy = base - R;
+      var th = s.x / R;
+      D.grid(c, w, h, 32);
+      D.line(c, 8, base, w - 8, base, FAINT, 1.5);
+      D.ring(c, cx, cy, R, INK, 1.5);
+      // Spokes
+      for (var k = 0; k < 4; k++) {
+        var a = th + k * Math.PI / 2;
+        D.line(c, cx, cy, cx + R * Math.cos(a), cy + R * Math.sin(a), MUTED, 1);
+      }
+      // Marked point
+      var mx = cx + R * Math.cos(-th), my = cy + R * Math.sin(-th);
+      D.dot(c, mx, my, 5, INK);
+      // Velocity arrows
+      D.arrow(c, cx, cy, cx + p.v * 15, cy, INK, 1.5);
+      // Instantaneous contact point: at the bottom
+      var bx = cx, by = base;
+      D.dot(c, bx, by, 4, MUTED);
+      D.label(c, 'instant. at rest', bx, base + 14, 'center');
+      D.label(c, 'v_CM = ' + p.v.toFixed(1) + ' m/s', 10, 20, 'left', INK);
+      D.label(c, 'v = ωR (no slip)', 10, 38);
+    }
+  });
+
+  V.register('rotframe', {
+    params: {
+      w: { label: 'Ω', min: 0, max: 2, value: 1, unit: 'rad/s', digits: 1 }
+    },
+    duration: 10,
+    init: function () { return { x: 0, y: 0, vx: 0.5, vy: 0 }; },
+    step: function (s, dt, p) {
+      // In rotating frame: Coriolis -2Ω × v + centrifugal Ω²r
+      var W = p.w;
+      s.x += s.vx * dt; s.y += s.vy * dt;
+      var ax = 2 * W * s.vy + W * W * s.x;
+      var ay = -2 * W * s.vx + W * W * s.y;
+      s.vx += ax * dt; s.vy += ay * dt;
+    },
+    draw: function (c, w, h, s, p) {
+      var cx = w / 2, cy = h / 2, sc = 80;
+      D.grid(c, w, h, 32);
+      D.ring(c, cx, cy, 100, FAINT, 1, [3, 3]);
+      D.dot(c, cx, cy, 3, MUTED);
+      var px = cx + s.x * sc, py = cy - s.y * sc;
+      D.line(c, cx, cy, px, py, MUTED, 1);
+      D.dot(c, px, py, 6, INK);
+      D.label(c, 'puck slides on turntable (rotating frame)', 10, 20, 'left', INK);
+      D.label(c, 'Ω = ' + p.w.toFixed(1) + ' rad/s → Coriolis bends the path', 10, 38);
+    }
+  });
+
   function start() { document.querySelectorAll('.viz[data-viz]').forEach(mount); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();

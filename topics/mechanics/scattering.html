@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Hyperbolic Orbits and Rutherford Scattering · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="scattering">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Hyperbolic Orbits and Rutherford Scattering</h1>
+          <p class="doc-lede">Unbound central-force motion: a particle approaches from infinity with impact parameter b, bends in the force field, and leaves. The link between impact parameter and scattering angle, and the classic Rutherford formula.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Flying past a force centre</strong> — a comet past the Sun, an alpha particle past a nucleus. Comes in from far away, bends, flies off in a different direction. The question: how much does it bend?</p>
+<p>The two numbers that describe the incoming particle are <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li><strong>Speed</strong> $v_0$ (while it's still far away).</li>
+<li><strong>Impact parameter</strong> $b$ (the perpendicular offset between its straight-line path and the force centre — if there were no force, how far it would miss by).</li>
+</ul>
+<p>For inverse-square forces (gravity, Coulomb), the scattering angle $\chi$ obeys the simple formula <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\tan\frac{\chi}{2} = \frac{k}{\mu v_0^2 b}.$$
+<p><strong>Small $b$ (close call):</strong> big deflection, maybe even backscatter. <strong>Large $b$:</strong> barely bends.</p>
+<p><strong>Rutherford's experiment</strong> (1909-1911): shoot alpha particles at gold foil. Most went straight through (large $b$). A small fraction bounced almost backward (tiny $b$). From the <em>statistics</em>, Rutherford computed how massive and how small the deflector must be — leading to the discovery of the <strong>atomic nucleus</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Closest approach:</strong> at the bend, the distance is $r_{\min}$. For a head-on hit at a repulsive force, $r_{\min} = k/E$ — simply where kinetic energy equals Coulomb potential energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Hyperbolic orbit</h3>
+            <div>
+<p>A particle approaches a central force from far away with speed $v_0$ at impact parameter $b$ (perpendicular offset of its initial line from the force centre). Its initial energy and angular momentum are <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.5</span></span>:</p>
+$$E = \tfrac12\mu v_0^2 &gt; 0, \qquad L = \mu v_0 b.$$
+<p>$E &gt; 0$ means the orbit is unbound; $e &gt; 1$: it's a hyperbola.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Closest approach</h3>
+            <div>
+<p>At closest approach $r = r_{\min}$, $\dot r = 0$: all radial kinetic energy is zero. The turning-point condition $E = U_{\text{eff}}(r_{\min})$ gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2</span></span>:</p>
+$$E = \frac{L^2}{2\mu r_{\min}^2} + U(r_{\min}).$$
+<p>For attractive gravity ($U = -k/r$) or repulsive Coulomb ($U = +k/r$), solve the resulting quadratic for $r_{\min}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2, §20.4</span></span>:</p>
+$$r_{\min} = \frac{k}{\mu v_0^2}\left[\pm 1 + \sqrt{1 + \left(\frac{\mu v_0^2\,b}{k}\right)^2}\right].$$
+<p>Upper sign for repulsive, lower for attractive.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The deflection angle</h3>
+            <div>
+<p>The scattering angle $\chi$ is the angle between the incoming and outgoing straight-line asymptotes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.3</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.5</span></span>. For inverse-square force:</p>
+$$\tan\frac{\chi}{2} = \frac{k}{\mu v_0^2 b}.$$
+<p>Small $b$ (close hit) → large $\chi$ (strong deflection, even backscatter). Large $b$ (far miss) → small $\chi$ (gentle bend). Removing the force entirely ($k \to 0$): $\chi \to 0$.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Rutherford scattering</h3>
+            <div>
+<p>For two charges $Qq$ interacting through Coulomb repulsion, $k = Qq/(4\pi\varepsilon_0)$, and the scattering angle formula above becomes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.4</span></span>:</p>
+$$\tan\frac{\chi}{2} = \frac{Qq}{4\pi\varepsilon_0\,\mu v_0^2 b}.$$
+<p>Historically (Rutherford, 1911), this was derived classically for alpha particles scattering off a gold nucleus. It is still correct (up to quantum corrections) and it is how we learned that atoms have tiny, dense nuclei: the occasional large-angle scatter required the mass to be concentrated in a region much smaller than the atom itself <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.4</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Differential cross section</h3>
+            <div>
+<p>Imagine a uniform beam of particles with impact parameters uniformly distributed. Particles with $b$ in $[b, b+db]$ scatter into angles in $[\chi, \chi+d\chi]$. The ratio $d\sigma/d\Omega = b\,|db/d\chi|/\sin\chi$ is the <strong>differential cross section</strong>. For Rutherford <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.5</span></span>:</p>
+$$\frac{d\sigma}{d\Omega} = \left(\frac{k}{4E}\right)^2\frac{1}{\sin^4(\chi/2)}.$$
+<p>Diverges at small angles (tiny deflections are very common) and drops fast at large angles (big deflections rare) — exactly what Rutherford's Geiger-Marsden experiment measured.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>In a bound orbit (ellipse), the minimum $r$ is called perihelion (if Sun) or periastron. In an unbound orbit (hyperbola), it's called the closest approach $r_{\min}$. Same equation, different name — just whether $E$ is below or above zero <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>The formula for $r_{\min}$ in the Theory section uses the <em>reduced</em> mass $\mu$. If one target is much heavier than the other (alpha particle on gold nucleus, or Sun on comet), $\mu \approx m_{\text{lighter}}$ and the heavy target can be treated as fixed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§3.5</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="approach">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Two bodies moving in straight lines (dashed) at constant velocities, like two particles too distant to feel each other. The graph shows the distance between them over time and marks its minimum. In a central-force problem, the attractive or repulsive interaction would bend the trajectories — the "straight-line" paths you see here are the "no-force" limit. The closest approach formula $r_{\min} \sim b$ holds when the force is weak; when it's strong (nearby charges, nuclear scattering), the real path bends far from these dashed lines.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Initial E and L <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$E = \tfrac12\mu v_0^2, \quad L = \mu v_0 b$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Closest approach (attractive, repulsive) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$r_{\min} = \frac{|k|}{\mu v_0^2}\left[\pm 1 + \sqrt{1 + \left(\frac{\mu v_0^2 b}{|k|}\right)^2}\right]$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Scattering angle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\tan\frac{\chi}{2} = \frac{k}{\mu v_0^2 b}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rutherford differential cross section <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\frac{d\sigma}{d\Omega} = \left(\frac{k}{4E}\right)^2\frac{1}{\sin^4(\chi/2)}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Head-on (b = 0), repulsive <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$r_{\min} = \frac{2k}{\mu v_0^2} = \frac{k}{E}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A head-on collision ($b = 0$) between a $7.7\ \text{MeV}$ alpha particle ($z = 2$) and a gold nucleus ($Z = 79$). Find the closest approach. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §20.4 — the classic Rutherford estimate.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$b = 0$: $L = 0$, no centrifugal barrier. Full kinetic energy becomes Coulomb potential energy: $E = k/r_{\min}$.</p>
+              </div></li>
+              <li><div>
+<p>$k = zZ e^2/(4\pi\varepsilon_0) = 2\times 79\times 1.44\ \text{MeV·fm} \approx 227.5\ \text{MeV·fm}$.</p>
+              </div></li>
+              <li><div>
+<p>$r_{\min} = k/E = 227.5/7.7 \approx 29.5\ \text{fm}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>About 30 fm — much smaller than an atom ($10^5\ \text{fm}$) but larger than a nuclear radius ($\sim 7\ \text{fm}$ for gold), consistent with Rutherford's conclusion that the alpha was repelled before hitting the nucleus ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>What impact parameter gives $90°$ scattering for an alpha particle on gold at $5\ \text{MeV}$? (Application of scattering formula.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\tan(45°) = 1 = k/(\mu v_0^2 b_{90})$, so $b_{90} = k/(2E) = k/(2E) = 227.5/(2\times 5) = 22.75\ \text{fm}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Particles with impact parameters smaller than $b_{90}$ scatter through angles larger than $90°$ — a tiny target but a large cross section for near-backward scattering ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A comet approaches the Sun from far away with speed $v_0 = 30\ \text{km/s}$ at impact parameter $b = 10^{11}\ \text{m}$. Find its closest approach distance. ($GM_\odot = 1.32\times 10^{20}\ \text{m}^3/\text{s}^2$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$k = GM_\odot m$ with $\mu \approx m$, so $k/\mu = GM_\odot$.</p>
+              </div></li>
+              <li><div>
+<p>Attractive closest approach: $r_{\min} = (GM_\odot/v_0^2)[-1 + \sqrt{1 + (v_0^2 b/GM_\odot)^2}]$.</p>
+              </div></li>
+              <li><div>
+<p>$GM_\odot/v_0^2 = 1.32\times 10^{20}/(3\times 10^4)^2 \approx 1.47\times 10^{11}\ \text{m}$.</p>
+              </div></li>
+              <li><div>
+<p>$(v_0^2 b/GM_\odot)^2 = (10^{11}/1.47\times 10^{11})^2 \approx 0.464$, so $\sqrt{1.464} \approx 1.21$.</p>
+              </div></li>
+              <li><div>
+<p>$r_{\min} \approx 1.47\times 10^{11}\times 0.21 \approx 3.1\times 10^{10}\ \text{m}$ — about 2/3 of Mercury's orbital distance.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The comet is <em>sucked in</em> closer than its straight-line impact parameter would suggest, because gravity is attractive. The reverse happens for repulsive Coulomb ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>N. Harnew, <em>Introduction to Classical Mechanics</em>, Lectures 20–29, University of Oxford, Hilary Term 2017. §20.2 Hyperbolic orbit: distance of closest approach, §20.3 Angle of deflection, §20.4 Rutherford scattering. <a href="https://users.physics.ox.ac.uk/~harnew/lectures/mechanics-lectures-20to29.pdf">PDF</a></span></li>
+            <li><span>J. Shapiro, <em>Classical Mechanics</em>, Ch. 3 "Two Body Central Forces", Rutgers University. §3.5 Rutherford Scattering (differential cross section). <a href="https://www.physics.rutgers.edu/~shapiro/507/book4.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

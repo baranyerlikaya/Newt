@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Energy of Simple Oscillations · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="oscillation-energy">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Energy of Simple Oscillations</h1>
+          <p class="doc-lede">For simple harmonic motion the total energy is constant, equal to ½kR², and it trades back and forth between kinetic and potential as the oscillator swings.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>A spring oscillator never loses energy</strong> (no friction yet). But kinetic and potential take turns <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>At the ends of the swing ($x = \pm R$): zero speed, all energy stored in the spring as $U$.</li>
+<li>At the middle ($x = 0$): spring at natural length, all energy as motion $K$.</li>
+<li>In between: some $K$, some $U$, but the total is always the same.</li>
+</ul>
+<p>The constant total energy is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$E = \tfrac12 kR^2.$$
+<p>So the <strong>amplitude</strong> $R$ is set by how much energy you gave it. Give a swing a bigger push → wider swing. Interesting bit: the <em>period</em> doesn't change — small swings and big swings both take the same time (the beat depends on $m$ and $k$ only).</p>
+<p><strong>Maximum speed:</strong> at $x = 0$, $v_{\max} = R\omega_0$.</p>
+<p><strong>On average</strong> over a full cycle, exactly half the energy is kinetic and half is potential <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. That's a surprisingly deep fact — it generalizes to many parabolic wells, as we saw in Topic 5.5.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Total mechanical energy</h3>
+            <div>
+<p>For a mass on a spring, $K = \tfrac12 m\dot x^2$ and $U = \tfrac12 k x^2$. With the SHM solution $x(t) = R\cos(\omega_0 t+\phi)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Energy of Simple Oscillations</span></span>:</p>
+$$\begin{gathered}K(t) = \tfrac12 mR^2\omega_0^2\sin^2(\omega_0 t+\phi) \\ U(t) = \tfrac12 kR^2\cos^2(\omega_0 t+\phi).\end{gathered}$$
+<p>Adding and using $\sin^2+\cos^2 = 1$ and $k = m\omega_0^2$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\boxed{E = K + U = \tfrac12 kR^2 = \tfrac12 mR^2\omega_0^2 = \text{const.}}$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Energy traded, total conserved</h3>
+            <div>
+<p>$K$ and $U$ each oscillate at <em>twice</em> the oscillation frequency, $2\omega_0$. When one is at a maximum the other is at a minimum; their sum is always $E$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>. At the <strong>turning points</strong> $x = \pm R$, $K = 0$ and all energy is potential; at the <strong>centre</strong> $x = 0$, $U = 0$ and all energy is kinetic. The maximum speed is</p>
+$$v_{\max} = R\omega_0,$$
+<p>and the maximum $U$ is $\tfrac12 kR^2 = E$.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Amplitude from energy</h3>
+            <div>
+<p>Rearranging $E = \tfrac12 kR^2$:</p>
+$$R = \sqrt{\frac{2E}{k}}.$$
+<p>So the <strong>amplitude is set by the energy</strong> you gave the oscillator — not by the spring constant alone. Give it more energy, it swings further <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>The speed at any point $x$ follows from $K = E - U$:</p>
+$$v(x) = \pm\sqrt{\frac{2}{m}\left(E - \tfrac12 kx^2\right)} = \pm\omega_0\sqrt{R^2 - x^2}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Averages</h3>
+            <div>
+<p>Since $\overline{\sin^2(\omega_0 t+\phi)} = \overline{\cos^2(\omega_0 t+\phi)} = \tfrac12$, the time-averaged energies are <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\langle K\rangle = \langle U\rangle = \tfrac12 E = \tfrac14 kR^2.$$
+<p>The oscillator spends on average half its energy as kinetic and half as potential — a general property of quadratic potentials (virial theorem in miniature).</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Any potential $U(x)$ that has a stable minimum behaves like $\tfrac12 k_{\text{eff}}(x-x_0)^2$ near the bottom, with $k_{\text{eff}} = U''(x_0)$ — so the same energy formulas apply <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>The energy conservation $E = \tfrac12 kR^2$ is exact only for a frictionless (undamped) oscillator. Any drag or friction drains mechanical energy into heat; see Topic 6.3 on damped oscillations <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="pendulum">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A pendulum swinging with no damping. The bars on the right show $K$, $U$ and the total $E$. $K$ and $U$ trade back and forth, but $E$ stays flat. At the lowest point, all energy is kinetic; at the highest point, all potential. If you add damping, the total $E$ shrinks — the mechanical energy is leaking into heat, breaking conservation.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energies in time <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{gathered}K(t) = \tfrac12 mR^2\omega_0^2\sin^2(\omega_0 t+\phi) \\ U(t) = \tfrac12 kR^2\cos^2(\omega_0 t+\phi)\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Total energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$E = \tfrac12 kR^2 = \tfrac12 mR^2\omega_0^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Max speed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v_{\max} = R\omega_0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Speed at any x <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v(x) = \pm\omega_0\sqrt{R^2 - x^2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Amplitude from energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$R = \sqrt{2E/k}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Time averages <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\langle K\rangle = \langle U\rangle = \tfrac12 E$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $1\ \text{kg}$ mass on a spring with $k = 100\ \text{N/m}$ has amplitude $5\ \text{cm}$. Find the energy, max speed, and the speed at $x = 2.5\ \text{cm}$. (Direct application of <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\omega_0 = \sqrt{100/1} = 10\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>Total energy: $E = \tfrac12 kR^2 = \tfrac12(100)(0.05)^2 = 0.125\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Max speed: $v_{\max} = R\omega_0 = 0.05\times 10 = 0.5\ \text{m/s}$.</p>
+              </div></li>
+              <li><div>
+<p>At $x = 0.025$: $v = \omega_0\sqrt{R^2 - x^2} = 10\sqrt{0.0025 - 0.000625} = 10\sqrt{0.001875} \approx 0.433\ \text{m/s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Check with energy: $K = E - U = 0.125 - \tfrac12(100)(0.025)^2 = 0.125 - 0.03125 = 0.09375\ \text{J}$, so $v = \sqrt{2K/m} \approx 0.433\ \text{m/s}$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A spring is given twice the energy. What happens to the amplitude, period, and maximum speed? (Application of $E = \tfrac12 kR^2$ and $v_{\max} = R\omega_0$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$R = \sqrt{2E/k}$: doubling $E$ multiplies $R$ by $\sqrt 2$.</p>
+              </div></li>
+              <li><div>
+<p>Period: $T = 2\pi\sqrt{m/k}$ — <strong>unchanged</strong>.</p>
+              </div></li>
+              <li><div>
+<p>$v_{\max} = R\omega_0$: multiplied by $\sqrt 2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The amplitude isn't proportional to $E$; both $R^2 \propto E$ and $v_{\max}^2 \propto E$. ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A pendulum of length $L$, amplitude $\theta_0$ (small), bob mass $m$. Find the oscillation energy. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Worked Examples and §Energy of Simple Oscillations.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>The effective stiffness from the small-angle equation $\ddot\theta + (g/L)\theta = 0$ is $k_{\text{eff}} = mg/L$, with "coordinate" $\theta$. Then $E = \tfrac12 k_{\text{eff}}R^2 = \tfrac12 (mg/L)\theta_0^2 \cdot L^2 = \tfrac12 mgL\theta_0^2$.</p>
+              </div></li>
+              <li><div>
+<p>Alternatively, the maximum height above the bottom is $L(1-\cos\theta_0) \approx \tfrac12 L\theta_0^2$ for small $\theta_0$, so $E \approx mgL\theta_0^2/2$ — same answer.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The max speed is at the bottom: $v_{\max} = \sqrt{2E/m} = \theta_0\sqrt{gL}$, matching the direct $L\theta_0\omega_0$ ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>İ. Yalçınkaya, <em>Chapter 4: Small Oscillations</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Energy of Simple Oscillations, §Amplitude-Phase Form; Worked Example “Work, Potential Energy, and Energy Conservation in a Spring”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/small-oscillations/main.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

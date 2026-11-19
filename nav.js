@@ -59,5 +59,63 @@ window.PHYSREF_NAV = [
       { id: 'energy-conservation', title: 'Conservation of Total Energy, Energy as Equation of Motion', file: 'topics/mechanics/energy-conservation.html', status: 'ready' },
       { id: 'equilibrium-impulse-power', title: 'Equilibrium, Impulse, Power',                    file: 'topics/mechanics/equilibrium-impulse-power.html', status: 'ready' }
     ]
+  },
+  {
+    id: 'oscillations',
+    title: 'Small Oscillations',
+    topics: [
+      { id: 'shm',                 title: 'Simple Harmonic Motion',                               file: 'topics/mechanics/shm.html',                 status: 'ready' },
+      { id: 'oscillation-energy',  title: 'Energy of Simple Oscillations',                        file: 'topics/mechanics/oscillation-energy.html',  status: 'ready' },
+      { id: 'damped-oscillations', title: 'Damped Oscillations',                                  file: 'topics/mechanics/damped-oscillations.html', status: 'ready' },
+      { id: 'driven-oscillations', title: 'Driven Oscillations and Resonance',                    file: 'topics/mechanics/driven-oscillations.html', status: 'ready' }
+    ]
+  },
+  {
+    id: 'gravitation',
+    title: 'Gravitation',
+    topics: [
+      { id: 'universal-gravitation', title: 'Universal Law of Gravitation',                       file: 'topics/mechanics/universal-gravitation.html', status: 'ready' },
+      { id: 'gravitational-potential', title: 'Gravitational Potential Energy and Escape Velocity', file: 'topics/mechanics/gravitational-potential.html', status: 'ready' },
+      { id: 'keplers-laws',        title: "Kepler's Laws",                                        file: 'topics/mechanics/keplers-laws.html',        status: 'ready' }
+    ]
+  },
+  {
+    id: 'central-force',
+    title: 'Central-Force Motion',
+    topics: [
+      { id: 'two-body-reduction',  title: 'Two-Body Problem and Reduced Mass',                    file: 'topics/mechanics/two-body-reduction.html',  status: 'ready' },
+      { id: 'effective-potential', title: 'Effective Potential and Turning Points',               file: 'topics/mechanics/effective-potential.html', status: 'ready' },
+      { id: 'orbit-equation',      title: 'Orbit Equation and Kepler Orbits',                     file: 'topics/mechanics/orbit-equation.html',      status: 'ready' },
+      { id: 'scattering',          title: 'Hyperbolic Orbits and Rutherford Scattering',          file: 'topics/mechanics/scattering.html',          status: 'ready' }
+    ]
+  },
+  {
+    id: 'particle-systems',
+    title: 'Dynamics of System of Particles',
+    topics: [
+      { id: 'center-of-mass',      title: 'Centre of Mass',                                       file: 'topics/mechanics/center-of-mass.html',      status: 'ready' },
+      { id: 'cm-motion',           title: 'Motion of the Centre of Mass',                         file: 'topics/mechanics/cm-motion.html',           status: 'ready' },
+      { id: 'variable-mass',       title: 'Variable Mass: the Rocket Equation',                   file: 'topics/mechanics/variable-mass.html',       status: 'ready' },
+      { id: 'collision-theory',    title: 'Collision Theory',                                     file: 'topics/mechanics/collision-theory.html',    status: 'ready' }
+    ]
+  },
+  {
+    id: 'noninertial',
+    title: 'Non-Inertial Reference Frames',
+    topics: [
+      { id: 'accelerating-frames', title: 'Linearly Accelerating Frames',                         file: 'topics/mechanics/accelerating-frames.html', status: 'ready' },
+      { id: 'rotating-frames',     title: 'Rotating Frames and Centrifugal Force',                file: 'topics/mechanics/rotating-frames.html',     status: 'ready' },
+      { id: 'coriolis',            title: 'Coriolis Force and Motion on Earth',                   file: 'topics/mechanics/coriolis.html',            status: 'ready' }
+    ]
+  },
+  {
+    id: 'rigid-bodies',
+    title: 'Rigid Body Dynamics',
+    topics: [
+      { id: 'rigid-kinematics',    title: 'Rigid Body Kinematics',                                file: 'topics/mechanics/rigid-kinematics.html',    status: 'ready' },
+      { id: 'parallel-axis',       title: 'Moment of Inertia: Shapes and the Parallel-Axis Theorem', file: 'topics/mechanics/parallel-axis.html',       status: 'ready' },
+      { id: 'rolling',             title: 'Rolling Without Slipping',                             file: 'topics/mechanics/rolling.html',             status: 'ready' },
+      { id: 'static-equilibrium',  title: 'Static Equilibrium',                                   file: 'topics/mechanics/static-equilibrium.html',  status: 'ready' }
+    ]
   }
 ];

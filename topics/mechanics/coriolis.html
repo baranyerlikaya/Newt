@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Coriolis Force and Motion on Earth · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="coriolis">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Coriolis Force and Motion on Earth</h1>
+          <p class="doc-lede">On Earth's rotating surface the Coriolis force bends moving things sideways. It shapes trade winds, hurricanes and ocean currents, and makes Foucault's pendulum slowly rotate its plane of swing.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Earth rotates once a day.</strong> In the frame that rotates with it (the ground), things that <em>move</em> get pushed sideways by the <strong>Coriolis force</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>Northern Hemisphere: anything moving gets nudged to its <strong>right</strong>.</li>
+<li>Southern Hemisphere: nudged to its <strong>left</strong>.</li>
+<li>Equator: no horizontal Coriolis.</li>
+</ul>
+<p>The effect is tiny per second but builds up over long distances.</p>
+<p><strong>Weather</strong> is Coriolis-shaped. Trade winds blow westward because air flowing toward the equator gets deflected. Hurricanes rotate counterclockwise in the Northern Hemisphere (clockwise in the Southern) because air rushing into a low-pressure centre gets curled by Coriolis <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Foucault's pendulum</strong> (1851) is the most beautiful demonstration. A long, heavy pendulum left to swing slowly rotates its plane of swing — once per day at the poles, once per $\sim 34$ hours at mid-latitudes, never at the equator. In the stars' frame the pendulum's plane doesn't move; it's Earth that turns beneath it <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Common myth:</strong> bathtub drains don't reliably spin one way per hemisphere. Household-scale Coriolis is overwhelmed by the tap, the tub's shape, and whatever stirring was there before <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Long-range artillery, missiles, and rockets</strong> all need Coriolis corrections.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Coriolis on Earth</h3>
+            <div>
+<p>Earth rotates with $\boldsymbol\Omega$ along its axis, $\Omega = 2\pi/(86164\ \text{s}) \approx 7.3\times 10^{-5}\ \text{rad/s}$. At latitude $\lambda$ (north of equator), the vertical component is $\Omega\sin\lambda$ and the horizontal is $\Omega\cos\lambda$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.3</span></span>.</p>
+<p>For a body moving horizontally (parallel to the local ground), only the vertical part of $\boldsymbol\Omega$ contributes to a horizontal Coriolis deflection:</p>
+$$\mathbf F_{\text{Cor, horizontal}} = -2m\,\Omega\sin\lambda\,(\hat z\times\mathbf v'_{\text{horiz}}).$$
+<p>This deflects the velocity to the <strong>right</strong> in the Northern Hemisphere ($\lambda &gt; 0$) and to the <strong>left</strong> in the Southern ($\lambda &lt; 0$). At the equator ($\lambda = 0$), there is no horizontal Coriolis deflection <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Trade winds and hurricanes</h3>
+            <div>
+<p>Air flowing from the tropics toward the equator is deflected to the right (Northern) and left (Southern), creating the westward <strong>trade winds</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.3</span></span>.</p>
+<p>In a <strong>hurricane</strong>, air rushes inward toward a low-pressure centre. Coriolis bends this inflow — in the Northern Hemisphere it swirls counterclockwise (looking down), in the Southern Hemisphere clockwise <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">Examples 7–8</span></span>. The rotation direction is a direct Coriolis signature.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Deflection of falling bodies</h3>
+            <div>
+<p>A body dropped from height $h$ at the equator lands slightly to the <strong>east</strong> of the plumb line: in the (inertial) frame of the stars, the top of the tower moves east faster than the ground beneath it, so the released body carries that extra eastward speed.</p>
+<p>Horizontally, for a long-range projectile in the Northern Hemisphere, Coriolis bends it to the right. Artillery tables for long-range guns include this correction <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.3</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Foucault's pendulum</h3>
+            <div>
+<p>Hang a long, heavy pendulum with low friction, give it a gentle push. Its plane of swing <em>rotates</em> relative to the ground, completing a full turn in time</p>
+$$T_{\text{Foucault}} = \frac{T_{\text{day}}}{\sin\lambda}.$$
+<p>At the North Pole ($\lambda = 90°$): one turn per sidereal day. At $45°$ latitude: one turn per ~34 hours. At the equator: never — the horizontal Coriolis force vanishes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§31.5.3</span></span>.</p>
+<p>In the inertial frame the pendulum's plane doesn't rotate at all; it's Earth that rotates under it. Foucault's 1851 demonstration in the Pantheon was the first direct laboratory evidence of Earth's rotation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Everyday scale</h3>
+            <div>
+<p>Coriolis is tiny at everyday scales. The acceleration is $\sim 2\Omega v \sim 10^{-4}\,v$: a bullet at $v = 500\ \text{m/s}$ feels only $\sim 0.07\ \text{m/s}^2$. Over a short distance this is irrelevant; over a kilometre or more it matters a lot.</p>
+<p>The folklore about <strong>bathtub drains spinning differently in each hemisphere</strong> is wrong — household-scale Coriolis is much smaller than any wobble from the tap or tub shape <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Coriolis is a result of the frame's rotation, not of any physical interaction with Earth. In an inertial (non-rotating) frame it doesn't appear — the "sideways deflection" is just the moving body going straight while Earth turns under it <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>The Coriolis effect strength depends on $\sin\lambda$ (latitude), not on $\cos\lambda$. It is maximum at the poles and zero at the equator <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="rotframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Inspired by the Foucault pendulum / turntable analogy: a particle sliding on a rotating platform (viewed in the rotating frame). As the platform spins, the Coriolis force curves the particle's path. Set $\Omega = 0$: the particle moves in a straight line. Turn up $\Omega$: the path curls — this is the same qualitative effect that sets large-scale weather patterns on Earth.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Earth's angular speed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\Omega = \frac{2\pi}{86164\ \text{s}} \approx 7.27\times 10^{-5}\ \text{rad/s}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Horizontal Coriolis acceleration <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$a_{\text{Cor}} = 2\Omega\sin\lambda\,v'$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Northern vs Southern <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{cases}\text{right} & \lambda > 0 \\ \text{left} & \lambda < 0\end{cases}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Foucault pendulum period <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$T_{\text{Foucault}} = \frac{T_{\text{day}}}{\sin\lambda}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Centrifugal correction to g <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$g_{\text{eff}} = g - \Omega^2 R\cos^2\lambda$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A wind blows due south at $20\ \text{m/s}$ in Boston ($\lambda = 42°\text{N}$). What is the Coriolis acceleration? In which direction? (Standard; from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §31.5.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$a_{\text{Cor}} = 2\Omega\sin\lambda\,v = 2\times 7.27\times 10^{-5}\times 0.669\times 20 \approx 1.9\times 10^{-3}\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>Northern Hemisphere → deflection to the right. A south-blowing wind is deflected to the <em>west</em>.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Small on a per-second basis, but over hours and thousands of kilometres this sets the overall direction of pressure-driven winds ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Foucault pendulum period at Paris ($\lambda = 48.86°$). (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$T_{\text{Foucault}} = T_{\text{day}}/\sin\lambda = 86164/\sin(48.86°) \approx 86164/0.753 \approx 114{,}400\ \text{s}$.</p>
+              </div></li>
+              <li><div>
+<p>$\approx 31.8\ \text{hours}$ for one full turn.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Foucault's original 1851 demonstration showed a plane rotation of about 11° per hour (360°/32 h ≈ 11.25°/h) ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Long-range gun fires a shell $20\ \text{km}$ due north at $v_0 = 800\ \text{m/s}$ from latitude $45°$. Estimate the sideways drift at impact. (Rough application of $a \approx 2\Omega\sin\lambda\,v$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Flight time: $t \approx L/v_0 = 20{,}000/800 = 25\ \text{s}$ (horizontal, straight-line estimate).</p>
+              </div></li>
+              <li><div>
+<p>Coriolis acceleration: $a \approx 2\times 7.27\times 10^{-5}\times 0.707\times 800 \approx 0.082\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>Drift: $\tfrac12 at^2 \approx \tfrac12\times 0.082\times 625 \approx 26\ \text{m}$ to the east (northern hemisphere, firing north).</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>~25 m drift over 20 km. Significant enough that long-range artillery tables include it ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 31 "Non-Inertial Rotating Reference Frames", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §31.5 Motion on the Earth, §31.5.3 Coriolis Fictitious Force; Examples 7, 8. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter31.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

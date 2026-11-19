@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Moment of Inertia: Shapes and the Parallel-Axis Theorem · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="parallel-axis">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Moment of Inertia: Shapes and the Parallel-Axis Theorem</h1>
+          <p class="doc-lede">Moments of inertia of common shapes about their CM, and the parallel-axis theorem that gets you the moment about any other parallel axis.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Moment of inertia is "mass for rotation"</strong>: how hard it is to twist a body (Topic 4.3). It depends on both the mass and <em>how the mass is spread</em>.</p>
+<p><strong>Standard shapes</strong> (about an axis through the centre of mass) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>Thin rod, axis through middle: $\tfrac{1}{12}ML^2$.</li>
+<li>Thin ring: $MR^2$ (all mass at the rim).</li>
+<li>Uniform disc: $\tfrac12 MR^2$.</li>
+<li>Solid sphere: $\tfrac25 MR^2$ (mass is centrally concentrated).</li>
+<li>Hollow sphere: $\tfrac23 MR^2$ (mass on the surface).</li>
+</ul>
+<p>Hollow shapes have bigger $I$ than solid ones, because their mass sits further from the axis.</p>
+<p><strong>Parallel-axis theorem</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>: if you move the axis sideways by a distance $d$ (parallel to the original), the new moment of inertia is:</p>
+$$I = I_{\text{CM}} + Md^2.$$
+<p>Any parallel-shifted axis has a larger $I$ than the CM axis.</p>
+<p><strong>Example:</strong> a rod, about one end instead of the centre. $I_{\text{end}} = \tfrac{1}{12}ML^2 + M(L/2)^2 = \tfrac13 ML^2$. Four times bigger.</p>
+<p><strong>Rolling race:</strong> solid cylinder beats hollow cylinder down a ramp because its smaller $I$ means less energy spent spinning, more left for forward motion. Try it with a tin can and a solid bottle.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Moment of inertia for a continuous body</h3>
+            <div>
+<p>For a continuous body about a chosen axis, replace the sum $\sum m_ir_i^2$ with an integral <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§16.3.1</span></span>:</p>
+$$I = \int r_\perp^2\,dm,$$
+<p>where $r_\perp$ is the perpendicular distance from the axis to the mass element $dm$. For a body of uniform density $\rho$: $dm = \rho\,dV$ and $I = \rho\int r_\perp^2\,dV$.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Standard shapes</h3>
+            <div>
+<p>Results for uniform bodies, axis through the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§16.3.2, Example 16.2</span></span>:</p>
+<ul>
+<li><strong>Thin rod of length $L$, perpendicular axis through centre:</strong> $I = \tfrac{1}{12}ML^2$.</li>
+<li><strong>Thin rod of length $L$, perpendicular axis through end:</strong> $I = \tfrac{1}{3}ML^2$.</li>
+<li><strong>Thin ring of radius $R$, axis through centre perpendicular to the ring:</strong> $I = MR^2$.</li>
+<li><strong>Uniform disc of radius $R$, axis through centre perpendicular to disc:</strong> $I = \tfrac12 MR^2$.</li>
+<li><strong>Solid sphere of radius $R$, axis through centre:</strong> $I = \tfrac25 MR^2$.</li>
+<li><strong>Hollow sphere (thin shell) of radius $R$:</strong> $I = \tfrac23 MR^2$.</li>
+<li><strong>Solid cylinder (radius $R$, length $L$), axis along symmetry:</strong> $I = \tfrac12 MR^2$.</li>
+</ul>
+<p>Hollow shapes have more mass far from the axis, so they have bigger $I$ than solid ones of the same mass and radius — and roll down ramps slower.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Parallel-axis theorem</h3>
+            <div>
+<p>If $I_{\text{CM}}$ is the moment of inertia about an axis through the CM, then about <em>any parallel</em> axis at perpendicular distance $d$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§16.3.3</span></span>:</p>
+$$\boxed{I = I_{\text{CM}} + Md^2.}$$
+<p>Shift the axis out by $d$ and add $Md^2$. Equivalent: the CM axis always gives the <em>smallest</em> moment of inertia among all parallel axes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>Example: thin rod, axis through an end: $I = \tfrac{1}{12}ML^2 + M(L/2)^2 = \tfrac{1}{12}ML^2 + \tfrac14 ML^2 = \tfrac13 ML^2$. Matches the direct result above ✓.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Deriving a moment of inertia (rod example)</h3>
+            <div>
+<p>Thin rod of mass $M$, length $L$, linear density $\lambda = M/L$. Axis perpendicular through the centre. Mass element at $x$: $dm = \lambda\,dx$. Distance to axis: $|x|$. Then <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§16.3.2</span></span></p>
+$$I = \int_{-L/2}^{L/2}\lambda\,x^2\,dx = \lambda\,\frac{L^3}{12} = \frac{ML^2}{12}.$$
+<p>Same method works for any 1D body: a quick integral along the length.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Moments of inertia scale with $MR^2$ (or $ML^2$ for rods). For geometrically similar shapes, the dimensionless prefactor (e.g. $\tfrac12$ for a disc, $\tfrac25$ for a sphere) depends only on the mass distribution, not on the overall size <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Parallel-axis theorem needs an axis <em>parallel</em> to the CM axis. For an axis through a different point and in a different direction, use the full tensor relation or integrate directly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§16.3.3</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="moi">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Four point masses on a cross at adjustable radii $r_1$ and $r_2$, showing $I = \sum m_i r_i^2$ in action. Pull the masses in → $I$ drops rapidly (as $r^2$). Spread them out → $I$ grows. A real extended body is just infinitely many such masses integrated together.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Continuous moment of inertia <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$I = \int r_\perp^2\,dm$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Thin rod (end / centre) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$I_{\text{end}} = \tfrac13 ML^2, \quad I_{\text{CM}} = \tfrac1{12}ML^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Ring / disc <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$I_{\text{ring}} = MR^2, \quad I_{\text{disc}} = \tfrac12 MR^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Solid / hollow sphere <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$I_{\text{solid}} = \tfrac25 MR^2, \quad I_{\text{hollow}} = \tfrac23 MR^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Parallel-axis theorem <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$I = I_{\text{CM}} + Md^2$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Find the moment of inertia of a uniform disc of mass $M$ and radius $R$ about its symmetry axis, by integration. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, Example 16.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Surface density $\sigma = M/(\pi R^2)$. Ring at radius $r$ with width $dr$: $dm = \sigma\,2\pi r\,dr$.</p>
+              </div></li>
+              <li><div>
+<p>Its distance from the axis is $r$: $dI = r^2\,dm = 2\pi\sigma\,r^3\,dr$.</p>
+              </div></li>
+              <li><div>
+<p>Integrate: $I = \int_0^R 2\pi\sigma\,r^3\,dr = 2\pi\sigma\,R^4/4 = \tfrac12 MR^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Same as the table entry ✓. A thin ring at radius $R$ would give $I = MR^2$ — twice as large, because all the mass is at the outer rim.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Find the moment of inertia of a solid disc about an axis tangent to its rim, parallel to its symmetry axis. (Application of the parallel-axis theorem.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>CM moment about the symmetry axis: $I_{\text{CM}} = \tfrac12 MR^2$.</p>
+              </div></li>
+              <li><div>
+<p>Parallel axis at the rim, distance $d = R$: $I = \tfrac12 MR^2 + MR^2 = \tfrac32 MR^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Three times larger than for the central axis: moving the axis out to $R$ adds $MR^2$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Why does a hollow cylinder roll down a ramp slower than a solid one of the same mass and radius? (Qualitative, using Topic 11.3 and the moments above.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Rolling KE: $K = \tfrac12 MV^2 + \tfrac12 I\omega^2 = \tfrac12 MV^2(1 + I/(MR^2))$ (since $V = \omega R$).</p>
+              </div></li>
+              <li><div>
+<p>Solid cylinder: $I/(MR^2) = \tfrac12$. Hollow cylinder (thin shell): $I/(MR^2) = 1$.</p>
+              </div></li>
+              <li><div>
+<p>Hollow one needs more energy per unit $V^2$ — so for the same height drop $Mgh$, it ends up with lower $V$. Slower.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Famous "which cylinder wins the race" demo: solid beats hollow every time, regardless of mass and radius ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 16 "Two Dimensional Rotational Kinematics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §16.3 Rotational Kinetic Energy and Moment of Inertia, §16.3.2 Moment of Inertia of a Rod, §16.3.3 Parallel Axis Theorem; Example 16.2. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter16.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

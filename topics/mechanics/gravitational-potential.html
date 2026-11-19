@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Gravitational Potential Energy and Escape Velocity · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="gravitational-potential">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Gravitational Potential Energy and Escape Velocity</h1>
+          <p class="doc-lede">For the inverse-square gravity, U(r) = -GMm/r. Energy conservation then gives the escape velocity from a planet and the energies of circular and elliptical orbits.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Gravity has a potential energy</strong> — the "stored energy" of being far from a planet <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$U(r) = -\frac{GMm}{r}.$$
+<p>It's negative because you have to give the body <em>more</em> energy to move it farther away. The reference $U = 0$ is at infinity.</p>
+<p><strong>Near Earth's surface</strong>, this reduces to the familiar $U = mgh$ — first-order Taylor expansion of the full formula.</p>
+<p><strong>Escape velocity.</strong> To leave a planet and not come back, you need enough speed that $\tfrac12 mv^2 \ge GMm/R$. Set equal:</p>
+$$v_e = \sqrt{\frac{2GM}{R}}.$$
+<p>For Earth: about $11.2\ \text{km/s}$. For the Moon: $2.4\ \text{km/s}$. No matter which direction you launch, this is the minimum speed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>To orbit</strong> at radius $r$, you need less — just enough centripetal force: $v_{\text{orbit}} = \sqrt{GM/r} = v_e/\sqrt 2$ at the surface. ISS orbits at about $7.7\ \text{km/s}$.</p>
+<p><strong>Total orbit energy:</strong> for a circular orbit, $E = -GMm/(2r)$. Negative = bound. To raise a satellite to a higher orbit, you must <em>add</em> energy, even though it moves slower up there (less kinetic energy, but even less potential).</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Gravitational potential energy</h3>
+            <div>
+<p>The force $F_r = -GMm/r^2$ is conservative (it is radial and depends only on $r$). Integrate $F_r = -dU/dr$ with the reference $U(\infty) = 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§14.4.3</span></span>:</p>
+$$U(r) = -\frac{GMm}{r}.$$
+<p>$U &lt; 0$ everywhere, going to $0$ at infinity and $-\infty$ at $r = 0$. The <em>bigger</em> the separation, the <em>less negative</em> (so higher) the energy.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Near Earth's surface: U ≈ mgh</h3>
+            <div>
+<p>Expand $U$ around $r = R_E$: for a particle at height $h$ with $h \ll R_E$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§14.4.1</span></span>:</p>
+$$\begin{aligned}U(R_E + h) &= -\frac{GMm}{R_E}\left(1 - \frac{h}{R_E} + \cdots\right) \\ &\approx \text{const} + mgh,\end{aligned}$$
+<p>with $g = GM/R_E^2$ as before. So "$U = mgh$" is the first-order expansion of the inverse-square potential.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Total energy of a bound orbit</h3>
+            <div>
+<p>For a particle of mass $m$ at distance $r$ from $M$ moving with speed $v$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§14.5</span></span>:</p>
+$$E = \tfrac12 mv^2 - \frac{GMm}{r}.$$
+<p>Energy conservation along the orbit links speed to distance:</p>
+$$\tfrac12 v_1^2 - \frac{GM}{r_1} = \tfrac12 v_2^2 - \frac{GM}{r_2}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Escape velocity</h3>
+            <div>
+<p>To escape to infinity (where $U = 0$), you need $E \ge 0$. The minimum is $E = 0$ at launch:</p>
+$$\tfrac12 v_e^2 - \frac{GM}{R} = 0 \;\Longrightarrow\; v_e = \sqrt{\frac{2GM}{R}}.$$
+<p>From Earth's surface, $v_e \approx 11.2\ \text{km/s}$. From the Moon's surface, $\approx 2.4\ \text{km/s}$. Independent of the launch direction (since only speed matters in the energy budget) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Energy of a circular orbit</h3>
+            <div>
+<p>For a circular orbit of radius $r$, gravity supplies the centripetal force: $GMm/r^2 = mv^2/r$, so $v^2 = GM/r$ and $K = \tfrac12 mv^2 = GMm/(2r)$. Then</p>
+$$E = K + U = \frac{GMm}{2r} - \frac{GMm}{r} = -\frac{GMm}{2r}.$$
+<p>Negative — bound. Note that $|U| = 2K$ for a circular orbit (a special case of the virial theorem).</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>$|E|$ decreases as $r$ grows: higher orbits have more total energy (less negative). To move a satellite up, you must <em>add</em> energy, even though it ends up moving slower <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Escape velocity gives you enough energy to just barely reach infinity with zero speed. Real rockets launch with a slight excess. And escape velocity is <em>not</em> the velocity needed to orbit — that's smaller, $v_{\text{orbit}} = \sqrt{GM/R} = v_e/\sqrt2$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="gravity">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A body in orbit around a planet, with the gravitational force $F = GMm/r^2$ shown. Move the slider to change the orbit radius $r$: force scales as $1/r^2$ (and the orbital speed as $1/\sqrt r$). Move $M$ to change the planet's mass: force scales linearly with $M$. For circular orbit, gravity equals $mv^2/r$, so $v = \sqrt{GM/r}$.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Potential energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$U(r) = -\frac{GMm}{r}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Near surface limit <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$U \approx mgh + \text{const}, \quad g = GM/R^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Total energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$E = \tfrac12 mv^2 - \frac{GMm}{r}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Escape velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v_e = \sqrt{\frac{2GM}{R}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Circular orbit <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v = \sqrt{\frac{GM}{r}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energy of a circular orbit <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$E = -\frac{GMm}{2r}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Find Earth's escape velocity. (Standard application of <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$v_e = \sqrt{2GM_E/R_E} = \sqrt{2(6.674\times 10^{-11})(5.97\times 10^{24})/(6.37\times 10^6)}$.</p>
+              </div></li>
+              <li><div>
+<p>Inside root: $\approx 1.25\times 10^8$, so $v_e \approx 1.12\times 10^4\ \text{m/s} \approx 11.2\ \text{km/s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Equivalently $v_e = \sqrt{2gR_E} = \sqrt{2\times 9.81\times 6.37\times 10^6} \approx 11.2\ \text{km/s}$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>What speed does a satellite need to circle at the ISS altitude ($h = 400\ \text{km}$)? (Application of $v = \sqrt{GM/r}$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$r = R_E + h = 6.77\times 10^6\ \text{m}$.</p>
+              </div></li>
+              <li><div>
+<p>$v = \sqrt{GM/r} \approx \sqrt{3.98\times 10^{14}/6.77\times 10^6} \approx 7.67\ \text{km/s}$.</p>
+              </div></li>
+              <li><div>
+<p>Orbital period: $T = 2\pi r/v \approx 5.55\times 10^3\ \text{s} \approx 92\ \text{minutes}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Matches the ISS's real 90-minute orbit ✓. Much smaller than the $11.2\ \text{km/s}$ escape speed: $v = v_e/\sqrt2$ exactly for circular orbit near the surface.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Show that the energy of a circular orbit of radius $r$ is $-GMm/(2r)$. (Direct derivation from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Circular condition: $v^2 = GM/r$, so $K = \tfrac12 mv^2 = GMm/(2r)$.</p>
+              </div></li>
+              <li><div>
+<p>Add $U$: $E = GMm/(2r) - GMm/r = -GMm/(2r)$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>$E$ is negative (bound), and $|U|/K = 2$ — the virial relation for inverse-square forces. ✓</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 14 "Potential Energy and Conservation of Energy", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §14.4.3 Inverse Square Gravitation Force, §14.4.1 Change in Gravitational Potential Energy Near Surface of the Earth, §14.5 Mechanical Energy and Conservation of Mechanical Energy. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter14.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

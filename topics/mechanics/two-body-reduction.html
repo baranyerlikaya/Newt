@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Two-Body Problem and Reduced Mass · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="two-body-reduction">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Two-Body Problem and Reduced Mass</h1>
+          <p class="doc-lede">A system of two bodies interacting only with each other reduces to the motion of a single fictitious particle of reduced mass μ = m₁m₂/(m₁+m₂) in the given potential.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Two things pulling on each other</strong> — like Earth and the Moon, or two electrons — is a hard problem: six coordinates, two moving bodies.</p>
+<p><strong>The trick:</strong> change variables <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<ul>
+<li>The <strong>centre of mass</strong> $\mathbf R$ moves at constant velocity (no external force). So go to its frame; now it sits still.</li>
+<li>The <strong>relative position</strong> $\mathbf r = \mathbf r_2 - \mathbf r_1$ carries all the interesting motion.</li>
+</ul>
+<p>In the CM frame, $\mathbf r$ moves as if it were a single fictitious particle of the <strong>reduced mass</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$\mu = \frac{m_1 m_2}{m_1 + m_2}.$$
+<p>$\mu$ is always smaller than either $m_1$ or $m_2$. For equal masses, $\mu = m/2$. For a very light particle orbiting a heavy one (electron around proton, planet around Sun), $\mu$ is nearly the light mass.</p>
+<p><strong>What does this buy you?</strong> You can now use all the one-body tools of Chapter 3 (energy, angular momentum, central-force motion). Everything that followed about the gravitational potential energy, Kepler's laws, circular orbits — it was really all done with $\mu$ in place of $m$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+<p><strong>For the Sun-planet system</strong>, the Sun is a million times heavier than the Earth, so $\mu \approx m_{\text{Earth}}$ — the Sun stays still to very high accuracy. For a binary star with equal masses, both stars orbit the CM at the same distance.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The two-body problem</h3>
+            <div>
+<p>Two particles of masses $m_1$ and $m_2$ interact only with each other through a potential $U(|\mathbf r_2 - \mathbf r_1|)$ depending only on their separation. Newton's laws for each <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§Definition of Central Force</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$m_1\ddot{\mathbf r}_1 = -\nabla_1 U, \qquad m_2\ddot{\mathbf r}_2 = -\nabla_2 U.$$
+<p>Six coordinates — a mess until you change variables.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Centre of mass and relative coordinates</h3>
+            <div>
+<p>Change to <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$\mathbf R = \frac{m_1\mathbf r_1 + m_2\mathbf r_2}{m_1+m_2}, \qquad \mathbf r = \mathbf r_2 - \mathbf r_1.$$
+<p>$\mathbf R$ is the centre of mass; $\mathbf r$ is the relative coordinate. Adding the two Newton equations: $M\ddot{\mathbf R} = 0$, where $M = m_1 + m_2$. So <strong>the centre of mass moves at constant velocity</strong> (no external force). You can go to the CM frame where $\mathbf R = \mathbf 0$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> The reduced mass</h3>
+            <div>
+<p>Subtracting ($\ddot{\mathbf r}_2 - \ddot{\mathbf r}_1$) and simplifying <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$\mu\ddot{\mathbf r} = \mathbf F(\mathbf r), \qquad \mu = \frac{m_1 m_2}{m_1 + m_2}.$$
+<p>The <strong>reduced mass</strong> $\mu$ turns the two-body problem into a one-body problem: a fictitious particle of mass $\mu$ at position $\mathbf r$ in the force field $\mathbf F$. All the original dynamics are encoded in $\mathbf r(t)$ and the CM drift <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Kinetic energy and angular momentum</h3>
+            <div>
+<p>The kinetic energy splits cleanly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$K = \tfrac12 M\dot{\mathbf R}^2 + \tfrac12 \mu\dot{\mathbf r}^2.$$
+<p>The first term is the CM's bulk motion; the second is the "internal" motion of the reduced particle.</p>
+<p>The total angular momentum about the CM is $\mathbf L = \mu\,\mathbf r\times\dot{\mathbf r}$. For a central force (always along $\mathbf r$), no torque acts on the reduced particle: $\mathbf L$ is conserved. This makes the reduced motion planar (in the plane perpendicular to $\mathbf L$).</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Limiting cases</h3>
+            <div>
+<p>Two useful limits:</p>
+<ul>
+<li>$m_1 = m_2 = m$: $\mu = m/2$. Each body orbits the CM at the same distance.</li>
+<li>$m_2 \gg m_1$: $\mu \approx m_1$. The reduced motion is essentially that of the lighter body around the heavier one — this is the Sun-planet case.</li>
+</ul>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The reduced mass is always less than either individual mass: $\mu &lt; m_1$ and $\mu &lt; m_2$. For equal masses it is half; for a very unequal pair it is close to the smaller mass <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$\mu\ddot{\mathbf r} = \mathbf F(\mathbf r)$ looks like Newton's second law for a single particle, but $\mathbf r$ is the <em>relative</em> position vector — not the position of either real body. The real bodies both move, in opposite senses, in the CM frame <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="cmframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Two bodies of mass $m_1$ (dark, bigger) and $m_2$ (grey, smaller) orbit their common centre of mass. In the CM frame, both go around at the same angular velocity, each at a distance from the CM proportional to the <em>other</em> body's mass: $d_1 = (m_2/M)r$, $d_2 = (m_1/M)r$. Equal masses: symmetric circles. Very unequal masses (e.g. Sun + Earth): the heavy body barely moves while the light one does almost all the orbiting.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>CM and relative coordinates <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf R = \frac{m_1\mathbf r_1 + m_2\mathbf r_2}{M}, \ \mathbf r = \mathbf r_2 - \mathbf r_1$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>CM moves freely <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$M\ddot{\mathbf R} = 0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Reduced-particle equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mu\ddot{\mathbf r} = \mathbf F(\mathbf r)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Reduced mass <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mu = \frac{m_1 m_2}{m_1 + m_2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Kinetic energy split <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$K = \tfrac12 M\dot{\mathbf R}^2 + \tfrac12\mu\dot{\mathbf r}^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular momentum about CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf L = \mu\,\mathbf r\times\dot{\mathbf r}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Two equal stars in a binary each of mass $m$ orbit the CM at radius $R$ with angular velocity $\omega$. Find the gravitational force law and the Kepler-type relation. (Based on the reduced-mass formalism of <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Separation: $r = 2R$. Reduced mass: $\mu = m/2$.</p>
+              </div></li>
+              <li><div>
+<p>Reduced-particle circular motion: $\mu\omega^2 r = Gm^2/r^2$, i.e. $(m/2)\omega^2(2R) = Gm^2/(2R)^2$.</p>
+              </div></li>
+              <li><div>
+<p>Solve: $\omega^2 = Gm/(4R^3)$, so $T^2 = 16\pi^2 R^3/(Gm)$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Reality check: each star traces a circle of radius $R$ at angular velocity $\omega$, with the gravitational force $Gm^2/(2R)^2$ providing the centripetal force $m\omega^2 R$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Earth-Sun: $m_1 = 5.97\times 10^{24}\ \text{kg}$, $m_2 = 1.99\times 10^{30}\ \text{kg}$. Find the reduced mass and show it's essentially $m_1$. (Direct from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\mu = m_1 m_2/(m_1 + m_2) \approx m_1(1 - m_1/m_2)$.</p>
+              </div></li>
+              <li><div>
+<p>$m_1/m_2 \approx 3\times 10^{-6}$, so $\mu \approx m_1$ to 6 significant figures.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>That's why pretending the Sun is fixed and Earth orbits around it gives a very accurate answer ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A Hydrogen atom: $m_p = 1836\,m_e$. Find the reduced mass of the electron-proton system in units of $m_e$. (Direct from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>; this correction appears in the Rydberg constant for hydrogen.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\mu = m_e m_p/(m_e + m_p) = m_e \cdot 1836/1837$.</p>
+              </div></li>
+              <li><div>
+<p>$\mu \approx 0.99946\,m_e$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>0.054% correction. Small, but measurable in atomic spectra — it shifts hydrogen lines relative to what you'd compute with an infinitely heavy proton ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Central-Force Motion</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Definition of Central Force, §Direct Consequences of the Definitions. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/central-force-motion/main.pdf">PDF</a></span></li>
+            <li><span>J. Shapiro, <em>Classical Mechanics</em>, Ch. 3 "Two Body Central Forces", Rutgers University. §3.1.1 Reduction to a one-body problem (defines reduced mass μ = m₁m₂/(m₁+m₂)). <a href="https://www.physics.rutgers.edu/~shapiro/507/book4.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Universal Law of Gravitation · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="universal-gravitation">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Universal Law of Gravitation</h1>
+          <p class="doc-lede">Newton's inverse-square law of gravity F = GMm/r², the universal gravitational constant G, and how the familiar mg near Earth's surface comes out of it.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Every pair of masses pulls on each other</strong>, along the line joining them. The strength is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$F = \frac{GMm}{r^2},$$
+<p>where $G \approx 6.67\times 10^{-11}\ \text{N·m}^2/\text{kg}^2$ is a universal constant and $r$ is the distance between the centres.</p>
+<p><strong>The inverse square</strong> is key: double the distance and the force drops to a quarter. That's why gravity is strong at Earth's surface but essentially irrelevant between people in the same room.</p>
+<p><strong>Near Earth's surface</strong>, $r$ doesn't change much as you move around, so the formula reduces to $F = mg$ with <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+$$g = \frac{GM_E}{R_E^2} \approx 9.81\ \text{m/s}^2.$$
+<p><strong>On the Moon</strong>, $g \approx 1.6\ \text{m/s}^2$ (about $1/6$ Earth's) because the Moon is much less massive even though it's smaller. Astronauts don't lose weight by being far from Earth; their weight is actually just the Moon's gravity pulling them <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Weight is a force; mass is not.</strong> Your mass is the same everywhere. Your weight depends on the local $g$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+<p><strong>Everything falls the same.</strong> Drop a hammer and a feather on the Moon (no air): they land together. This happens because the $m$ in $F = GMm/r^2$ is the same $m$ as in $F = ma$, so acceleration $a = GM/r^2$ doesn't depend on $m$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Newton's law of universal gravitation</h3>
+            <div>
+<p>Two point masses $M$ and $m$ a distance $r$ apart attract each other along the line joining them, with force <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§9.2.1</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.1</span></span>:</p>
+$$\mathbf F = -\frac{GMm}{r^2}\hat r,$$
+<p>where $\hat r$ points from the source $M$ to the body $m$, and the minus sign makes the force attractive. $G$ is <strong>Newton's gravitational constant</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$G = 6.674\times 10^{-11}\ \text{N·m}^2/\text{kg}^2.$$
+<p>The law is <strong>universal</strong>: the same $G$ applies to every pair of masses — planets, apples and galaxies alike <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§9.2</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Spherical bodies</h3>
+            <div>
+<p>A beautiful consequence (which Newton proved using calculus): a spherically symmetric body attracts an external particle as if all its mass were concentrated at its centre <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.3</span></span>. So for an object of mass $m$ at distance $r$ from the centre of a planet of mass $M$ and radius $R_p$ ($r \ge R_p$):</p>
+$$F = \frac{GMm}{r^2}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Gravity near Earth's surface</h3>
+            <div>
+<p>At the Earth's surface ($r = R_E$) the gravitational acceleration is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.3</span></span>:</p>
+$$g = \frac{GM_E}{R_E^2} \approx 9.81\ \text{m/s}^2.$$
+<p>With $M_E = 5.97\times 10^{24}\ \text{kg}$ and $R_E = 6.37\times 10^6\ \text{m}$, this works out exactly. The familiar $F = mg$ is just the inverse-square law evaluated at $r = R_E$ for everyday heights where $r \approx R_E$ stays constant to high accuracy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Mass and weight</h3>
+            <div>
+<p>The <strong>weight</strong> of a body is the gravitational force on it; at Earth's surface, $W = mg$. This is a force in newtons <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.3</span></span>. The body's <strong>mass</strong> $m$ is the same everywhere — what changes with location (Earth, Moon, orbit) is $g$, and therefore the weight.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Inertial = gravitational mass</h3>
+            <div>
+<p>The $m$ in $F = GMm/r^2$ (gravitational mass) is experimentally identical to the $m$ in $F = ma$ (inertial mass). That is why every body falls with the same acceleration $g$ near the surface, regardless of mass. In Einstein's general relativity this equality becomes the <strong>equivalence principle</strong> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 3">3</a> <span class="srcref-detail">§Measurement of Mass</span></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Gravity between everyday objects is tiny. Two $1\ \text{kg}$ masses $1\ \text{m}$ apart attract each other with $F \approx 6.7\times 10^{-11}\ \text{N}$ — undetectable without a torsion balance. Gravity dominates only when one of the masses is astronomical <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>The $r$ in $F = GMm/r^2$ is the distance between <em>centres</em> (for spherical bodies), not the height above a surface. For a particle at height $h$ above Earth's surface, $r = R_E + h$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§8.2.3</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="gravity">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A planet (dark circle) at the centre pulls on a smaller body at distance $r$. The arrow is the gravitational force $F = GMm/r^2$: doubling $r$ reduces it to a quarter. Change $M$ and watch the force scale linearly. The dashed circle marks the orbit distance.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Universal gravitation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$F = \frac{GMm}{r^2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Vector form <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F = -\frac{GMm}{r^2}\hat r$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Gravitational constant <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$G = 6.674\times 10^{-11}\ \text{N·m}^2/\text{kg}^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Surface gravity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$g = \frac{GM}{R^2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Weight <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$W = mg$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Verify that Newton's law gives $g = 9.81\ \text{m/s}^2$ at Earth's surface. Use $M_E = 5.97\times 10^{24}\ \text{kg}$, $R_E = 6.37\times 10^6\ \text{m}$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>, §8.2.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$g = GM_E/R_E^2 = (6.674\times 10^{-11})(5.97\times 10^{24})/(6.37\times 10^6)^2$.</p>
+              </div></li>
+              <li><div>
+<p>Numerator: $3.98\times 10^{14}$. Denominator: $4.06\times 10^{13}$.</p>
+              </div></li>
+              <li><div>
+<p>$g \approx 9.81\ \text{m/s}^2$ ✓.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Satellite in low Earth orbit ($h \sim 400\ \text{km}$): $r = R_E + h \approx 6.77\times 10^6\ \text{m}$, so $g$ there is $9.81\cdot(R_E/r)^2 \approx 8.7\ \text{m/s}^2$ — only slightly reduced. Astronauts float not because gravity is weak, but because they are in free fall.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Earth's Moon ($M_M = 7.35\times 10^{22}\ \text{kg}$, $R_M = 1.74\times 10^6\ \text{m}$). Find its surface gravity. (Standard application of $g = GM/R^2$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$g_M = GM_M/R_M^2 = (6.674\times 10^{-11})(7.35\times 10^{22})/(1.74\times 10^6)^2$.</p>
+              </div></li>
+              <li><div>
+<p>$\approx 1.62\ \text{m/s}^2 \approx g/6$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Apollo astronauts weighed $1/6$ their Earth weight and bounced accordingly ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>What is the acceleration of the Moon toward Earth, and how does it compare with the centripetal acceleration of its orbit? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §9.2 — Newton's classic moon test.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Moon–Earth distance $r = 3.84\times 10^8\ \text{m}$, $M_E = 5.97\times 10^{24}\ \text{kg}$.</p>
+              </div></li>
+              <li><div>
+<p>$a_{\text{grav}} = GM_E/r^2 \approx 2.70\times 10^{-3}\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>Centripetal for circular orbit: $a_c = \omega^2 r = (2\pi/T)^2 r$, $T = 27.3\ \text{days}$: $a_c \approx 2.72\times 10^{-3}\ \text{m/s}^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>The two match: gravity is exactly the centripetal force of the Moon's orbit. Newton's famous proof that terrestrial gravity and planetary motion come from the same law ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 9 "Circular Motion Dynamics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §9.2 Universal Law of Gravitation and the Circular Orbit of the Moon. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter9.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 8 "Applications of Newton’s Second Law", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §8.2 Fundamental Laws of Nature (§8.2.1 Universal Law of Gravitation, §8.2.3 Gravitational Force near the Surface of the Earth). <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter8.pdf">PDF</a></span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. §Measurement of Mass (equivalence of inertial and gravitational mass). <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

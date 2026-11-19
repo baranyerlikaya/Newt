@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Collision Theory · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="collision-theory">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Collision Theory</h1>
+          <p class="doc-lede">Momentum is always conserved in collisions. Kinetic energy may or may not be. Elastic, inelastic and perfectly inelastic cases, in both the lab and CM frames.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>In every collision, total momentum is conserved</strong> — the external forces during the brief contact are negligible compared to the internal forces <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Three flavours</strong> by what happens to the <em>kinetic</em> energy:</p>
+<ul>
+<li><strong>Elastic:</strong> KE conserved. Billiard balls, atomic nuclei.</li>
+<li><strong>Inelastic:</strong> KE partly lost to heat/deformation. Most everyday collisions.</li>
+<li><strong>Perfectly inelastic:</strong> bodies stick together. Maximum possible energy loss.</li>
+</ul>
+<p><strong>1D elastic formulas</strong> (body 1 hits stationary body 2) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$v_1' = \frac{m_1-m_2}{m_1+m_2}v_1, \qquad v_2' = \frac{2m_1}{m_1+m_2}v_1.$$
+<p>Three cases:</p>
+<ul>
+<li><strong>Equal masses:</strong> body 1 stops, body 2 takes over its velocity. Newton's cradle.</li>
+<li><strong>Light hits heavy:</strong> light bounces back, heavy barely moves. Ball off a wall.</li>
+<li><strong>Heavy hits light:</strong> heavy continues, light flies off fast. Bowling pin.</li>
+</ul>
+<p><strong>Perfectly inelastic:</strong> stuck-together speed is the centre-of-mass velocity, which never changed anyway. The <em>relative</em> kinetic energy is what gets lost <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Trick:</strong> go to the CM frame. There the total momentum is zero, and an elastic collision just reverses each body's velocity. Transform back by adding $\mathbf V_{\text{CM}}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The three types</h3>
+            <div>
+<p>Classify by what happens to kinetic energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.3</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+<ul>
+<li><strong>Elastic:</strong> $\Delta K = 0$. Momentum and KE both conserved.</li>
+<li><strong>Inelastic:</strong> $\Delta K &lt; 0$. Some energy becomes heat, sound, deformation.</li>
+<li><strong>Perfectly inelastic:</strong> the bodies stick together. Maximum $K$ loss consistent with momentum conservation.</li>
+</ul>
+<p>Momentum is <em>always</em> conserved (assuming the external impulse during the brief collision is negligible) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.3</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> 1D elastic collision</h3>
+            <div>
+<p>Two bodies $m_1, m_2$ with initial velocities $v_1, v_2$ and final $v_1', v_2'$. Momentum and energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.4.1</span></span>:</p>
+$$m_1v_1 + m_2v_2 = m_1v_1' + m_2v_2',$$
+$$\tfrac12 m_1v_1^2 + \tfrac12 m_2v_2^2 = \tfrac12 m_1v_1'^2 + \tfrac12 m_2v_2'^2.$$
+<p>Solving simultaneously <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$v_1' = \frac{m_1 - m_2}{m_1 + m_2}v_1 + \frac{2m_2}{m_1 + m_2}v_2,$$
+$$v_2' = \frac{2m_1}{m_1 + m_2}v_1 + \frac{m_2 - m_1}{m_1 + m_2}v_2.$$
+<p>Equivalent handy result: <strong>relative velocity reverses</strong>: $v_1' - v_2' = -(v_1 - v_2)$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Special cases of elastic 1D</h3>
+            <div>
+<ul>
+<li><strong>Equal masses, body 2 at rest:</strong> body 1 stops, body 2 moves off at $v_1$ (Newton's cradle).</li>
+<li><strong>Light hits heavy, body 2 at rest ($m_1 \ll m_2$):</strong> body 1 bounces back nearly reversed, body 2 barely moves. Ball off a wall.</li>
+<li><strong>Heavy hits light, body 2 at rest ($m_1 \gg m_2$):</strong> body 1 continues almost unchanged, body 2 flies off at $\approx 2v_1$. Bowling pin.</li>
+</ul>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Perfectly inelastic</h3>
+            <div>
+<p>Bodies stick together: $v_1' = v_2' = v_f$. Momentum: $m_1v_1 + m_2v_2 = (m_1 + m_2)v_f$, so <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.3</span></span></p>
+$$v_f = \frac{m_1v_1 + m_2v_2}{m_1 + m_2} = V_{\text{CM}}.$$
+<p>The combined body moves at the CM velocity (necessary, since that's never changed anyway). Energy loss <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\Delta K = -\tfrac12\mu(v_1 - v_2)^2, \qquad \mu = \frac{m_1m_2}{m_1+m_2}.$$
+<p>All of the KE that was in <em>relative motion</em> is lost; the CM KE is kept.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> CM frame makes it trivial</h3>
+            <div>
+<p>In the CM frame the total momentum is zero: $m_1\mathbf u_1 + m_2\mathbf u_2 = 0$. An elastic collision there is just a reversal of each velocity (for 1D) or a rotation of each (for 2D) while keeping magnitudes fixed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.2, §15.7</span></span>. Transform back to the lab frame by adding $\mathbf V_{\text{CM}}$.</p>
+<p>2D collisions have an extra degree of freedom (scattering angle $\chi$): momentum conservation + energy conservation gives 3 equations in 4 unknowns $(v_1', v_2', \theta_1', \theta_2')$. The scattering angle is set by the impact parameter — a geometric detail of how the two bodies touched <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.6, §15.7</span></span>.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>"Elastic" doesn't mean rubbery — it means <em>no mechanical energy is lost</em>. Billiard balls, atomic nuclei at low energy and hard spheres are elastic to good approximation. Mud balls, cars, and skaters are not <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.3</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Momentum conservation is a vector statement. In two dimensions you get two equations; in three, three. Energy is one scalar equation. You can't conserve more unknowns than you have equations — that's why 2D elastic collisions still leave a free scattering angle <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§15.6</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="carts">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A perfectly inelastic collision: cart 1 (dark, $m_1$) hits stationary cart 2 (grey, $m_2$) and they stick. Momentum conservation: $m_1v_1 = (m_1+m_2)v_f$. The bars show $p_1$, $p_2$ and the sum: the sum never changes, but $p_1$ decreases and $p_2$ grows during the collision. For elastic collisions, both bars would still conserve, but the velocities would differ — equal masses give a perfect stop-and-swap, unequal masses give a bounce.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Momentum conservation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\sum_i m_i\mathbf v_i^{\text{(before)}} = \sum_i m_i\mathbf v_i^{\text{(after)}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>1D elastic solution <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{gathered}v_1' = \frac{(m_1-m_2)v_1 + 2m_2v_2}{m_1+m_2} \\ v_2' = \frac{(m_2-m_1)v_2 + 2m_1v_1}{m_1+m_2}\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Relative velocity reversal <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v_1' - v_2' = -(v_1 - v_2)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Perfectly inelastic <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$v_f = \frac{m_1v_1 + m_2v_2}{m_1+m_2}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energy loss (perf. inelastic) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\Delta K = -\tfrac12\mu(v_1 - v_2)^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Reduced mass <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mu = \frac{m_1m_2}{m_1+m_2}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>$m_1 = 1\ \text{kg}$ at $v_1 = 3\ \text{m/s}$ hits stationary $m_2 = 3\ \text{kg}$ elastically. Find the final velocities. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §15.4.1.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$v_1' = (1-3)\cdot 3/(1+3) = -1.5\ \text{m/s}$ (bounces back).</p>
+              </div></li>
+              <li><div>
+<p>$v_2' = 2\cdot 1\cdot 3/(1+3) = 1.5\ \text{m/s}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Momentum: $3 = 1\cdot(-1.5) + 3\cdot 1.5 = -1.5 + 4.5 = 3$ ✓. Energy: $\tfrac12(3)^2 = 4.5$ initial, $\tfrac12(1)(1.5^2) + \tfrac12(3)(1.5^2) = 1.125 + 3.375 = 4.5$ final ✓. Relative velocity: before $3-0 = 3$, after $-1.5 - 1.5 = -3$, reversed ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Same bodies but perfectly inelastic. Find $v_f$ and the fraction of KE lost. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §15.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$v_f = (1\cdot 3 + 3\cdot 0)/4 = 0.75\ \text{m/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$K_i = 4.5\ \text{J}$, $K_f = \tfrac12(4)(0.75^2) = 1.125\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Fraction lost: $(4.5 - 1.125)/4.5 = 75\%$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Verify with $\mu$: $\mu = 1\cdot 3/4 = 0.75$, $\Delta K = -\tfrac12(0.75)(3)^2 = -3.375\ \text{J}$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $5\ \text{g}$ bullet moving at $400\ \text{m/s}$ embeds in a $2\ \text{kg}$ block of wood resting on a frictionless table. Find the block's speed and the fraction of KE converted to heat. (Standard ballistic pendulum setup, from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §15.3.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Perfectly inelastic: $v_f = (0.005\times 400)/(0.005 + 2) = 2/2.005 \approx 0.998\ \text{m/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$K_i = \tfrac12(0.005)(400)^2 = 400\ \text{J}$. $K_f = \tfrac12(2.005)(0.998)^2 \approx 1.0\ \text{J}$.</p>
+              </div></li>
+              <li><div>
+<p>Fraction lost: $(400-1)/400 \approx 99.75\%$. Nearly all the KE becomes heat and deformation.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>This is why bullets are so destructive: a huge fraction of their KE deposits in the target ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 15 "Collision Theory", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §15.2 Reference Frames and Relative Velocities, §15.3 Characterizing Collisions, §15.4 One-Dimensional Collisions, §15.6 Two Dimensional Elastic Collisions, §15.7 Two-Dimensional Collisions in CM Frame. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter15.pdf">PDF</a></span></li>
+            <li><span>İ. Yalçınkaya, <em>Chapter 3: Dynamics</em> (lecture notes), 02YMECH Mechanics, FJFI, Czech Technical University in Prague, 2026. Worked Examples “Elastic collision of two hockey pucks”, “Inelastic collision of two hockey pucks”. <a href="https://github.com/iyalcinkaya/02YMECH/blob/main/notes/dynamics/main.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

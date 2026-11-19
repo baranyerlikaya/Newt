@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Orbit Equation and Kepler Orbits · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="orbit-equation">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Orbit Equation and Kepler Orbits</h1>
+          <p class="doc-lede">Combining energy conservation and angular momentum gives the shape r(θ) of the orbit. For the inverse-square force this is a conic section.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>For a central force, $r(\theta)$ describes the shape of the orbit</strong> — the map in space, time removed <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p>For gravity (and any inverse-square force), the shape is always a <strong>conic section</strong> with the force centre at one focus:</p>
+$$r(\theta) = \frac{p}{1 + e\cos\theta}.$$
+<p>The <strong>eccentricity</strong> $e$ picks the shape:</p>
+<ul>
+<li>$e = 0$: perfect <strong>circle</strong>.</li>
+<li>$0 &lt; e &lt; 1$: <strong>ellipse</strong> (Earth, Mars, all planets; comets like Halley).</li>
+<li>$e = 1$: <strong>parabola</strong> (marginal, just barely escapes).</li>
+<li>$e &gt; 1$: <strong>hyperbola</strong> (fly-bys, scattering, interstellar comets).</li>
+</ul>
+<p>The energy decides between bound and unbound: $E &lt; 0$ gives ellipse, $E = 0$ parabola, $E &gt; 0$ hyperbola.</p>
+<p><strong>Semi-major axis $a$ holds the energy:</strong> all ellipses with the same $a$ have the same energy and the same period (Kepler 3) — regardless of their shape (eccentricity) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> From dθ/dr to r(θ)</h3>
+            <div>
+<p>Angular momentum gives $\dot\theta = L/(\mu r^2)$, and the radial energy equation gives $\dot r = \pm\sqrt{(2/\mu)[E - U_{\text{eff}}(r)]}$. Dividing <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\frac{d\theta}{dr} = \frac{L/(\mu r^2)}{\pm\sqrt{(2/\mu)[E - U_{\text{eff}}(r)]}}.$$
+<p>Integrating gives the orbit $\theta(r)$ or, inverted, $r(\theta)$ — the shape of the path in space, with time removed.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Substitution u = 1/r</h3>
+            <div>
+<p>For $U = -k/r$ (inverse-square attraction, with $k = GMm$ for gravity), substitute $u = 1/r$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\frac{d^2 u}{d\theta^2} + u = \frac{\mu k}{L^2}.$$
+<p>A linear ODE with the same shape as SHM. Its solution is</p>
+$$u(\theta) = \frac{\mu k}{L^2}\left <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">+ e\cos(\theta - \theta_0)\right</span></span>,$$
+<p>where $e$ is an integration constant. Inverting <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$r(\theta) = \frac{p}{1 + e\cos(\theta - \theta_0)}, \qquad p = \frac{L^2}{\mu k}.$$
+<p>This is a <strong>conic section</strong> with the force centre at one focus.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Kepler orbits: the four conics</h3>
+            <div>
+<p>The eccentricity $e$ decides the shape <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>$e = 0$: <strong>circle</strong>, $r = p$ constant.</li>
+<li>$0 &lt; e &lt; 1$: <strong>ellipse</strong>, bound orbit. Periastron $r_{\min} = p/(1+e)$, apastron $r_{\max} = p/(1-e)$. Semi-major axis $a = p/(1-e^2)$.</li>
+<li>$e = 1$: <strong>parabola</strong>, $E = 0$, barely escaping.</li>
+<li>$e &gt; 1$: <strong>hyperbola</strong>, $E &gt; 0$, scattering trajectory.</li>
+</ul>
+<p>In terms of energy and angular momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$e = \sqrt{1 + \frac{2EL^2}{\mu k^2}}.$$
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Energy and semi-major axis</h3>
+            <div>
+<p>For bound orbits ($E &lt; 0$) one finds (as in Topic 7.3):</p>
+$$a = -\frac{k}{2E}, \qquad E = -\frac{k}{2a}.$$
+<p>So the orbit's energy depends only on $a$, not $L$ or $e$. All orbits with the same semi-major axis have the same energy and the same period (Kepler's third law).</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The orbit closes up (comes back to exactly the same path) only for certain special force laws. The inverse-square force is one of them — perfect ellipses. Any small deviation from inverse-square causes the ellipse to <em>precess</em>, slowly rotating in space. General relativity predicts such a precession for Mercury's orbit <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>The orbit equation gives the <em>shape</em> $r(\theta)$, not $r(t)$ or $\theta(t)$. To get motion in time, you still need Kepler's second law: $dA/dt = L/(2\mu) = \text{const}$, which gives $\theta(t)$ implicitly as an integral <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="kepler">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">An orbit around a central mass (dark dot at the focus, not the centre). Change the eccentricity $e$: a circle at $e = 0$, elongated ellipses as $e$ grows. In every case the shaded wedge swept in a fixed time is the same area (Kepler 2), so the particle moves faster when it's close and slower when it's far.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Orbit equation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$r(\theta) = \frac{p}{1 + e\cos(\theta - \theta_0)}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Semi-latus rectum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$p = \frac{L^2}{\mu k}, \qquad k = GMm \text{ (grav.)}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Eccentricity from E, L <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$e = \sqrt{1 + \frac{2EL^2}{\mu k^2}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Perihelion / aphelion <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$r_{\min} = \frac{p}{1+e}, \quad r_{\max} = \frac{p}{1-e}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Semi-major axis <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$a = \frac{p}{1-e^2} = -\frac{k}{2E}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Four conic sections <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{cases}e = 0 & \text{circle} \\ 0 < e < 1 & \text{ellipse} \\ e = 1 & \text{parabola} \\ e > 1 & \text{hyperbola}\end{cases}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Identify the orbit shapes for the Earth, a parabolic comet, and an interstellar visitor like 'Oumuamua. (Standard application of eccentricity and $E$.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Earth: $e \approx 0.017$, $E &lt; 0$, nearly circular ellipse.</p>
+              </div></li>
+              <li><div>
+<p>Typical periodic comet (Halley): $e \approx 0.97$, $E &lt; 0$, highly elongated ellipse.</p>
+              </div></li>
+              <li><div>
+<p>'Oumuamua: $e \approx 1.2$, $E &gt; 0$, unbound hyperbola — it came from outside the solar system and is leaving.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Each eccentricity directly corresponds to a shape. $e &lt; 1$: closed, periodic. $e \ge 1$: open, one-pass ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Earth's orbit has perihelion $r_{\min} = 1.47\times 10^{11}\ \text{m}$ and aphelion $r_{\max} = 1.52\times 10^{11}\ \text{m}$. Find $a$ and $e$. (Standard.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$a = (r_{\min} + r_{\max})/2 = 1.495\times 10^{11}\ \text{m} = 1\ \text{AU}$.</p>
+              </div></li>
+              <li><div>
+<p>$e = (r_{\max} - r_{\min})/(r_{\max} + r_{\min}) = 0.05\times 10^{11}/(2.99\times 10^{11}) \approx 0.0167$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Earth's semi-major axis defines the astronomical unit by convention; its eccentricity is about 0.017 ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A comet is observed with $E = 0$ (parabolic). Find its closest approach to the Sun in terms of its angular momentum. (Direct from orbit equation.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$e = 1$ for $E = 0$. Orbit: $r = p/(1+\cos\theta)$.</p>
+              </div></li>
+              <li><div>
+<p>Closest approach at $\theta = 0$: $r_{\min} = p/2 = L^2/(2\mu k) = L^2/(2\mu GMm)$.</p>
+              </div></li>
+              <li><div>
+<p>With $\mu \approx m$: $r_{\min} = L^2/(2GMm^2) = v_{\min}^2 r_{\min}^2/(2GM)$, so $v_{\min}^2 = 2GM/r_{\min}$ — exactly escape velocity at perihelion ✓.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>A parabolic orbit is the marginal one between bound (ellipse) and free (hyperbola): its speed at every point is exactly local escape velocity ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>J. Shapiro, <em>Classical Mechanics</em>, Ch. 3 "Two Body Central Forces", Rutgers University. §3.2 Integrating the motion, §3.2.1 The Kepler problem. <a href="https://www.physics.rutgers.edu/~shapiro/507/book4.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Rigid Body Kinematics · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="rigid-kinematics">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Rigid Body Kinematics</h1>
+          <p class="doc-lede">A rigid body's motion decomposes into translation of the centre of mass and rotation about an axis through the CM. Each point of the body has its own velocity v = V_CM + ω × r'.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>A rigid body is one that doesn't deform.</strong> All its particles stay at fixed distances from each other. So its entire motion is captured by <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+<ul>
+<li>Where the <strong>centre of mass</strong> is going (translation).</li>
+<li>How it's spinning about the CM (rotation).</li>
+</ul>
+<p>Every single point's velocity is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf v = \mathbf V_{\text{CM}} + \boldsymbol\omega\times\mathbf r'.$$
+<p>$\mathbf V_{\text{CM}}$ is the same for the whole body; $\mathbf r'$ is each point's offset from the CM; $\boldsymbol\omega$ is the angular velocity (same for the whole body).</p>
+<p><strong>Rolling without slipping</strong> (Topic 11.3): the contact point is instantaneously at rest. That means $V_{\text{CM}} = \omega R$. The top of the wheel moves at <em>twice</em> the bike's forward speed.</p>
+<p><strong>For spinning about a fixed axis</strong>, rotational kinematics copies translational <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>:</p>
+<ul>
+<li>$v = r_\perp\omega$ (speed of a point)</li>
+<li>$a_t = r_\perp\alpha$ (tangential acceleration)</li>
+<li>$a_c = r_\perp\omega^2$ (centripetal)</li>
+<li>Constant $\alpha$: $\omega = \omega_0 + \alpha t$, $\theta = \theta_0 + \omega_0 t + \tfrac12\alpha t^2$.</li>
+</ul>
+<p>Same formulas as straight-line motion, with $x \to \theta$, $v \to \omega$, $a \to \alpha$.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> What makes a body rigid</h3>
+            <div>
+<p>A <strong>rigid body</strong> is a system of particles with fixed distances between every pair. Internal forces just enforce the constraints — they do no net work. A rigid body in 3D has <em>six</em> degrees of freedom: three for the position of its CM, three for its orientation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2</span></span>; <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§16.2</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Chasles' theorem: translation + rotation</h3>
+            <div>
+<p>The most general motion of a rigid body at any instant is a translation of the CM plus a rotation about an axis through the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2</span></span>. Each particle's velocity is:</p>
+$$\mathbf v_i = \mathbf V_{\text{CM}} + \boldsymbol\omega\times\mathbf r_i',$$
+<p>where $\mathbf r_i'$ is the particle's position relative to the CM and $\boldsymbol\omega$ is the (instantaneous) angular velocity, the same for every particle of the body.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Fixed-axis rotation</h3>
+            <div>
+<p>A special and common case: the body rotates about a fixed axis (axle of a wheel, hinge of a door). Choose the axis as $\hat z$. Then $\boldsymbol\omega = \omega\hat z$, every point moves in a circle in a plane perpendicular to the axis, with speed $v = r_\perp\omega$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§16.2</span></span>:</p>
+<ul>
+<li>Angular velocity $\omega = d\theta/dt$.</li>
+<li>Angular acceleration $\alpha = d\omega/dt = d^2\theta/dt^2$.</li>
+<li>Tangential acceleration $a_t = r_\perp\alpha$.</li>
+<li>Centripetal acceleration $a_c = r_\perp\omega^2$.</li>
+</ul>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> General 3D rotations</h3>
+            <div>
+<p>For rotations about a general axis through the CM, $\boldsymbol\omega$ is a vector along that axis. For free rotation (no torques), $\boldsymbol\omega$ can tumble over time — Euler angles describe the full orientation. In an introductory course we usually restrict to fixed-axis rotations or to symmetry axes where $\boldsymbol\omega$ stays put <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2, §20.3</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Kinematic equations for rotations</h3>
+            <div>
+<p>For constant $\alpha$, the rotational formulas mirror the translational ones exactly <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§16.2</span></span>:</p>
+$$\omega(t) = \omega_0 + \alpha t, \qquad \theta(t) = \theta_0 + \omega_0 t + \tfrac12\alpha t^2.$$
+<p>And the handy "square" identity:</p>
+$$\omega^2 = \omega_0^2 + 2\alpha(\theta - \theta_0).$$
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>Every point of a rigid body has the same $\boldsymbol\omega$ and $\boldsymbol\alpha$ (this is what "rigid" means — otherwise the body would be deforming) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§16.2</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Linear velocities $\mathbf v_i$ differ from point to point (they are $\mathbf V_{\text{CM}} + \boldsymbol\omega\times\mathbf r_i'$). Only $\boldsymbol\omega$ and $\boldsymbol\alpha$ are "properties of the whole body" <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="rolling">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A wheel rolls without slipping to the right. The CM moves at steady speed $v$; each rim point does a cycloid. Watch the small dot marking a specific rim point: it is <em>at rest</em> whenever it touches the ground, moves at $2v$ when at the top, and in between moves in curved paths. This is $\mathbf v = \mathbf V_{\text{CM}} + \boldsymbol\omega\times\mathbf r'$ in action.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Velocity of a point <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf v_i = \mathbf V_{\text{CM}} + \boldsymbol\omega\times\mathbf r_i'$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Tangential speed (fixed axis) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$v = r_\perp\omega$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Tangential and centripetal acceleration <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$a_t = r_\perp\alpha, \quad a_c = r_\perp\omega^2$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Angular kinematics (constant α) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\begin{gathered}\omega = \omega_0 + \alpha t \\ \theta = \theta_0 + \omega_0 t + \tfrac12\alpha t^2\end{gathered}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Energy-like identity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\omega^2 = \omega_0^2 + 2\alpha\,\Delta\theta$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A wheel of radius $R$ rolls without slipping with CM velocity $V$. Find the velocity of the top, bottom and side points of the rim. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §20.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Rolling without slipping means $V = \omega R$, with $\boldsymbol\omega$ along the axle (into the page, say, for rightward motion).</p>
+              </div></li>
+              <li><div>
+<p>Top: $\boldsymbol\omega\times\mathbf r'$ where $\mathbf r' = +R\hat y$ gives $\omega R\hat x = +V\hat x$. Adding $\mathbf V_{\text{CM}} = V\hat x$: top moves at $2V$ forward.</p>
+              </div></li>
+              <li><div>
+<p>Bottom: $\mathbf r' = -R\hat y$ gives $-V\hat x$. Adding $V\hat x$: bottom is instantaneously at rest.</p>
+              </div></li>
+              <li><div>
+<p>Side points: $\mathbf r' = \pm R\hat x$, gives $\mp V\hat y$ (upward or downward). Adding $V\hat x$: moves diagonally at $\sqrt 2\,V$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Top of a bike wheel moves twice as fast as the bike; bottom is at rest (which is why rolling doesn't slip); sides trace a cycloid, as in Topic 2.6 ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A record turntable starts from rest and reaches $33\tfrac13\ \text{rpm}$ in $2\ \text{s}$. What is $\alpha$, and how many revolutions does it make? (Standard kinematics.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$\omega_f = 33.33\times 2\pi/60 \approx 3.49\ \text{rad/s}$.</p>
+              </div></li>
+              <li><div>
+<p>$\alpha = \omega_f/t = 3.49/2 \approx 1.75\ \text{rad/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>$\Delta\theta = \tfrac12\alpha t^2 = \tfrac12\times 1.75\times 4 = 3.49\ \text{rad} \approx 0.56$ revolutions.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Average $\omega$ during spin-up is $\omega_f/2$, so $\Delta\theta = (\omega_f/2)t = 3.49\ \text{rad}$ ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A ball of radius $R$ rolls without slipping down a slope and has angular speed $\omega = 10\ \text{rad/s}$ when $R = 0.05\ \text{m}$. Find its linear speed, period, tangential and centripetal accelerations at the rim. (Direct application.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>$v_{\text{CM}} = R\omega = 0.5\ \text{m/s}$.</p>
+              </div></li>
+              <li><div>
+<p>Period of one full rotation: $T = 2\pi/\omega \approx 0.63\ \text{s}$.</p>
+              </div></li>
+              <li><div>
+<p>If $\alpha = 0$ (constant $\omega$), $a_t = 0$; centripetal of a rim point about the axle: $a_c = R\omega^2 = 0.05\times 100 = 5\ \text{m/s}^2$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Centripetal is from the point being in circular motion <em>about the CM</em>. In the ground frame, a different calculation applies ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 20 "Rigid Body: Translation and Rotational Motion Kinematics for Fixed Axis Rotation", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §20.2 Constrained Motion: Translation and Rotation, §20.2.1 Rolling without slipping. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter20.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 16 "Two Dimensional Rotational Kinematics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §16.2 Fixed Axis Rotation: Rotational Kinematics. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter16.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

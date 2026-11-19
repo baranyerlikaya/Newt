@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Static Equilibrium · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="static-equilibrium">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Static Equilibrium</h1>
+          <p class="doc-lede">A rigid body in static equilibrium has zero net force AND zero net torque. The two conditions let you solve for the forces on bridges, ladders, seesaws and bookshelves.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Static equilibrium:</strong> an object stays put. Not just no sliding — also no spinning. So two conditions have to hold at once <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\sum\mathbf F = 0, \qquad \sum\boldsymbol\tau = 0.$$
+<ul>
+<li>Forces balance in every direction.</li>
+<li>Torques balance about every point.</li>
+</ul>
+<p><strong>The clever-pivot trick:</strong> you can take torques about <em>any</em> pivot. Pick one that goes through an unknown force so its torque vanishes — now you don't need to solve for it <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Lever law (Archimedes):</strong> balance is about torques, not forces.</p>
+$$F_L\,d_L = F_R\,d_R.$$
+<p>Small force far from the pivot = large force near it. Why crowbars and wrenches work — and why a 30 kg kid can balance a 20 kg one on a seesaw by sitting closer in.</p>
+<p><strong>Centre of gravity:</strong> gravity acts as if it were applied at the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span>. A building, a leaning tower, a Jenga tower stays up as long as the vertical line through its CG stays inside its base. Walk that line past the edge and it topples.</p>
+<p><strong>Three-step recipe:</strong> free-body diagram → $\sum F = 0$ for each axis → $\sum\tau = 0$ about a smart pivot.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> Two conditions</h3>
+            <div>
+<p>A rigid body is in <strong>static equilibrium</strong> if every point of it is at rest in an inertial frame. Then both $\mathbf V_{\text{CM}}$ and $\boldsymbol\omega$ are zero, and their derivatives also vanish, so <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.1</span></span>:</p>
+$$\sum_i\mathbf F_i = 0, \qquad \sum_i\boldsymbol\tau_i = 0.$$
+<p>The first says the body as a whole doesn't accelerate linearly; the second says it doesn't spin up. Both are vector equations — three components each in 3D, two + one in 2D.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Choice of pivot</h3>
+            <div>
+<p>For a body in equilibrium, the torque equation $\sum\boldsymbol\tau = 0$ holds <em>about any point</em>. Pick the point that kills the most unknowns: choose the pivot through an unknown force so its torque vanishes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.2</span></span>. Common tricks:</p>
+<ul>
+<li>Ladder against a wall: take the pivot at the foot, and the ground's forces drop out.</li>
+<li>Seesaw: take the pivot at the fulcrum, and its reaction drops out.</li>
+</ul>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Lever law</h3>
+            <div>
+<p>For a horizontal beam pivoted somewhere, in equilibrium <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.2</span></span>:</p>
+$$F_L\,d_L = F_R\,d_R,$$
+<p>where $F$'s are perpendicular forces applied on each side and $d$'s are the moment arms from the pivot. This is Archimedes' lever law — apply a small force at a long moment arm to balance a large force at a short one.</p>
+<p>In general ("generalized lever law") <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.3</span></span>, the torque is the force times the <em>perpendicular</em> distance, or equivalently the perpendicular component of the force times the distance.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Centre of gravity</h3>
+            <div>
+<p>In uniform gravity, each part of a body has weight $m_i g$ downward, so the total gravitational force on the body is $Mg$ acting <em>as if</em> applied at the centre of mass — called the <strong>centre of gravity</strong> (CG) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§17.4.2</span></span>. For non-uniform gravity, CM and CG differ slightly.</p>
+<p>Consequence: for a body on a flat surface, it topples when the vertical line through its CG falls outside its base of support. Leaning towers, Jenga blocks, and pensioners carrying heavy bags all obey this <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a> <span class="srcref-detail">§17.4.2</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Three-step recipe for statics problems</h3>
+            <div>
+<p> <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.4</span></span>:</p>
+<ol>
+<li>Identify the body and <strong>draw a free-body diagram</strong> with every external force (gravity at CG, normal forces, friction, tensions).</li>
+<li>Write $\sum F_x = 0$ and $\sum F_y = 0$ (and $\sum F_z = 0$ if needed).</li>
+<li>Write $\sum\tau = 0$ about a clever pivot.</li>
+</ol>
+<p>In 2D you get three equations, enough to solve for up to three unknown components.</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>"Equilibrium" here means <em>static</em>: motionless. A body moving at constant velocity also has $\sum\mathbf F = 0$ and $\sum\boldsymbol\tau = 0$ — "dynamic equilibrium". Static just adds the extra condition of zero velocity <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>Torque depends on the chosen pivot. $\sum\boldsymbol\tau = 0$ holds <em>at every pivot</em> only if $\sum\mathbf F = 0$ also holds — these two conditions are coupled <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§18.2</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="torqueL">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A rod with a force applied at its end. For static equilibrium about a chosen pivot, the torque $\tau = rF\sin\phi$ must be zero (or balanced by other torques). Vary the angle $\phi$ to see how torque changes: maximum when the force is perpendicular ($\phi = 90°$), zero when parallel. In a real statics problem you add up all the torques and set the sum to zero.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Force equilibrium <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\sum_i\mathbf F_i = \mathbf 0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Torque equilibrium <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\sum_i\boldsymbol\tau_i = \mathbf 0$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Lever law (2D) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$F_L\,d_L = F_R\,d_R$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Torque about any point <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\tau = r\,F\sin\phi = r_\perp F$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Weight acts at CG <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 2">2</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{grav, total}} = M\mathbf g\ \text{at CG}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $20\ \text{kg}$ child sits $2\ \text{m}$ from the pivot of a seesaw. Where must a $30\ \text{kg}$ child sit to balance it? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §18.2.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Lever law about the pivot: $20g\times 2 = 30g\times d$.</p>
+              </div></li>
+              <li><div>
+<p>$d = 40/30 = 4/3 \approx 1.33\ \text{m}$ on the other side.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Heavier child sits closer to the pivot — ratio of distances is the inverse of the mass ratio ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A uniform ladder of mass $M$ and length $L$ leans against a frictionless wall at angle $\theta$ to the vertical. Friction at the floor has coefficient $\mu$. What is the minimum $\mu$ for the ladder not to slip? (Standard statics; from <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §18.4.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Forces: $Mg$ at CG (middle of ladder), normal from wall $N_w$ (horizontal), normal from floor $N_f$ (vertical), friction $f$ (horizontal).</p>
+              </div></li>
+              <li><div>
+<p>$\sum F_y = 0$: $N_f = Mg$. $\sum F_x = 0$: $f = N_w$.</p>
+              </div></li>
+              <li><div>
+<p>Take pivot at the foot: $\sum\tau = 0$ gives $Mg(L/2)\sin\theta = N_w L\cos\theta$, so $N_w = \tfrac12 Mg\tan\theta$.</p>
+              </div></li>
+              <li><div>
+<p>No-slip: $f \le \mu N_f$, i.e. $\tfrac12 Mg\tan\theta \le \mu Mg$, so $\mu \ge \tfrac12\tan\theta$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>At $\theta = 45°$: $\mu \ge 0.5$. Steep ladders (small $\theta$ from vertical) are safe with less friction; shallow leans need more friction ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A bookshelf of width $w$ and height $h$ sits on the floor. If you push horizontally at the top with force $F$, how big must $F$ be (relative to the weight $W$) to start the shelf tipping? (Standard "topple" calculation.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Tipping occurs about the far edge. At that instant the normal force concentrates at the edge and the shelf is on the verge of rotating.</p>
+              </div></li>
+              <li><div>
+<p>$\sum\tau$ about the tipping edge: $Fh = W(w/2)$.</p>
+              </div></li>
+              <li><div>
+<p>$F_{\text{tip}} = Ww/(2h)$. Wide shelf or short shelf: hard to tip. Tall narrow shelf: easy.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Why a bookshelf is bolted to the wall: $h/w$ is big and even modest horizontal forces can tip it ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 18 "Static Equilibrium", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §18.1 Introduction Static Equilibrium, §18.2 Lever Law, §18.3 Generalized Lever Law, §18.4 Worked Examples. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter18.pdf">PDF</a></span></li>
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 17 "Two Dimensional Rotational Dynamics", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §17.4.2 Torque Acts at the Center of Gravity. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter17.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

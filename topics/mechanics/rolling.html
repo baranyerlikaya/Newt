@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Rolling Without Slipping · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="rolling">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Rolling Without Slipping</h1>
+          <p class="doc-lede">Rolling without slipping ties linear and angular motion together, V = ωR. Kinetic energy splits into translation + rotation, and different shapes roll down inclines at different speeds.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>Rolling without slipping</strong> means the point where the wheel touches the ground is <em>not sliding</em>. That gives <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$V = \omega R.$$
+<p>The CM speed and the spin speed are locked together. The contact point is momentarily at rest.</p>
+<p><strong>Kinetic energy</strong> of a rolling body has two pieces <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+<ul>
+<li>Translation of the CM: $\tfrac12 MV^2$.</li>
+<li>Rotation about the CM: $\tfrac12 I\omega^2$.</li>
+</ul>
+<p>Shapes differ in how much is in each piece.</p>
+<p><strong>Famous ramp race:</strong> which shape rolls down fastest? <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></p>
+<ol>
+<li>Solid sphere ($I = \tfrac25 MR^2$) — fastest.</li>
+<li>Solid cylinder/disc ($I = \tfrac12 MR^2$).</li>
+<li>Hollow sphere ($I = \tfrac23 MR^2$).</li>
+<li>Thin hoop ($I = MR^2$) — slowest.</li>
+</ol>
+<p>Why? For each shape, energy conservation gives $V = \sqrt{2gh/(1 + I/(MR^2))}$. More $I$ per $MR^2$ means more KE goes into spinning, less into going forward.</p>
+<p><strong>Mass and radius don't matter.</strong> A big heavy sphere and a tiny light one roll the same way. Only the <em>shape</em> matters.</p>
+<p><strong>Static friction</strong> is what makes it roll instead of slide — but it does no work, because the contact point isn't moving <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The constraint V = ωR</h3>
+            <div>
+<p>A wheel of radius $R$ rolls without slipping on a flat surface. The contact point between wheel and ground is <strong>instantaneously at rest</strong> (if it were moving, it would be slipping) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2.1</span></span>. For the CM moving at velocity $V$ while the wheel spins with $\omega$ about its axle:</p>
+$$V = \omega R.$$
+<p>Differentiating: $a_{\text{CM}} = \alpha R$ (linear and angular accelerations also tied).</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Kinetic energy of a rolling body</h3>
+            <div>
+<p>Use the Koenig decomposition: total KE = CM translation + rotation about the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.4, §20.5</span></span>:</p>
+$$K = \tfrac12 MV^2 + \tfrac12 I_{\text{CM}}\omega^2.$$
+<p>With the no-slip condition $V = \omega R$:</p>
+$$K = \tfrac12 MV^2\left(1 + \frac{I_{\text{CM}}}{MR^2}\right).$$
+<p>Each shape has its own $I_{\text{CM}}/MR^2$: $1/2$ for a disc, $1$ for a hoop, $2/5$ for a solid sphere, $2/3$ for a hollow sphere.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Rolling down a ramp</h3>
+            <div>
+<p>Starting from rest at height $h$, energy conservation <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$Mgh = \tfrac12 MV^2\left(1 + \frac{I_{\text{CM}}}{MR^2}\right).$$
+<p>Solving for the speed at the bottom:</p>
+$$V = \sqrt{\frac{2gh}{1 + I_{\text{CM}}/(MR^2)}}.$$
+<p>The smaller $I_{\text{CM}}/(MR^2)$, the <strong>faster</strong> the body rolls — more energy goes into translation, less into rotation. So <strong>solid sphere &gt; solid disc &gt; hollow sphere &gt; thin hoop</strong> — in that order of winning the race down the ramp. Mass and radius don't matter (they cancel).</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Friction and rolling</h3>
+            <div>
+<p>Rolling without slipping needs a <em>static friction force</em> at the contact, which can be any value up to $\mu_s N$. This friction does <strong>no work</strong> (the contact point doesn't move), so it conserves mechanical energy even while it provides the torque that spins the wheel up <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2.1</span></span>.</p>
+<p>If the surface is too slippery, the body starts slipping: then kinetic friction applies and energy is lost to heat (that's why you lose energy skidding).</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-5">
+            <h3><span class="num"></span> Moment-of-inertia equation on a slope</h3>
+            <div>
+<p>Instead of energy, use Newton + torque. Along the slope (angle $\theta$): $MA = Mg\sin\theta - f$. About the CM: $I_{\text{CM}}\alpha = fR$. With $A = \alpha R$: solve <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.4</span></span>:</p>
+$$A = \frac{g\sin\theta}{1 + I_{\text{CM}}/(MR^2)}.$$
+<p>Constant, so the body speeds up uniformly. Independent of $M$ and $R$, depends only on the shape (through the ratio $I_{\text{CM}}/(MR^2)$).</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>The static friction on a rolling body is tiny when the slope is gentle. For $\theta$ above a critical angle (depending on $\mu_s$), the body starts to slip — then solid shapes still win, but by less, and energy is lost <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§20.2.1</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$V = \omega R$ is a <em>constraint</em>, not a general identity. It only applies to rolling without slipping. For a wheel spinning in place (burning rubber) or sliding (icy road), $V$ and $\omega R$ aren't equal <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="rolling">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">A wheel rolls without slipping. CM moves forward at $v$, the wheel spins with $\omega = v/R$. The dot marks the instantaneous contact point — labelled "instant. at rest". Watch the dot: every time it touches the ground, its velocity is zero, then it lifts off and traces a cycloid. The whole rim does this, which is why the rim-point speed varies from $0$ at the bottom to $2v$ at the top.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>No-slip constraint <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$V = \omega R, \quad A = \alpha R$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Rolling kinetic energy <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$K = \tfrac12 MV^2\!\left(1 + \frac{I_{\text{CM}}}{MR^2}\right)$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Speed at the bottom of a ramp <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$V = \sqrt{\frac{2gh}{1 + I_{\text{CM}}/(MR^2)}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Acceleration on a ramp <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$A = \frac{g\sin\theta}{1 + I_{\text{CM}}/(MR^2)}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Race order (same $h$) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\text{sphere} > \text{disc} > \text{hollow sphere} > \text{hoop}$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A solid sphere and a hoop, both of mass $M$ and radius $R$, roll from rest down the same ramp of height $h$. Who wins? And what are the speeds at the bottom? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §20.4–20.5.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Sphere: $I/(MR^2) = 2/5$, so $V_{\text{sph}} = \sqrt{2gh/(1 + 2/5)} = \sqrt{10gh/7}$.</p>
+              </div></li>
+              <li><div>
+<p>Hoop: $I/(MR^2) = 1$, so $V_{\text{hoop}} = \sqrt{2gh/(1 + 1)} = \sqrt{gh}$.</p>
+              </div></li>
+              <li><div>
+<p>Ratio: $V_{\text{sph}}/V_{\text{hoop}} = \sqrt{10/7} \approx 1.20$. The sphere is about 20% faster.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Independent of mass and radius ✓. A big billiard ball and a small marble both roll the same way down the same slope; a bike wheel and a solid wheel of the same mass and radius do not.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>What is the acceleration of a solid cylinder rolling without slipping down a $30°$ slope? (Direct application.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Solid cylinder: $I/(MR^2) = 1/2$.</p>
+              </div></li>
+              <li><div>
+<p>$A = g\sin30°/(1 + 1/2) = (9.81\times 0.5)/1.5 \approx 3.27\ \text{m/s}^2$.</p>
+              </div></li>
+              <li><div>
+<p>A frictionless block would have $A = g\sin30° = 4.9\ \text{m/s}^2$ — faster, because it doesn't have to spin up any rotational KE.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Two-thirds of the "no-rotation" acceleration ✓. For a hoop it would be exactly half.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>Show that the static friction on a solid sphere rolling down a ramp is $f = \tfrac{2}{7}Mg\sin\theta$. (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §20.4.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>From the two equations: $MA = Mg\sin\theta - f$ and $I_{\text{CM}}\alpha = fR$ with $I_{\text{CM}} = \tfrac25 MR^2$ and $A = \alpha R$: get $f = \tfrac25 MA = \tfrac25 M \cdot g\sin\theta/(1 + 2/5) = \tfrac{2}{7}Mg\sin\theta$.</p>
+              </div></li>
+              <li><div>
+<p>Friction scales with $\sin\theta$. No-slip holds while $f &lt; \mu_s N = \mu_s Mg\cos\theta$, i.e. while $\tan\theta &lt; \tfrac72\mu_s$. Above that, the sphere slips.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>For $\mu_s = 0.3$: $\theta_{\text{slip}} = \arctan(7\times 0.3/2) = \arctan(1.05) \approx 46°$. Steeper slopes make a ball slide instead of rolling ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 20 "Rigid Body: Translation and Rotational Motion Kinematics for Fixed Axis Rotation", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §20.2.1 Rolling without slipping, §20.4 Kinetic Energy of a System of Particles, §20.5 Rotational Kinetic Energy. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter20.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>

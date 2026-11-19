@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{if(self===top&&localStorage.getItem('newt.mode')==='basic'){var d=document.documentElement;d.setAttribute('data-mode','basic');d.style.background='#0b0b0b';d.style.colorScheme='dark'}}catch(e){}</script>
+  <title>Motion of the Centre of Mass · Newt</title>
+  <link rel="stylesheet" href="../../lib/katex.min.css">
+  <link rel="stylesheet" href="../../style.css?v=28">
+  <script defer src="../../lib/katex.min.js"></script>
+  <script defer src="../../lib/auto-render.min.js"></script>
+  <script defer src="../../lib/render-math.js?v=28"></script>
+  <script defer src="../../nav.js?v=28"></script>
+  <script defer src="../../app.js?v=28"></script>
+  <script defer src="../../assets/viz.js?v=28"></script>
+</head>
+<body class="layout-doc" data-root="../../" data-topic="cm-motion">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <div class="doc-shell">
+    <div id="site-sidebar"></div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <header class="doc-header">
+          <nav class="breadcrumb" aria-label="Breadcrumb"></nav>
+          <h1 class="doc-title">Motion of the Centre of Mass</h1>
+          <p class="doc-lede">The centre of mass of a system moves as if all the mass were concentrated there and the net external force acted on that point.</p>
+        </header>
+
+        <section class="doc-section" id="basics" aria-labelledby="basics-h" data-level="basic">
+          <h2 id="basics-h">In short</h2>
+          <div>
+<p><strong>The centre of mass moves like a single particle</strong>, no matter what's going on inside the system <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>:</p>
+$$\mathbf F_{\text{ext}} = M\mathbf A_{\text{CM}}.$$
+<p>Internal forces cancel out (Newton's third law pairs). Only outside forces affect how the CM moves.</p>
+<p><strong>Throw a spinning wrench:</strong> it tumbles chaotically, but its centre of mass traces a perfect parabola, exactly like a point mass would <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+<p><strong>Isolated system → CM at constant velocity.</strong> Two skaters pushing apart on ice: they fly in opposite directions, but their CM doesn't move. A rocket in deep space: the exhaust carries momentum back, so the rocket goes forward, but the CM of (rocket + exhaust) stays put.</p>
+<p><strong>Boat trick:</strong> stand on a floating boat and walk to the other end. The boat drifts backward so your combined CM stays put. If you're much lighter than the boat, it barely moves; if the boat is lighter, it moves a lot.</p>
+<p><strong>The CM is the "clean" place to describe motion.</strong> The rest of the physics is internal, and the kinetic energy splits cleanly: $K = \tfrac12 MV_{\text{CM}}^2 + K_{\text{internal}}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="theory" aria-labelledby="theory-h" data-level="full">
+          <h2 id="theory-h">Theory</h2>
+
+          <section class="subsection" id="theory-1">
+            <h3><span class="num"></span> The CM obeys Newton's second law</h3>
+            <div>
+<p>For a system of $N$ particles with total mass $M$ and centre of mass $\mathbf R = \frac{1}{M}\sum_i m_i\mathbf r_i$, differentiate twice <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5, §10.7</span></span>:</p>
+$$M\ddot{\mathbf R} = \sum_i m_i\ddot{\mathbf r}_i = \sum_i\mathbf F_i^{\text{net}}.$$
+<p>Internal forces come in Newton's-third-law pairs and sum to zero <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.3</span></span>. So only <strong>external</strong> forces affect the CM:</p>
+$$\boxed{\mathbf F_{\text{ext}} = M\mathbf A_{\text{CM}}.}$$
+<p>The CM moves like a single particle of mass $M$ under the net external force, regardless of how complicated the internal motion is <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-2">
+            <h3><span class="num"></span> Isolated systems and conservation</h3>
+            <div>
+<p>If $\mathbf F_{\text{ext}} = \mathbf 0$, $\mathbf A_{\text{CM}} = \mathbf 0$: the CM moves at constant velocity (or stays at rest if it started that way). This is just conservation of total momentum $\mathbf p = M\mathbf V_{\text{CM}}$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.7</span></span>.</p>
+<p>Examples: two skaters on ice push apart — they fly in opposite directions, but their CM stays put. An exploding firework in free fall — its CM keeps following the parabolic trajectory even as pieces fly in all directions.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-3">
+            <h3><span class="num"></span> Projectile reinterpreted</h3>
+            <div>
+<p>An extended body thrown in the air (a tumbling hammer, a spinning wrench) has only gravity as external force. The CM traces a perfect parabola, while the body spins around the CM however it likes <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>. This is why a point-particle treatment works so well for projectile problems — every result is really a statement about the CM.</p>
+            </div>
+          </section>
+
+          <section class="subsection" id="theory-4">
+            <h3><span class="num"></span> Decomposing kinetic energy: CM + internal</h3>
+            <div>
+<p>Write each particle's velocity as $\mathbf v_i = \mathbf V_{\text{CM}} + \mathbf v_i'$ (with $\mathbf v_i'$ the velocity in the CM frame). Expand $\sum\tfrac12 m_i v_i^2$ <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>:</p>
+$$K = \tfrac12 M V_{\text{CM}}^2 + K',$$
+<p>the <strong>Koenig decomposition</strong>. $K'$ is the kinetic energy in the CM frame — for a rigid body, it reduces to rotational kinetic energy $\tfrac12 I_{\text{CM}}\omega^2$ (see Topic 11.3 for rolling).</p>
+            </div>
+          </section>
+
+          <aside class="callout callout-note" role="note">
+            <p class="callout-label">Note</p>
+            <div>
+<p>If the external force is uniform (such as gravity near Earth's surface), it exerts no net torque about the CM, so the body's rotation about the CM is <em>unchanged</em> by gravity — only the CM motion is accelerated <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>.</p>
+            </div>
+          </aside>
+
+          <aside class="callout callout-warning" role="note">
+            <p class="callout-label">Warning</p>
+            <div>
+<p>$\mathbf F_{\text{ext}} = M\mathbf A_{\text{CM}}$ gives the CM's motion only. To know how pieces move relative to the CM you still need the internal forces (collisions, spring forces, etc.) <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a> <span class="srcref-detail">§10.5</span></span>.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="doc-section" id="visualization" aria-labelledby="visualization-h">
+          <h2 id="visualization-h">Visualization</h2>
+          <figure class="viz" data-viz="cmframe">
+            <div class="viz-stage"></div>
+            <figcaption class="viz-bar"></figcaption>
+          </figure>
+          <p class="viz-caption">Two bodies $m_1$ and $m_2$ orbit their common CM (the dot in the middle). The CM doesn't move at all, because no external force acts on the isolated two-body system. Change the masses: the heavier body stays closer to the CM; the lighter one makes a bigger circle. The CM itself is the dot at the centre, visibly unmoving.</p>
+        </section>
+
+        <section class="doc-section" id="formulas" aria-labelledby="formulas-h">
+          <h2 id="formulas-h">Key formulas</h2>
+
+          <div class="formula-list">
+            <figure class="formula">
+              <figcaption class="formula-label"><span>CM position <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf R = \frac{\sum_i m_i\mathbf r_i}{M}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Newton's law for the CM <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{ext}} = M\mathbf A_{\text{CM}} = \dot{\mathbf p}_{\text{sys}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Total momentum <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf p_{\text{sys}} = M\mathbf V_{\text{CM}}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Conservation when isolated <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$\mathbf F_{\text{ext}} = 0 \Rightarrow \mathbf V_{\text{CM}} = \text{const}$$</div>
+            </figure>
+
+            <figure class="formula">
+              <figcaption class="formula-label"><span>Koenig decomposition <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span></span></figcaption>
+              <div class="formula-body">$$K = \tfrac12 M V_{\text{CM}}^2 + K'$$</div>
+            </figure>
+
+          </div>
+        </section>
+
+        <section class="doc-section" id="examples" aria-labelledby="examples-h" data-level="full">
+          <h2 id="examples-h">Worked examples</h2>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $60\ \text{kg}$ person stands at one end of a $120\ \text{kg}$ boat $5\ \text{m}$ long (stationary on frictionless water). She walks to the other end. How far does the boat move? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §10.5 — CM is invariant for isolated horizontal motion.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>No horizontal external force, so the CM doesn't move. $M = 180\ \text{kg}$.</p>
+              </div></li>
+              <li><div>
+<p>Initial: person at $x = 0$, boat CM at $x = 2.5$: $X_{\text{CM}} = (60\cdot 0 + 120\cdot 2.5)/180 = 1.67\ \text{m}$.</p>
+              </div></li>
+              <li><div>
+<p>Final: person at $x = 5 + d$, boat CM at $x = 2.5 + d$ where $d$ is the boat's shift. Set $X_{\text{CM}}$ equal: $60(5+d) + 120(2.5+d) = 180\cdot 1.67 \cdot 3$. Simplify: $300 + 300 + 180d = 300$, so $d = -5/3 \approx -1.67\ \text{m}$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Boat drifts 1.67 m backward as the person walks 5 m forward. Person moves (relative to ground) $5 - 1.67 = 3.33\ \text{m}$. Mass ratio 2:1, displacement ratio 2:1 ✓.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="example">
+            <p class="example-label">Example</p>
+            <div class="example-problem"><div>
+<p>A $2\ \text{kg}$ firework in free fall explodes at $y = 50\ \text{m}$, $v_y = 10\ \text{m/s}$ upward. Half the mass flies up at $40\ \text{m/s}$. What does the other half do? What does the CM do? (From <span class="srcrefs"><a href="#references" class="badge srcref" title="Source 1">1</a></span>, §10.7.)</p>
+            </div></div>
+            <ol class="steps">
+              <li><div>
+<p>Momentum conservation (the only external force before, during and after is gravity — the CM keeps moving as if nothing happened): $2\cdot 10 = 1\cdot 40 + 1\cdot v_2$, so $v_2 = -20\ \text{m/s}$ (downward).</p>
+              </div></li>
+              <li><div>
+<p>The CM continues on its original parabola with initial vertical velocity $10\ \text{m/s}$ and acceleration $-g$.</p>
+              </div></li>
+            </ol>
+            <div class="example-check">
+              <p class="example-check-label">Check</p>
+              <div>
+<p>Fireworks really work this way: the explosion's debris fans out around a trajectory that would have been taken by a single particle ✓.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="references" aria-labelledby="references-h">
+          <h2 id="references-h">References</h2>
+          <ol class="refs">
+            <li><span>P. Dourmashkin, <em>Classical Mechanics: MIT 8.01 Course Notes</em>, Chapter 10 "Momentum, System of Particles, and Conservation of Momentum", MIT OpenCourseWare, 8.01SC Classical Mechanics (online textbook, revised 2022). §10.3 External and Internal Forces, §10.5 Center of Mass, §10.7 Constancy of Momentum and Isolated Systems. <a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/mit8_01scs22_chapter10.pdf">PDF</a></span></li>
+          </ol>
+        </section>
+
+        <nav class="prevnext" aria-label="Previous and next topic"></nav>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li data-level="basic"><a href="#basics">In short</a></li>
+          <li data-level="full"><a href="#theory">Theory</a></li>
+          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#formulas">Key formulas</a></li>
+          <li data-level="full"><a href="#examples">Worked examples</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>
